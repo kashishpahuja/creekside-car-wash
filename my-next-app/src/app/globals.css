@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@700&family=Montserrat:wght@800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.montserrat {
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+
+.exo{
+  font-family: "Exo", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+}
+
+.red{
+  color: #ee0a00;
+}
+.blue{
+ color: #046dfd;
+}
+.skyBlue{
+  color: #64fcfd;
+}
+.green{
+ color: #73ee60;
+}
