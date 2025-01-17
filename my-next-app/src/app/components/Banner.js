@@ -1,89 +1,147 @@
-import Link from 'next/link';
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.min.css';
-import { Autoplay } from 'swiper';
+// 'use client';
+// import React from "react";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Autoplay } from "swiper/modules";
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import "swiper/css/navigation";
+// import "swiper/css/autoplay";
+
+// const services = [
+//   {
+//     title: "Self Service Bays",
+//     description: 'Creekside Car Wash'
+//   },
+//   {
+//     title: "Automatic Wash",
+//     description: 'Creekside Car Wash'
+//   },
+//   {
+//     title: "Vacuum Stations",
+//     description: 'Creekside Car Wash'
+//   },
+//   {
+//     title: "Tire Shine",
+//     description: 'Creekside Car Wash'
+//   },
+//   {
+//     title: "Detailing Services",
+//     description: 'Creekside Car Wash'
+//   }
+// ];
+
+// function Banner() {
+//   return (
+//     <div className="relative w-full h-[600px] overflow-hidden font-exo">
+//       {/* Background Video Section */}
+//       <div className="absolute inset-0 w-full h-full">
+//         {/* <video
+//           src="/Images/bannerVideo.mp4"
+//           muted
+//           autoPlay
+//           loop
+//           className="w-full h-full object-cover"
+//         ></video> */}
+//         <img src="/Images/banner2.webp" alt=""  className="w-full h-full object-contain"/>
+//         {/* White Overlay */}
+//       </div>
+//       {/* <div className="absolute shadow-black inset-0 bg-white opacity-70 w-[100%]"></div> */}
+
+//       {/* Content */}
+//       <div className="relative h-full flex items-center justify-end">
+//         {/* Swiper Section */}
+//         <div className="w-[90%] lg:w-[40%] bg-transparent text-center p-6 z-10">
+//           <Swiper
+//             modules={[Autoplay]}
+//             autoplay={{ delay: 3000, disableOnInteraction: false }}
+//             loop={true}
+//             className="h-full"
+//           >
+//             {services.map((service, index) => (
+//               <SwiperSlide key={index}>
+//                 <h3 className="text-xl lg:text-2xl">
+//                   Weyburn's Best{" "}
+//                   <span className="text-[#ee0a00]">{service.title}</span>
+//                 </h3>
+//                 <p className="montserrat text-3xl lg:text-5xl font-bold mt-6">
+//                   {service.description}
+//                 </p>
+//               </SwiperSlide>
+//             ))}
+//           </Swiper>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Banner;
+
+
+
+
+
+
+
+'use client';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
+import Link from "next/link";
+
+const services = [
+  {
+    title: "Self Service Bays",
+    description: 'Creekside Car Wash'  },
+  {
+    title: "Automatic Wash",
+    description: 'Creekside Car Wash'  },
+  {
+    title: "Vacuum Stations",
+    description: 'Creekside Car Wash'  },
+  {
+    title: "Tire Shine",
+    description: 'Creekside Car Wash'  },
+  {
+    title: "Detailing Services",
+    description: 'Creekside Car Wash'  }
+];
 
 function Banner() {
   return (
     <div className="font-exo relative w-full overflow-hidden">
-      <Swiper
-        modules={[Autoplay]}
-        spaceBetween={0}
-        slidesPerView={1}
-        autoplay={{
-          delay: 3000, // Adjust delay time in ms
-          disableOnInteraction: false,
-        }}
-        loop={true}
-      >
-        {/* Slide 1 */}
-        <SwiperSlide>
-          <div className='flex items-center justify-center flex-wrap-reverse lg:flex-nowrap'>
-            <div className='w-full lg:w-[50%]'>
-              <video src="/Images/bannerVideo.mp4" muted autoPlay loop className='rounded-r-lg shadow-sm'></video>
-            </div>
-            <div className='w-full lg:w-[50%] p-6 text-center'>
-              <h3 className='exo text-black lg:text-2xl'>
-                Weyburn's <span className='text-[#ee0a00]'>Self Service</span> Car Wash
-              </h3>
-              <h1 className='montserrat text-3xl lg:text-5xl font-bold mt-6'>
-                CREEKSIDE CAR WASH
-              </h1>
-            </div>
-          </div>
-        </SwiperSlide>
+      <div className='flex items-center justify-center flex-wrap-reverse lg:flex-nowrap'>
+        {/* Video Section */}
+        <div className='w-full lg:w-[50%]'>
+          {/* <video src="/Images/bannerVideo.mp4" muted autoPlay loop className="w-full h-full"></video> */}
+        <img src="/Images/bannerBG.webp" alt="" />
+        </div>
 
-        {/* Slide 2 (Add your service or other content here) */}
-        <SwiperSlide>
-          <div className="service-slide">
-            <h2>Service 1</h2>
-            <p>Description of Service 1</p>
-          </div>
-        </SwiperSlide>
-
-        {/* Slide 3 */}
-        <SwiperSlide>
-          <div className="service-slide">
-            <h2>Service 2</h2>
-            <p>Description of Service 2</p>
-          </div>
-        </SwiperSlide>
-
-        {/* Add more slides as needed */}
-      </Swiper>
+        {/* Swiper Section */}
+        <div className='w-full lg:w-[50%] p-6 text-center '>
+          <Swiper
+            modules={[Autoplay]}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            loop={true}
+            className="h-full"
+          >
+            {services.map((service, index) => (
+              <SwiperSlide key={index}>
+                <h3 className='exo lg:text-2xl '>Weyburn's Best <span className='text-[#ee0a00]'>{service.title}</span> </h3>
+                <p className='montserrat text-3xl xl:text-5xl font-bold mt-6'>{service.description}</p>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>
     </div>
   );
 }
 
 export default Banner;
 
-
-
-// import Link from 'next/link';
-// import React from 'react';
-
-// function Banner() {
-//   return (
-//     <div className="font-exo relative w-full  overflow-hidden  " >
-//      <div className='flex items-center justify-center flex-wrap-reverse lg:flex-nowrap '>
-//      <div className='w-full lg:w-[50%] '>
-//       <video src="/Images/bannerVideo.mp4"  muted autoPlay loop ></video>
-//       {/* <img src="/Images/bannerBG.webp" alt="" className='w-full h-[100%]'/> */}
-//         </div>
-//         <div className='w-full lg:w-[50%] p-6 text-center '>
-//             <h3 className='exo text-black lg:text-2xl '>Weyburn's <span className='text-[#ee0a00]'>Self Service</span> Car Wash</h3>
-// <h1 className='montserrat text-3xl lg:text-5xl font-bold mt-6'>CREEKSIDE CAR WASH</h1>
-//         </div>
-       
-//      </div>
-  
-
-
-
-//     </div>
-//   );
-// }
-
-// export default Banner;
 
