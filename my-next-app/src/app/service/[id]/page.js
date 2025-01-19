@@ -2,8 +2,7 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-// import SongsList from "../../components/albums/Songs"; // Import the SongsList component
-
+import Circle from '../../components/Circle'
 async function fetchAlbumData(id) {
   const albums = [
     {
@@ -93,7 +92,7 @@ export default function AlbumPage({ params }) {
     <div className="text-white">
       {/* Banner */}
       <div
-        className="relative h-[240px] lg:h-[410px] w-full"
+        className="relative h-[380px] lg:h-[480px] w-full"
         style={{
           backgroundImage: `url('/Images/services/carWraps.webp')`,
           backgroundPosition: "center",
@@ -101,16 +100,16 @@ export default function AlbumPage({ params }) {
         }}
       >
         <div
-          className="absolute inset-0 bg-black bg-opacity-70 rounded-lg"
+          className="absolute inset-0 bg-black bg-opacity-70"
           aria-hidden="true"
         ></div>
-        <div className="relative z-20 top-16 lg:top-32 ">
-          <div className="flex flex-col gap-4 items-center justify-center  ">
+        <div className="relative z-20 top-60 left-8 lg:left-16">
+          <div className="flex flex-col gap-4 items-start  ">
             <h3 className="montserrat text-3xl lg:text-5xl text-white">
               {/* {albumData.title} */}
               Auto Care Wash
             </h3>
-            <Link href={"/contact"} className="exo-bold p-2 lg:px-6 lg:py-4 border-white border text-white hover:text-black hover:bg-white"
+            <Link href={"/contact"} className="exo-bold p-2 lg:px-4 border-white border text-white hover:text-black hover:bg-white"
             >
               Book Now
             </Link>
@@ -123,7 +122,7 @@ export default function AlbumPage({ params }) {
       </div>
 
       {/* SongsList Component */}
-      {/* //   <SongsList songs={albumData.songs} /> */}
+<Circle/>
     </div>
   );
 }

@@ -11,9 +11,12 @@ export default function Home() {
   return (
     <div>
       <main className="">
-        <Navbar/>
+        {/* <Navbar/> */}
         <Banner/>
-<Circle/>
+        <div className="">
+        <Circle/>
+
+        </div>
 
         {/* <Cards/> */}
    

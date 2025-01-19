@@ -7,7 +7,7 @@ function Popup({ menuOpen }) {
   return (
     <div className="block md:hidden">
         
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+      <div className="sticky top-0   inset-0 bg-black bg-opacity-50 flex justify-center items-center z-[999999999]">
         <div className="relative">
           <div
             className="p-8 bg-black rounded-lg w-[300px] h-[500px] md:w-[500px] md:h-[600px] xl:w-[700px] bg-cover bg-center relative"
@@ -19,7 +19,7 @@ function Popup({ menuOpen }) {
               className="absolute top-4 right-4 text-2xl cursor-pointer text-white"
               onClick={menuOpen} // Close the menu when clicking the icon
             />
-<div className="flex items-start justify-between">
+<div className="flex flex-col items-center justify-between">
             {/* Logo Section */}
             <div className="flex justify-start mt-6">
               <div className="w-24 h-24">

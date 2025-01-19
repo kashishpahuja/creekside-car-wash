@@ -104,7 +104,7 @@ const News = () => {
       >
         Our Blogs
       </h2>
-      <div className="mx-auto px-4 pt-8">
+      <div className="mx-auto  pt-8">
         <Slider {...settings}>
           {blogs.map((blog) => {
             const blogDate = new Date(blog.date);

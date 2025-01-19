@@ -1,3 +1,131 @@
+// 'use client';
+// import Link from "next/link";
+// import React, { useState, useEffect } from "react";
+// import { FaBars, FaTimes } from "react-icons/fa";
+// import Popup from "./Popup";
+
+// function Navbar() {
+//   const [menuOpen, setMenuOpen] = useState(false);
+//   const [isScrolled, setIsScrolled] = useState(false);
+//   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+//   const toggleMenu = () => {
+//     setMenuOpen(!menuOpen);
+//   };
+
+//   // Add scroll event listener to check scroll position
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       if (window.scrollY > 0) {
+//         setIsScrolled(true);
+//       } else {
+//         setIsScrolled(false);
+//       }
+//     };
+
+//     // Listen to the scroll event
+//     window.addEventListener("scroll", handleScroll);
+
+//     // Cleanup listener on unmount
+//     return () => {
+//       window.removeEventListener("scroll", handleScroll);
+//     };
+//   }, []);
+
+//   return (
+//      <div
+//       className={`absolute top-0 left-0 w-full z-[99999] transition-opacity duration-1000 ease-in-out overflow-hidden`}
+//       style={{
+//         height: isScrolled ? "120px" : "120px", // Dynamic height
+//         backgroundColor: isScrolled ? "white" : "transparent",
+//         color: isScrolled ? "black" : "white",
+//         boxShadow: isScrolled ? "0 4px 6px rgba(0, 0, 0, 0.1)" : "none",
+//         position: isScrolled ? "sticky" : "absolute",
+//         transform: isScrolled ? "translateY(0)" : "translateY(0%)", // Smooth transition on scroll
+//       }}
+//     >
+//       <div className="text-lg font-medium flex items-center justify-between px-6 lg:px-20 h-full">
+//         {/* Logo */}
+//         <div className="w-48 h-48">
+//           <Link href="/" className="">
+//             <img
+//               src="/Images/logo.webp"
+//               alt="Logo"
+//               className="object-contain"
+//               style={{ width: "100%", height: "100%" }}
+//             />
+//           </Link>
+//         </div>
+
+//         {/* Desktop Navigation */}
+//         <div className="hidden md:flex items-center">
+//           <ul className="flex items-center justify-center gap-8 lg:gap-16 text-md">
+//             <li className="transition duration-300">
+//               <Link href={"/"}>Home</Link>
+//             </li>
+//             <li className="transition duration-300">
+//               <Link href={"/about"}>About Us</Link>
+//             </li>
+//             <li
+//               className="relative group transition duration-300"
+//               onMouseEnter={() => setIsDropdownOpen(true)}
+//             >
+//               <Link href={"/services"}>Services</Link>
+//               {isDropdownOpen && (
+//                 <div
+//                   className="absolute top-full left-2 mt-6 w-56 bg-white text-black"
+//                   onMouseLeave={() => setIsDropdownOpen(false)}
+//                 >
+//                   <ul className="flex flex-col">
+//                     <li className="hover:bg-gray-200 border-b px-4 py-2">
+//                       <Link href="/service1">Auto Wash</Link>
+//                     </li>
+//                     <li className="hover:bg-gray-200 border-b px-4 py-2">
+//                       <Link href="/service2">Car Wash</Link>
+//                     </li>
+//                     <li className="hover:bg-gray-200 border-b px-4 py-2">
+//                       <Link href="/service3">Detailing</Link>
+//                     </li>
+//                     <li className="hover:bg-gray-200 border-b px-4 py-2">
+//                       <Link href="/service3">Window Tinting</Link>
+//                     </li>
+//                     <li className="hover:bg-gray-200 border-b px-4 py-2">
+//                       <Link href="/service3">Paint Protection Film</Link>
+//                     </li>
+//                   </ul>
+//                 </div>
+//               )}
+//             </li>
+//             <li className="transition duration-300">
+//               <Link href="/contact">Contact Us</Link>
+//             </li>
+//           </ul>
+//         </div>
+
+//         {/* Mobile Menu Icon */}
+//         <div className="md:hidden">
+//           <button
+//             onClick={toggleMenu}
+//             className="text-2xl focus:outline-none"
+//           >
+//             {menuOpen ? <FaTimes /> : <FaBars />}
+//           </button>
+//         </div>
+//       </div>
+
+//       {/* Mobile Menu Popup */}
+//       {menuOpen && <Popup menuOpen={toggleMenu} />}
+//     </div>
+//   );
+// }
+
+// export default Navbar;
+
+
+
+
+
+
 'use client';
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
@@ -34,15 +162,19 @@ function Navbar() {
 
   return (
     <div
-      className={`${
-        isScrolled
-          ? "bg-opacity-90 "
-          : ""
-      } h-[100px] bg-white text-black shadow-md sticky top-0 z-[99999] transition-all ease-in-out duration-300`}
-    >
-      <div className="text-lg font-medium flex items-center justify-between px-6 lg:px-20 h-full mx-4 lg:mx-16">
+className={`absolute top-0 left-0 w-full z-[99999] md:transition-opacity duration-500 ease-in-out `}
+style={{
+  height: isScrolled ? "120px" : "120px", // Dynamic height
+  backgroundColor: isScrolled ? "white" : "transparent",
+  color: isScrolled ? "black" : "white",
+  boxShadow: isScrolled ? "0 4px 6px rgba(0, 0, 0, 0.1)" : "none",
+  position: isScrolled ? "sticky" : "absolute",
+  transform: isScrolled ? "translateY(0)" : "translateY(0%)", // Smooth transition on scroll
+}}
+>
+      <div className="text-lg font-medium flex items-center justify-between px-4 lg:px-20 h-full xl:mx-8">
         {/* Logo */}
-        <div className="w-44 h-44">
+        <div className="w-44 h-44 overflow-hidden">
           <Link href="/" className="">
             <img
               src="/Images/logo.webp"
@@ -69,7 +201,7 @@ function Navbar() {
             >
               <Link href={'/services'}>Services</Link>
               {isDropdownOpen && (
-                <div className="absolute top-full left-2 mt-6 w-56 bg-white text-black "  onMouseLeave={() => setIsDropdownOpen(false)}>
+                <div className="absolute  top-full left-2 mt-6 w-56 bg-white text-black "  onMouseLeave={() => setIsDropdownOpen(false)}>
                   <ul className="flex flex-col">
                     <li className="hover:bg-gray-200 border-b  px-4 py-2">
                       <Link href="/service1">Auto Wash</Link>
@@ -99,7 +231,7 @@ function Navbar() {
         <div className="md:hidden">
           <button
             onClick={toggleMenu}
-            className="text-2xl text-white focus:outline-none"
+            className="text-2xl text-[#ee0a00] focus:outline-none"
           >
             {menuOpen ? <FaTimes /> : <FaBars />}
           </button>

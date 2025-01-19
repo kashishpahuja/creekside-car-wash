@@ -32,7 +32,7 @@ const services = [
 
 function Banner() {
   return (
-    <div className="relative w-full h-[600px] overflow-hidden font-exo">
+    <div className="relative w-full h-[600px] lg:min-h-screen overflow-hidden font-exo">
       {/* Background Video Section */}
       <div className="absolute inset-0 w-full h-full">
         {/* <video
@@ -48,9 +48,9 @@ function Banner() {
       <div className="absolute shadow-black inset-0 bg-black opacity-70 w-[100%]"></div>
 
       {/* Content */}
-      <div className="relative text-white h-full flex items-center justify-start">
+      <div className="relative text-white h-full flex items-center justify-start overflow-hidden">
         {/* Swiper Section */}
-        <div className="w-[90%]  lg:w-[40%] bg-transparent text-center p-6 z-10">
+        <div className=" w-[100%] lg:w-[50%] xl:w-[40%] bg-transparent text-center p-6 z-10">
           <Swiper
             modules={[Autoplay]}
             autoplay={{ delay: 3000, disableOnInteraction: false }}
@@ -59,11 +59,11 @@ function Banner() {
           >
             {services.map((service, index) => (
               <SwiperSlide key={index}>
-                <h3 className="text-xl lg:text-2xl">
+                <h3 className="text-lg md:text-xl xl:text-2xl">
                   Weyburn's Best{" "}
                   <span className="text-[#ee0a00]">{service.title}</span>
                 </h3>
-                <p className="montserrat text-3xl lg:text-5xl font-bold mt-6">
+                <p className="montserrat text-3xl lg:text-4xl xl:text-5xl font-bold mt-6">
                   {service.description}
                 </p>
               </SwiperSlide>
