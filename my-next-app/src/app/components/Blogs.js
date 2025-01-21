@@ -99,10 +99,10 @@ const News = () => {
       {/* Title Section */}
 
       <h2
-        className="text-3xl lg:text-4xl font-bold text-black"
+        className="montserrat text-3xl lg:text-4xl font-bold text-gray-800"
         data-aos="zoom-out"
       >
-        Our Blogs
+        What Our Cliets Say About Us?
       </h2>
       <div className="mx-auto  pt-8">
         <Slider {...settings}>
@@ -118,7 +118,7 @@ const News = () => {
                     <img src='/Images/bannerBG2.jpg' alt="img" className="w-full h-60 object-cover" />
                   </div>
                   <div className="p-4">
-                             <h3 className="montserrat text-start text-lg font-semibold mt-4 hover:text-[#ee0a00]">
+                             <h3 className="exo text-start text-lg font-semibold mt-4 text-gray-900 hover:text-[#ee0a00]">
                       {blog.title}
                     </h3>
 

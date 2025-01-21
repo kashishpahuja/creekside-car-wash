@@ -168,7 +168,7 @@ style={{
   backgroundColor: isScrolled ? "white" : "transparent",
   color: isScrolled ? "black" : "white",
   boxShadow: isScrolled ? "0 4px 6px rgba(0, 0, 0, 0.1)" : "none",
-  position: isScrolled ? "sticky" : "absolute",
+  position: isScrolled ? "fixed" : "absolute",
   transform: isScrolled ? "translateY(0)" : "translateY(0%)", // Smooth transition on scroll
 }}
 >

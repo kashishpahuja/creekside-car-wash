@@ -5,6 +5,8 @@ import Cards from "./components/Cards";
 import Services from "./components/Services";
 import Blog from './components/Blogs'
 import Circle from './components/Circle'
+import Bay from "./components/Bay";
+import Gift from "./components/Gift";
 
 
 export default function Home() {
@@ -13,17 +15,15 @@ export default function Home() {
       <main className="">
         {/* <Navbar/> */}
         <Banner/>
-        <div className="">
         <Circle/>
 
-        </div>
 
         {/* <Cards/> */}
    
         <Services/>
-        <div className="">
+        <Bay/>
           <Blog/>
-        </div>
+          <Gift/>
       </main>
       
     </div>

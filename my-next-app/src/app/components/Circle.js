@@ -8,10 +8,10 @@ function Producer() {
         {/* CLEAN Section */}
         <div className="flex flex-col items-center justify-center gap-4">
           <div className="w-20 h-20 xl:w-28 xl:h-28">
-            <img className='w-full h-[100%] object-cover' src="/Images/circle/clean.webp" alt="Clean" />
+            <img className='w-full h-[100%] object-cover' src="/Images/circle/1.webp" className="text-red-600" alt="Clean" />
           </div>
           <div className="text-center">
-            <h3 className="montserrat text-xl font-semibold text-[#ee0a00]">
+            <h3 className="montserrat text-xl font-semibold text-gray-800 ">
               CLEAN
             </h3>
             <p className="exo mt-2 text-gray-600 text-sm lg:text-md font-semibold">
@@ -22,11 +22,11 @@ function Producer() {
             {/* CLEAN Section */}
             <div className="flex flex-col items-center justify-center gap-4">
           <div className="w-20 h-20 xl:w-28 xl:h-28">
-            <img className='w-full h-[100%] object-cover' src="/Images/circle/clean.webp" alt="Clean" />
+            <img className='w-full h-[100%] object-cover' src="/Images/circle/2.webp" className="text-red-600" alt="Clean" />
           </div>
           <div className="text-center">
-            <h3 className="montserrat text-xl font-semibold text-[#ee0a00]">
-              CLEAN
+            <h3 className="montserrat text-xl font-semibold text-gray-800 ">
+              SHINE
             </h3>
             <p className="exo mt-2 text-gray-600 text-sm lg:text-md font-semibold">
               Your car deserves a spotless shine inside and out.
@@ -37,10 +37,10 @@ function Producer() {
         {/* DETAIL Section */}
         <div className="flex flex-col items-center justify-center gap-4">
           <div className="w-20 h-20 xl:w-28 xl:h-28">
-            <img className='w-full h-[100%] object-cover' src="/Images/circle/detail.webp" alt="Detail" />
+            <img className='w-full h-[100%] object-cover' src="/Images/circle/3.webp" className="text-red-600" alt="Detail" />
           </div>
           <div className="text-center">
-            <h3 className="montserrat text-xl font-semibold text-[#ee0a00]">
+            <h3 className="montserrat text-xl font-semibold text-gray-800 ">
               DETAIL
             </h3>
             <p className="exo mt-2 text-gray-600 text-sm lg:text-md font-semibold">
@@ -52,11 +52,11 @@ function Producer() {
         {/* SHINE Section */}
         <div className="flex flex-col items-center justify-center ">
           <div className="w-24 h-24 xl:w-32 xl:h-32">
-            <img className='w-full h-[100%] object-cover' src="/Images/circle/shine.webp" alt="Shine" />
+            <img className='w-full h-[100%] object-cover' src="/Images/circle/4.webp" className="text-red-600" alt="Shine" />
           </div>
           <div className="text-center">
-            <h3 className="montserrat text-xl font-semibold text-[#ee0a00]">
-              SHINE
+            <h3 className="montserrat text-xl font-semibold text-gray-800 ">
+              PROTECT
             </h3>
             <p className="exo mt-2 text-gray-600 text-sm lg:text-md font-semibold">
               Keep your car shining bright, turning heads wherever you go.

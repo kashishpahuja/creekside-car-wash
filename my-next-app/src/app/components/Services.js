@@ -4,10 +4,10 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 function Services() {
   const services = [
-    {id:'1', name: 'Car Wraps', image: '/Images/services/carWraps.webp', icon: <MdKeyboardDoubleArrowRight /> },
-    { id:'2', name: 'Auto Glass', image: '/Images/services/autoGlass.jpg', icon: <MdKeyboardDoubleArrowRight /> },
-    { id:'3', name: 'Auto Detailing', image: '/Images/services/detailing.jpg', icon: <MdKeyboardDoubleArrowRight /> },
-    { id:'4', name: 'Car Wash', image: '/Images/services/carWash.webp', icon: <MdKeyboardDoubleArrowRight /> },
+    {id:'1', link:'/car-wash' , name: 'Car Wash', image: '/Images/services/carWash.webp', icon: <MdKeyboardDoubleArrowRight /> },
+    { id:'2', link:'/oil-undercoating' , name: 'Under Coating', image: '/Images/services/autoGlass.jpg', icon: <MdKeyboardDoubleArrowRight /> },
+    { id:'3', link:'/car-wash' , name: 'Auto Detailing', image: '/Images/services/detailing.jpg', icon: <MdKeyboardDoubleArrowRight /> },
+    { id:'4', link:'/car-wash' , name: 'Window Tinting', image: '/Images/services/carWraps.webp', icon: <MdKeyboardDoubleArrowRight /> },
   ];
 
   return (
@@ -18,7 +18,7 @@ function Services() {
           className='relative w-full h-[260px] bg-cover bg-center rounded shadow-lg overflow-hidden'
           style={{ backgroundImage: `url(${service.image})` }}
         >
-           <Link href={`/service/${service.id}`}>
+           <Link href={service.link}>
           {/* Black overlay */}
           <div className='absolute inset-0 bg-black bg-opacity-75'></div>
 
