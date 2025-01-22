@@ -3,29 +3,28 @@ import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
 import Cards from "./components/Cards";
 import Services from "./components/Services";
-import Blog from './components/Blogs'
-import Circle from './components/Circle'
+import Blog from "./components/Blogs";
+import Circle from "./components/Circle";
 import Bay from "./components/Bay";
 import Gift from "./components/Gift";
-
 
 export default function Home() {
   return (
     <div>
-      <main className="">
-        {/* <Navbar/> */}
-        <Banner/>
-        <Circle/>
+      <main
+        className=""
 
-
-        {/* <Cards/> */}
-   
-        <Services/>
-        <Bay/>
-          <Blog/>
-          <Gift/>
+      >
+       
+        <div >
+        <Banner />
+        <Circle />
+        <Services />
+        <Bay />
+        <Blog />
+        <Gift />
+        </div>
       </main>
-      
     </div>
   );
 }

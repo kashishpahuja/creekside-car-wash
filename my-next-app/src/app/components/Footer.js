@@ -20,11 +20,11 @@ const Footer = () => {
   return (
     <div 
     style={{
-        backgroundImage: `url('/Images/footerBG.webp')`,
+        backgroundImage: `url('/Images/footerImg.jpg')`,
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
-    className=" pt-16 relative bg-black text-white" >
+    className="  relative bg-black text-white" >
    
    <div
           className="absolute inset-0 bg-black bg-opacity-90 "
