@@ -166,13 +166,13 @@ className={`absolute top-0 left-0 w-full z-[99999] md:transition-opacity duratio
 style={{
   height: isScrolled ? "120px" : "120px", // Dynamic height
   backgroundColor: isScrolled ? "white" : "transparent",
-  color: isScrolled ? "black" : "white",
+  color: isScrolled ? "#272323" : "white",
   boxShadow: isScrolled ? "0 4px 6px rgba(0, 0, 0, 0.1)" : "none",
   position: isScrolled ? "fixed" : "absolute",
   transform: isScrolled ? "translateY(0)" : "translateY(0%)", // Smooth transition on scroll
 }}
 >
-      <div className="text-lg font-medium flex items-center justify-between px-4 lg:px-20 h-full xl:mx-8">
+      <div className="text-lg font-medium flex items-center justify-between px-4 xl:px-20 h-full xl:mx-8">
         {/* Logo */}
         <div className="w-44 h-44 overflow-hidden">
           <Link href="/" className="">
@@ -186,8 +186,8 @@ style={{
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center">
-          <ul className="flex items-center justify-center gap-8 lg:gap-16 text-md">
+        <div className="hidden lg:flex items-center">
+          <ul className="exo flex items-center justify-center gap-8 lg:gap-16 text-md">
             <li className=" transition duration-300">
               <Link href={"/"}>Home</Link>
             </li>
@@ -222,13 +222,19 @@ style={{
               )}
             </li>
             <li className=" transition duration-300">
+              <Link href="/blogs">Blogs</Link>
+            </li>
+            <li className=" transition duration-300">
+              <Link href="/faq">FAQ</Link>
+            </li>
+            <li className=" transition duration-300">
               <Link href="/contact">Contact Us</Link>
             </li>
           </ul>
         </div>
 
         {/* Mobile Menu Icon */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button
             onClick={toggleMenu}
             className="text-2xl text-[#ee0a00] focus:outline-none"

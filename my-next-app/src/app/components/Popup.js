@@ -5,7 +5,7 @@ import { AiOutlineClose } from "react-icons/ai"; // Import close icon
 
 function Popup({ menuOpen }) {
   return (
-    <div className="block md:hidden">
+    <div className="block lg:hidden">
         
       <div className="sticky top-0   inset-0 bg-black bg-opacity-50 flex justify-center items-center z-[999999999]">
         <div className="relative">

@@ -4,14 +4,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* body {
+  background-image: url('/Images/fullBG.webp'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: repeat; 
+  background-attachment: fixed; 
+} */
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(241, 250, 249);
+  background-color: rgb(255, 255, 255);
 }
-*{
-  /* border: 2px solid red; */
-}
+
 
 .montserrat {
   font-family: "Montserrat", serif;
