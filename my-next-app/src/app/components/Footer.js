@@ -30,7 +30,7 @@ const Footer = () => {
           className="absolute inset-0 bg-black bg-opacity-90 "
           aria-hidden="true"
         ></div>
-      <div className="relative z-20 py-10 px-5 lg:px-5">
+      <div className="relative z-20 py-10 lg:py-28 px-5 lg:px-5">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12  p-4 md:mx-8 lg:mx-16 xl:mx-36">
           {/* 1st Column - Company Info (4 columns on larger screens) */}
           <div className="lg:col-span-5 mb-6 lg:mb-0 ">

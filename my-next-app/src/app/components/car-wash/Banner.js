@@ -8,11 +8,6 @@ import React from "react";
 
 
 export default function AlbumPage() {
-
-
- 
-
-
   return (
 
     <div className="text-black bg-black">
@@ -29,7 +24,7 @@ export default function AlbumPage() {
           className="absolute inset-0 bg-black bg-opacity-70"
           aria-hidden="true"
         ></div>
-        <div className="relative z-20 top-60 left-8 lg:left-16">
+        <div className="relative z-20 top-60 left-2 md:left-6 lg:left-16 inline-block">
           <div className="flex flex-col gap-4 items-start  ">
             <h3 className="montserrat text-3xl lg:text-5xl text-white">
               

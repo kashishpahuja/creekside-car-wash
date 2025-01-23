@@ -51,7 +51,7 @@ function Producer() {
 
         {/* SHINE Section */}
         <div className="flex flex-col items-center justify-center ">
-          <div className="w-24 h-24 xl:w-32 xl:h-32">
+          <div className="w-20 h-20 xl:w-28 xl:h-28">
             <img className='w-full h-[100%] object-cover' src="/Images/circle/4.webp" className="text-red-600" alt="Shine" />
           </div>
           <div className="text-center">
