@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import "./globals.css";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -13,21 +14,24 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Remove this line from the client component (metadata should be declared outside client components)
 export const metadata = {
-  title: "Crreekside Car Wash",
+  title: "Creekside Car Wash",
   description: "Auto Care Website",
 };
 
 export default function RootLayout({ children }) {
+
+
   return (
     <html lang="en">
-      <body
-      
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Navbar/>
+         <head>
+        <link rel="icon" href="/Images/favicon.webp" type="image/webp" />
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Navbar />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

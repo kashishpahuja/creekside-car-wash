@@ -99,12 +99,12 @@ const News = () => {
       {/* Title Section */}
 
       <h2
-        className="montserrat text-3xl lg:text-4xl font-bold text-gray-800"
+        className="montserrat text-2xl lg:text-6xl text-black text-center mb-12"
         data-aos="zoom-out"
       >
-        What Our Cliets Say About Us?
+OUR BLOGS
       </h2>
-      <div className="mx-auto  pt-8">
+      <Link href={'/blogs'} className="mx-auto">
         <Slider {...settings}>
           {blogs.map((blog) => {
             const blogDate = new Date(blog.date);
@@ -115,24 +115,24 @@ const News = () => {
               <div key={blog.id} className="p-4">
                 <div className="bg-white shadow-lg rounded-lg w-auto h-auto overflow-hidden">
                   <div>
-                    <img src='/Images/bannerBG2.jpg' alt="img" className="w-full h-60 object-cover" />
+                    <img src='/Images/bannerBG2.jpg' alt="img" className="w-full h-72 object-cover" />
                   </div>
                   <div className="p-4">
-                             <h3 className="exo text-start text-lg font-semibold mt-4 text-gray-900 hover:text-[#ee0a00]">
+                             <h3 className="exo text-start text-xl font-semibold mt-4 text-black hover:text-[#ee0a00]">
                       {blog.title}
                     </h3>
 
 
 <div className="flex items-center justify-between">
-<div className="exo flex items-center text-gray-600 text-sm font-semibold hover:underline mt-4 ">
-                      <CgProfile  className="w-4 h-4 mr-2" />{' '}
+<div className="exo flex items-center text-gray-600 text-md font-semibold hover:underline mt-4 ">
+                      <CgProfile  className="w-6 h-6 mr-2" />{' '}
                         
                         <span>Mohit Oberoi</span>
                       </div>
                       <div>
                       <Link
                       href="/blog"
-                      className="exo text-gray-600 text-sm font-semibold hover:underline mt-4 inline-block"
+                      className="exo text-gray-600 text-md font-semibold hover:underline mt-4 inline-block"
                     >
                       <span>Read More</span>{" "}
                       <FaArrowRight className="inline ml-2" />
@@ -147,7 +147,7 @@ const News = () => {
             );
           })}
         </Slider>
-      </div>
+      </Link>
     </div>
   );
 };

@@ -46,27 +46,30 @@ const Footer = () => {
               <p className="">
                 <Link
                   href="tel:+91 94623-27667"
-                  className="hover:underline text-sm lg:text-md"
+                  className="hover:underline text-md xl:text-lg"
                 >
-                  Phone: +91 94623-27667
+                  Phone:
+                   +91 94623-27667
                 </Link>
               </p>
               <p>
                 <Link
                   href="mailto:info@srscargopackers.in"
-                  className="hover:underline text-sm lg:text-md"
+                  className="hover:underline text-md xl:text-lg"
                 >
-                  Email: info@srscargopackers.in
+                  Email: 
+                  info@srscargopackers.in
                 </Link>
               </p>
-              <p className=" text-sm lg:text-md">
-                Address: 70 Hermann Ave Carteret New Jersey 07008 70 Hermann Ave
+              <p className=" text-md xl:text-lg">
+                Address:
+                 70 Hermann Ave Carteret New Jersey 07008 70 Hermann Ave
                 Carteret New Jersey 07008
               </p>
             </div>
             <h3 className=" text-sm  font-semibold mt-4">Working Hours:</h3>
             <div className="flex flex-col gap-1 my-2">
-              <p className=" text-sm lg:text-md">
+              <p className=" text-md xl:text-lg">
                 Monday-Friday: 08:00 AM - 05:30 PM <br /> Saturday : 08:00 AM -
                 05:00 PM <br /> Sunday: Closed
               </p>
@@ -90,24 +93,24 @@ const Footer = () => {
             <ul className="space-y-4 text-md my-4">
               <li className="flex items-center hover:text-orange-500">
                 <FaChevronRight className="mr-2" />
-                <Link className="text-sm lg:text-md" href="/">Home</Link>
+                <Link className="text-md xl:text-lg" href="/">Home</Link>
               </li>
               <li className="flex items-center hover:text-orange-500">
                 <FaChevronRight className="mr-2" />
-                <Link className="text-sm lg:text-md" href="/about">About Us</Link>
+                <Link className="text-md xl:text-lg" href="/about">About Us</Link>
               </li>
               <li className="flex items-center hover:text-orange-500">
                 <FaChevronRight className="mr-2" />
-                <Link className="text-sm lg:text-md" href="/menu">Food Menu</Link>
+                <Link className="text-md xl:text-lg" href="/menu">Food Menu</Link>
               </li>
               <li className="flex items-center hover:text-orange-500">
                 <FaChevronRight className="mr-2" />
-                <Link className="text-sm lg:text-md" href="/blog">Our Blogs</Link>
+                <Link className="text-md xl:text-lg" href="/blog">Our Blogs</Link>
               </li>
 
               <li className="flex items-center hover:text-orange-500">
                 <FaChevronRight className="mr-2" />
-                <Link className="text-sm lg:text-md" href="/contact">Contact Us</Link>
+                <Link className="text-md xl:text-lg" href="/contact">Contact Us</Link>
               </li>
             </ul>
           </div>
@@ -120,23 +123,23 @@ const Footer = () => {
             <ul className="space-y-4 text-md my-4">
               <li className="flex items-center hover:text-orange-500">
                 <FaChevronRight className="mr-2" />
-                <Link className="text-sm lg:text-md" href="/pizza">Mobile Auto Glass Services </Link>
+                <Link className="text-md xl:text-lg" href="/pizza">Mobile Auto Glass Services </Link>
               </li>
               <li className="flex items-center hover:text-orange-500">
                 <FaChevronRight className="mr-2" />
-                <Link className="text-sm lg:text-md" href="/burger">Auto Detailing </Link>
+                <Link className="text-md xl:text-lg" href="/burger">Auto Detailing </Link>
               </li>
               <li className="flex items-center hover:text-orange-500">
                 <FaChevronRight className="mr-2" />
-                <Link className="text-sm lg:text-md" href="/pasta">Protection Services & Packages</Link>
+                <Link className="text-md xl:text-lg" href="/pasta">Protection Services & Packages</Link>
               </li>
               <li className="flex items-center hover:text-orange-500">
                 <FaChevronRight className="mr-2" />
-                <Link className="text-sm lg:text-md" href="/drinks">Window Tinting</Link>
+                <Link className="text-md xl:text-lg" href="/drinks">Window Tinting</Link>
               </li>
               <li className="flex items-center hover:text-orange-500">
                 <FaChevronRight className="mr-2" />
-                <Link className="text-sm lg:text-md" href="/desserts">Ceramic Coating</Link>
+                <Link className="text-md xl:text-lg" href="/desserts">Ceramic Coating</Link>
               </li>
             </ul>
           </div>
@@ -144,7 +147,13 @@ const Footer = () => {
       </div>
 
       <div className="relative z-20">
-       
+              {/* <div className="w-[240px] h-[100px] mx-auto  flex items-center justify-center">
+            <img
+              src="/Images/logo.webp"
+              alt="FreshEAT"
+              className="w-32 md:w-40 lg:w-full object-cover h-[100%] "
+            />
+            </div> */}
         <div className="flex items-center justify-center gap-6 ">
               <Link href="#" className="hover:text-red-500 text-xl md:text-2xl rounded-full  shadow-full p-3 bg-gray-300">
                 <FaTwitter className="text-black" />
@@ -162,10 +171,10 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom Section */}
-      <div className="relative z-20 py-3  text-sm text-center">
-        Copyright © 2024 FreshEat Respondent.{" "}
+      <div className="relative z-20 py-6  text-md xl:text-lg text-center">
+        Copyright © 2025 Creekside Car Wash.{" "}
         <Link href="#" className="hover:text-orange-500">
-          Designed by Future IT Touch.
+          Designed by Digital Paaji.
         </Link>{" "}
         All Rights Reserved.
       </div>

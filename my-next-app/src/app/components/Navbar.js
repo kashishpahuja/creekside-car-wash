@@ -164,13 +164,15 @@ function Navbar() {
     <div
 className={`absolute top-0 left-0 w-full z-[99999] md:transition-opacity duration-500 ease-in-out `}
 style={{
-  height: isScrolled ? "120px" : "120px", // Dynamic height
-  backgroundColor: isScrolled ? "white" : "transparent",
-  color: isScrolled ? "#272323" : "white",
+  height: "120px", // Fixed height
+  backgroundColor: isScrolled ? "rgba(255, 255, 255, 0.95)" : "white", // Opacity effect
+  color: isScrolled ? "#272323" : "black",
   boxShadow: isScrolled ? "0 4px 6px rgba(0, 0, 0, 0.1)" : "none",
   position: isScrolled ? "fixed" : "absolute",
-  transform: isScrolled ? "translateY(0)" : "translateY(0%)", // Smooth transition on scroll
+  transform: "translateY(0%)", // Keeps it stable
+  transition: "background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out",
 }}
+
 >
       <div className="text-lg font-medium flex items-center justify-between px-4 xl:px-20 h-full xl:mx-8">
         {/* Logo */}
@@ -187,47 +189,45 @@ style={{
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center">
-          <ul className="exo flex items-center justify-center gap-8 lg:gap-16 text-md">
-            <li className=" transition duration-300">
+          <ul className="exo flex items-center justify-center gap-8 xl:gap-16 text-md">
+            <li className=" transition duration-300  py-6 px-2" >
               <Link href={"/"}>Home</Link>
             </li>
-            <li className=" transition duration-300">
+            <li className=" transition duration-300  py-6 px-2">
               <Link href={"/about"}>About Us</Link>
             </li>
             <li
-              className="relative group  transition duration-300"
-              onMouseEnter={() => setIsDropdownOpen(true)}
+              className="relative group  transition duration-300  py-6 px-2"
+              onMouseEnter={() => setIsDropdownOpen(true)} onMouseLeave={() => setIsDropdownOpen(false)}
              
             >
-              <Link href={'/services'}>Services</Link>
+             Services
               {isDropdownOpen && (
-                <div className="absolute  top-full left-2 mt-6 w-56 bg-white text-black "  onMouseLeave={() => setIsDropdownOpen(false)}>
+                <div className="absolute  top-full left-0  w-64 bg-white text-black "  onMouseLeave={() => setIsDropdownOpen(false)}>
                   <ul className="flex flex-col">
-                    <li className="hover:bg-gray-200 border-b  px-4 py-2">
-                      <Link href="/service1">Auto Wash</Link>
+                    <li className="hover:text-red-600 hover:bg-gray-200 border-b  px-4 py-4">
+                      <Link className="text-md " href="/service1">Car Wash</Link>
                     </li>
-                    <li className="hover:bg-gray-200 border-b  px-4 py-2">
-                      <Link href="/service2">Car Wash</Link>
+                    <li className="hover:text-red-600 hover:bg-gray-200 border-b  px-4 py-4">
+                      <Link className="text-md " href="/service2">Oil Undercoating</Link>
                     </li>
-                    <li className="hover:bg-gray-200 border-b  px-4 py-2">
-                      <Link href="/service3">Detailing</Link>
+                    <li className="hover:text-red-600 hover:bg-gray-200 border-b  px-4 py-4">
+                      <Link className="text-md " href="/service3">Detailing</Link>
                     </li>
-                    <li className="hover:bg-gray-200 border-b  px-4 py-2">
-                      <Link href="/service3">Window Tinting</Link>
-                    </li> <li className="hover:bg-gray-200 border-b  px-4 py-2">
-                      <Link href="/service3">Paint Protection Film</Link>
-                    </li>
+                    <li className="hover:text-red-600 hover:bg-gray-200 border-b  px-4 py-4">
+                      <Link className="text-md " href="/service3">Window Tinting</Link>
+                    </li> 
                   </ul>
                 </div>
               )}
             </li>
-            <li className=" transition duration-300">
+            <li className=" transition duration-300  py-6 px-2">
               <Link href="/blogs">Blogs</Link>
             </li>
-            <li className=" transition duration-300">
+            <li className=" transition duration-300  py-6 px-2">
               <Link href="/faq">FAQ</Link>
             </li>
-            <li className=" transition duration-300">
+            <li className=" transition duration-300  py-6 px-2">
               <Link href="/contact">Contact Us</Link>
             </li>
           </ul>

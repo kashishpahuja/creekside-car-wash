@@ -16,7 +16,7 @@ function Bay() {
       <div className=" rounded-xl  relative z-20 flex items-start justify-between flex-col xl:flex-row gap-8 mx-auto">
         {/* Left Side */}
         <div className="w-full xl:w-[60%] space-y-6">
-          <h3 className="montserrat text-lg lg:text-2xl font-bold text-center lg:text-left text-gray-800">
+          <h3 className="montserrat text-lg lg:text-3xl font-bold text-center lg:text-left text-black">
             Self-Serve Bays with Hot Water (Maximum Height 11'6)
           </h3>
           <div className="space-y-4">
@@ -49,10 +49,10 @@ function Bay() {
 
         {/* Right Side */}
         <div className="w-full xl:w-[40%] flex flex-col lg:flex-row  items-center xl:justify-center gap-6 mt-8 lg:mt-0">
-          <div className="p-6 rounded-lg bg-gray-100 shadow-lg flex flex-col items-center justify-center">
+          <div className=" p-6 rounded-lg bg-gray-100 shadow-lg flex flex-col items-center justify-center">
             <div className="w-24 h-24">
               <img
-                src="/Images/bay/24-7.webp"
+                src="/Images/gif/24seven.gif"
                 alt="24/7 Service"
                 className="w-full h-full object-cover"
               />
@@ -63,10 +63,10 @@ function Bay() {
               </h3>
             </div>
           </div>
-          <div className="p-6 rounded-lg bg-gray-100 shadow-lg flex flex-col items-center justify-center">
+          <div className=" p-6 rounded-lg bg-gray-100 shadow-lg flex flex-col items-center justify-center">
             <div className="w-24 h-24">
               <img
-                src="/Images/bay/car.webp"
+                src="/Images/gif/insurance.gif"
                 alt="Clean Car"
                 className="w-full h-full object-cover"
               />

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo:wght@700&family=Montserrat:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@700&family=Montserrat:wght@700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -21,7 +21,7 @@ body {
 .montserrat {
   font-family: "Montserrat", serif;
   font-optical-sizing: auto;
-  font-weight: 800;
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -43,4 +43,59 @@ body {
 }
 .green{
  color: #73ee60;
+}
+
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  border-right: 3px solid #ee0a00;
+}
+
+.typing {
+  animation: typing steps(17,end), blink 1s step-end infinite;
+}
+
+@keyframes typing {
+  0% {
+    max-width: 0;
+  }
+  100% {
+    max-width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+
+@keyframes growDown {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 500px; /* Adjust to a value larger than the content height */
+    opacity: 1;
+  }
+}
+
+.slide-grow {
+  animation: growDown 1s ease-in-out forwards ;
+  /* animation-delay: 3s;  */
+  overflow: hidden; /* Ensure content is hidden while growing */
+  max-height: 0; /* Initial height */
+}
+
+
+.zoom{
+  transition: transform 400ms ease-in-out;
+  /* width:100%; */
+  /* height: auto; */
+}
+.zoom:hover{
+  transform: scale(1.1);
 }

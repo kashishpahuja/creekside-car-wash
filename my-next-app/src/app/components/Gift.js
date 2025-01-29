@@ -15,7 +15,7 @@ function Gift() {
         aria-hidden="true"
       ></div>
       <div className="flex items-center justify-center flex-col xl:flex-row  relative z-30 px-4 md:px-8 py-12  lg:px-24 w-full shadow-lg text-black  rounded-xl">
-        <div className="w-full md:h-[350px] ">
+        <div className="zoom:hover w-full md:h-[500px] ">
           <img
             src="/Images/gift/card0.png"
             alt=""
@@ -23,10 +23,10 @@ function Gift() {
           />
         </div>
         <div className="text-center lg:pb-8">
-          <h3 className="montserrat text-3xl  lg:text-4xl font-bold text-gray-800">
+          <h3 className="montserrat text-3xl  xl:text-5xl text-black">
             JOIN YOUR COMMUNITY CAR WASH
           </h3>
-          <p className="montserrat my-8 text-md lg:text-xl  text-gray-800">
+          <p className="montserrat my-8 text-lg lg:text-2xl  text-gray-800">
             Get Creekside’s prepaid wash cards in 2 easy steps!
           </p>
           <div className="xl:w-[800px] mx-auto">
