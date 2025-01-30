@@ -21,7 +21,7 @@ function Services() {
             <div className='absolute inset-0 bg-black bg-opacity-75 '></div>
 
             {/* Text and icon */}
-            <div className='zoom relative z-10 flex items-center justify-center gap-3 h-full text-white hover:text-[#64fcfd]'>
+            <div className='zoom relative z-10 flex items-center justify-center gap-3 h-full text-white '>
               <div className='exo text-3xl  font-bold'>Car Wash</div>
               <div className='text-3xl'><MdKeyboardDoubleArrowRight /></div>
             </div>
@@ -38,7 +38,7 @@ function Services() {
             <div className='absolute inset-0 bg-black bg-opacity-75'></div>
 
             {/* Text and icon */}
-            <div className='zoom relative z-10 flex items-center justify-center gap-3 h-full text-white hover:text-[#64fcfd]'>
+            <div className='zoom relative z-10 flex items-center justify-center gap-3 h-full text-white '>
               <div className='exo text-3xl  font-bold'>Oil Under Coating</div>
               <div className='text-3xl'><MdKeyboardDoubleArrowRight /></div>
             </div>
@@ -55,7 +55,7 @@ function Services() {
             <div className='absolute inset-0 bg-black bg-opacity-75'></div>
 
             {/* Text and icon */}
-            <div className='zoom relative z-10 flex items-center justify-center gap-3 h-full text-white hover:text-[#64fcfd]'>
+            <div className='zoom relative z-10 flex items-center justify-center gap-3 h-full text-white '>
               <div className='exo text-3xl  font-bold'>Detailing</div>
               <div className='text-3xl'><MdKeyboardDoubleArrowRight /></div>
             </div>
@@ -72,7 +72,7 @@ function Services() {
             <div className='absolute inset-0 bg-black bg-opacity-75'></div>
 
             {/* Text and icon */}
-            <div className='zoom relative z-10 flex items-center justify-center gap-3 h-full text-white hover:text-[#64fcfd]'>
+            <div className='zoom relative z-10 flex items-center justify-center gap-3 h-full text-white '>
               <div className='exo text-3xl  font-bold'>Window Tinting</div>
               <div className='text-3xl'><MdKeyboardDoubleArrowRight /></div>
             </div>

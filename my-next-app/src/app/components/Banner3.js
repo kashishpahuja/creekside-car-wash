@@ -8,7 +8,7 @@ function Banner() {
 
 
   return (
-    <div className="relative w-full h-[600px] lg:min-h-screen overflow-hidden font-exo ">
+    <div className="relative w-full h-[450px] md:h-[600px] lg:min-h-screen overflow-hidden font-exo ">
       {/* Background Video Section */}
       <div className="absolute inset-0 w-full ">
         <video

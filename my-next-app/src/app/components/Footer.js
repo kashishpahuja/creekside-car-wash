@@ -171,7 +171,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom Section */}
-      <div className="relative z-20 py-6  text-md xl:text-lg text-center">
+      <div className="relative z-20 px-4 py-6  text-md xl:text-lg text-center">
         Copyright © 2025 Creekside Car Wash.{" "}
         <Link href="#" className="hover:text-orange-500">
           Designed by Digital Paaji.

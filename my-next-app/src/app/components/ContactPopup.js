@@ -180,7 +180,7 @@ function Form({ onClose }) {
           </div>
         </div>
         <div className="w-full lg:w-1/2  shadow-lg text-black">
-          <div className="lg:px-12 py-4 lg:py-0 font-semibold w-full max-w-3xl">
+          <div className="p-6 md:p-12  font-semibold w-full max-w-3xl">
             {/* <h3 className="text-3xl font-semibold mb-3">
               Feel Free to Write
             </h3>
