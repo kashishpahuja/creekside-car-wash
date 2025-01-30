@@ -8,7 +8,7 @@ export default function AlbumPage() {
   return (
     <div className="">
       <main>
-        <Banner title={' cONTACT US'}/>
+        <Banner title={' CONTACT US'}/>
         <Contact/>
       </main>
     </div>
