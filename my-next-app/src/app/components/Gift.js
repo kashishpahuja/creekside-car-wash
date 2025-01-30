@@ -1,4 +1,5 @@
 import React from "react";
+import GiftCards from '../'
 
 function Gift() {
   return (
@@ -41,8 +42,10 @@ function Gift() {
               It is that easy!
             </p>
           </div>
+          
         </div>
       </div>
+      <GiftCards/>
     </div>
   );
 }
