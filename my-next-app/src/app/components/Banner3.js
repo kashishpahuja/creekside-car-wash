@@ -18,7 +18,7 @@ function Banner() {
           muted
           playsInline
         >
-          <source src="/Images/CSC.mp4" type="video/mp4" />
+          <source src="/Images/CSC.webm" type="video/webm" />
           Your browser does not support the video tag.
         </video>
       </div>
