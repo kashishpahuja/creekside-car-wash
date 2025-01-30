@@ -41,30 +41,31 @@ const Footer = () => {
               className="w-32 md:w-40 lg:w-full object-cover h-[100%] "
             />
             </div> */}
-            <h3 className=" text-2xl font-bold ">Creekside Car Wash</h3>
+            <h3 className=" text-2xl font-bold ">CREEKSIDE CAR WASH</h3>
+            
+
             <div className="flex flex-col gap-2 mt-2">
               <p className="">
                 <Link
-                  href="tel:+91 94623-27667"
-                  className="hover:underline text-md xl:text-lg"
+                  href="tel: 7786367271"
+                  className="hover:text-red-600 text-md xl:text-lg"
                 >
                   Phone:
-                   +91 94623-27667
+                  778-636-7271
                 </Link>
               </p>
               <p>
                 <Link
-                  href="mailto:info@srscargopackers.in"
-                  className="hover:underline text-md xl:text-lg"
+                  href="mailto: creeksideetailz@gmail.com"
+                  className="hover:text-red-600 text-md xl:text-lg"
                 >
                   Email: 
-                  info@srscargopackers.in
+                  creeksideetailz@gmail.com
                 </Link>
               </p>
               <p className=" text-md xl:text-lg">
                 Address:
-                 70 Hermann Ave Carteret New Jersey 07008 70 Hermann Ave
-                Carteret New Jersey 07008
+                32721 Logan Ave, Mission BC V2V6K7
               </p>
             </div>
             <h3 className=" text-sm  font-semibold mt-4">Working Hours:</h3>
@@ -78,7 +79,7 @@ const Footer = () => {
               Phasellus ultricies aliquam volutpat ullamcorper laoreet neque, a
               lacinia curabitur lacinia mollis
             </p>
-            <h3 className="text-lg font-medium py-4 hover:text-orange-500">
+            <h3 className="text-lg font-medium py-4 hover:text-red-600">
               Follow Us:
             </h3>
         */}
@@ -86,29 +87,29 @@ const Footer = () => {
 
           {/* 2nd Column - Quick Links (2 columns on larger screens) */}
           <div className="lg:col-span-3 mb-6 lg:mb-0 ">
-            <h3 className="text-2xl font-bold  hover:text-orange-500">
+            <h2 className="text-2xl font-bold  hover:text-red-600">
               More About Us
-            </h3>
+            </h2>
 
             <ul className="space-y-4 text-md my-4">
-              <li className="flex items-center hover:text-orange-500">
+              <li className="flex items-center hover:text-red-600">
                 <FaChevronRight className="mr-2" />
                 <Link className="text-md xl:text-lg" href="/">Home</Link>
               </li>
-              <li className="flex items-center hover:text-orange-500">
+              <li className="flex items-center hover:text-red-600">
                 <FaChevronRight className="mr-2" />
                 <Link className="text-md xl:text-lg" href="/about">About Us</Link>
               </li>
-              <li className="flex items-center hover:text-orange-500">
+              <li className="flex items-center hover:text-red-600">
                 <FaChevronRight className="mr-2" />
-                <Link className="text-md xl:text-lg" href="/menu">Food Menu</Link>
+                <Link className="text-md xl:text-lg" href="/faq">FAQ</Link>
               </li>
-              <li className="flex items-center hover:text-orange-500">
+              <li className="flex items-center hover:text-red-600">
                 <FaChevronRight className="mr-2" />
-                <Link className="text-md xl:text-lg" href="/blog">Our Blogs</Link>
+                <Link className="text-md xl:text-lg" href="/blogs">Our Blogs</Link>
               </li>
 
-              <li className="flex items-center hover:text-orange-500">
+              <li className="flex items-center hover:text-red-600">
                 <FaChevronRight className="mr-2" />
                 <Link className="text-md xl:text-lg" href="/contact">Contact Us</Link>
               </li>
@@ -117,30 +118,28 @@ const Footer = () => {
 
           {/* 3rd Column - Our Menu (2 columns on larger screens) */}
           <div className="lg:col-span-4 mb-6 lg:mb-0 ">
-            <h3 className="text-2xl font-bold  hover:text-orange-500">
+            <h2 className="text-2xl font-bold  hover:text-red-600">
               Services
-            </h3>
+            </h2>
             <ul className="space-y-4 text-md my-4">
-              <li className="flex items-center hover:text-orange-500">
+              <li className="flex items-center hover:text-red-600">
                 <FaChevronRight className="mr-2" />
-                <Link className="text-md xl:text-lg" href="/pizza">Mobile Auto Glass Services </Link>
+                <Link className="text-md xl:text-lg" href="/car-wash">Creekside Car Wash </Link>
               </li>
-              <li className="flex items-center hover:text-orange-500">
+              <li className="flex items-center hover:text-red-600">
                 <FaChevronRight className="mr-2" />
-                <Link className="text-md xl:text-lg" href="/burger">Auto Detailing </Link>
+                <Link className="text-md xl:text-lg" href="/oil-undercoating">Creekside Oil Undercoating  </Link>
               </li>
-              <li className="flex items-center hover:text-orange-500">
+              <li className="flex items-center hover:text-red-600">
                 <FaChevronRight className="mr-2" />
-                <Link className="text-md xl:text-lg" href="/pasta">Protection Services & Packages</Link>
+                <Link className="text-md xl:text-lg" href="/detailing">Creekside Car Detailing  </Link>
               </li>
-              <li className="flex items-center hover:text-orange-500">
+             
+              <li className="flex items-center hover:text-red-600">
                 <FaChevronRight className="mr-2" />
-                <Link className="text-md xl:text-lg" href="/drinks">Window Tinting</Link>
+                <Link className="text-md xl:text-lg" href="/window-tinting">Window Tinting</Link>
               </li>
-              <li className="flex items-center hover:text-orange-500">
-                <FaChevronRight className="mr-2" />
-                <Link className="text-md xl:text-lg" href="/desserts">Ceramic Coating</Link>
-              </li>
+           
             </ul>
           </div>
         </div>
@@ -171,10 +170,10 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom Section */}
-      <div className="relative z-20 px-4 py-6  text-md xl:text-lg text-center">
-        Copyright © 2025 Creekside Car Wash.{" "}
-        <Link href="#" className="hover:text-orange-500">
-          Designed by Digital Paaji.
+      <div className="relative z-20 px-4 py-6  text-md  text-center">
+        Copyright © 2025 CREEKSIDE CAR WASH.{" "}
+        <Link href="#" className="hover:text-red-600">
+          Designed by DIGITAL PAAJI.
         </Link>{" "}
         All Rights Reserved.
       </div>

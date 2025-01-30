@@ -13,7 +13,7 @@ export default function AlbumPage() {
     <div className="text-black bg-black">
             <main>
       <div
-        className="relative h-[380px] lg:h-[480px] w-full"
+        className="relative h-[380px] lg:h-[600px] w-full"
         style={{
           backgroundImage: `url('/Images/services/carWraps.webp')`,
           backgroundPosition: "center",
@@ -24,15 +24,16 @@ export default function AlbumPage() {
           className="absolute inset-0 bg-black bg-opacity-70"
           aria-hidden="true"
         ></div>
-        <div className="relative z-20 top-60 left-2 md:left-6 lg:left-16 inline-block">
+        <div className="relative z-20 top-1/2 left-[15%] md:left-[30%] inline-block">
           <div className="flex flex-col gap-4 items-start  ">
-            <h3 className="montserrat text-3xl lg:text-5xl text-white">
+            <h1 className="montserrat text-3xl lg:text-5xl text-white">
               
-              Auto Care Wash
-            </h3>
-            <Link href={"/contact"} className="exo-bold p-2 lg:px-4 border-white border text-white hover:text-black hover:bg-white"
+           CREEKSIDE CAR WASH
+            </h1>
+            <Link href={"/contact"} className="exo-bold p-2 lg:px-4 py-3 border border-white mx-auto text-white rounded-xl  hover:text-black hover:bg-white"
             >
-              Book Now
+              <div className="montserrat text-lg lg:text-xl"> Book Now
+                </div>
             </Link>
          
           </div>

@@ -14,7 +14,7 @@ function Oil() {
    
        <div className="w-full xl:w-1/2 text-center lg:pb-8">
        <div className="">
-       <h3 className="montserrat text-2xl  lg:text-3xl font-bold text-gray-700">
+       <h3 className="montserrat text-2xl lg:text-4xl text-black text-center ">
        Get Access to High-Quality Oil Undercoating Services
       </h3>
           

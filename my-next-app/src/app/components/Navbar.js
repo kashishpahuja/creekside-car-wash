@@ -206,16 +206,16 @@ style={{
                 <div className="absolute  top-full left-0  w-64 bg-white text-black "  onMouseLeave={() => setIsDropdownOpen(false)}>
                   <ul className="flex flex-col">
                     <li className="hover:text-red-600 hover:bg-gray-200 border-b  px-4 py-4">
-                      <Link className="text-md " href="/service1">Car Wash</Link>
+                      <Link className="text-md " href="/car-wash">Car Wash</Link>
                     </li>
                     <li className="hover:text-red-600 hover:bg-gray-200 border-b  px-4 py-4">
-                      <Link className="text-md " href="/service2">Oil Undercoating</Link>
+                      <Link className="text-md " href="/oil-undercoating">Oil Undercoating</Link>
                     </li>
                     <li className="hover:text-red-600 hover:bg-gray-200 border-b  px-4 py-4">
-                      <Link className="text-md " href="/service3">Detailing</Link>
+                      <Link className="text-md " href="/detailing">Detailing</Link>
                     </li>
                     <li className="hover:text-red-600 hover:bg-gray-200 border-b  px-4 py-4">
-                      <Link className="text-md " href="/service3">Window Tinting</Link>
+                      <Link className="text-md " href="/window-tinting">Window Tinting</Link>
                     </li> 
                   </ul>
                 </div>

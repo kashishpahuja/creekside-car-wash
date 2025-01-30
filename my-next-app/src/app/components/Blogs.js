@@ -50,7 +50,7 @@ const News = () => {
     {
       id: 1,
       title: "Why Regular Car Washes Are Important for Your Vehicle",
-      image: "/images/car-wash-tips.jpg",
+      image: "/Images/blog2.webp",
       date: "2025-01-18T12:00:00Z",
       tag: "Car Care",
       description:
@@ -59,7 +59,7 @@ const News = () => {
     {
       id: 2,
       title: "How to Choose the Best Auto Care Package for Your Car",
-      image: "/images/car-care-package.jpg",
+      image: "/Images/blog3.webp",
       date: "2025-01-10T10:30:00Z",
       tag: "Service Packages",
       description:
@@ -68,7 +68,7 @@ const News = () => {
     {
       id: 3,
       title: "The Benefits of Professional Car Detailing",
-      image: "/images/car-detailing.jpg",
+      image: "/Images/blog4.webp",
       date: "2025-01-05T15:00:00Z",
       tag: "Car Detailing",
       description:
@@ -77,21 +77,21 @@ const News = () => {
     {
       id: 4,
       title: "Preparing Your Car for Winter: Tips from Creekside Car Wash",
-      image: "/images/winter-car-care.jpg",
+      image: "/Images/bannerBG2.jpg",
       date: "2025-01-01T08:00:00Z",
       tag: "Winter Tips",
       description:
         "Get your car ready for winter with these expert tips from Creekside Car Wash in Weyburn. Protect your vehicle from the harsh elements.",
     },
-    {
-      id: 5,
-      title: "Creekside Car Wash: Your Go-To Auto Care Center in Weyburn",
-      image: "/images/creekside-location.jpg",
-      date: "2024-12-20T14:30:00Z",
-      tag: "Local Business",
-      description:
-        "Find out why Creekside Car Wash is Weyburn’s favorite choice for car washing and detailing services.",
-    },
+    // {
+    //   id: 5,
+    //   title: "Creekside Car Wash: Your Go-To Auto Care Center in Weyburn",
+    //   image: "/images/creekside-location.jpg",
+    //   date: "2024-12-20T14:30:00Z",
+    //   tag: "Local Business",
+    //   description:
+    //     "Find out why Creekside Car Wash is Weyburn’s favorite choice for car washing and detailing services.",
+    // },
   ];
 
   return (
@@ -115,7 +115,7 @@ OUR BLOGS
               <div key={blog.id} className="p-4">
                 <div className="bg-white shadow-lg rounded-lg w-auto h-auto overflow-hidden">
                   <div>
-                    <img src='/Images/bannerBG2.jpg' alt="img" className="w-full h-72 object-cover" />
+                    <img src={blog.image} alt="img" className="w-full h-72 object-cover" />
                   </div>
                   <div className="p-4">
                              <h3 className="exo text-start text-xl font-semibold mt-4 text-black hover:text-[#ee0a00]">

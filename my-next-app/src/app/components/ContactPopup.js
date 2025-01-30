@@ -55,7 +55,7 @@ function Form({ onClose }) {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://kaushalya-records.onrender.com/send-mail", {
+      const response = await fetch("https://creekside-car-wash.onrender.com/send-mail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -103,7 +103,7 @@ function Form({ onClose }) {
   return (
     <div className="my-8 lg:my-20 mx-8 lg:mx-16 xl:mx-40 text-black ">
       <ToastContainer style={{ zIndex: 999999999 }}  />
-      <div className="flex items-start justify-center flex-wrap-reverse lg:flex-nowrap gap-8">
+      <div className="flex items-center justify-center flex-wrap-reverse lg:flex-nowrap gap-8">
         <div className="w-full lg:w-1/2 text-black  ">
           {/* <img
             src="/Images/contact1.webp"
@@ -112,22 +112,40 @@ function Form({ onClose }) {
           /> */}
           <div>
           <h3 className=" text-3xl font-semibold ">Feel Free to Write</h3>
-          <h3 className="text-lg lg:text-2xl font-semibold mt-4">Working Hours</h3>
+          <h3 className="text-lg font-semibold mt-6">Working Hours</h3>
           <div className="flex items-center justify-between my-2 ">
             <div className="flex items-center gap-2">
             <div>
                 <SlCalender className="w-4 h-4 text-gray-600"/>
               </div>
-              <div className="text-md lg:text-lg text-gray-600">
-                Monday - Saturday
+              <div className="text-md  text-gray-600">
+                Monday - Friday
               </div>
             </div>
             <div className="flex items-center gap-2">
             <div>
                 <MdAccessTime  className="w-4 h-4 text-gray-600"/>
               </div>
-              <div className="text-md lg:text-lg text-gray-600">
-                10:00am - 06:00pm
+              <div className="text-md  text-gray-600">
+                08:00am - 05:30pm
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center justify-between my-2 ">
+            <div className="flex items-center gap-2">
+            <div>
+                <SlCalender className="w-4 h-4 text-gray-600"/>
+              </div>
+              <div className="text-md  text-gray-600">
+                Saturday
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+            <div>
+                <MdAccessTime  className="w-4 h-4 text-gray-600"/>
+              </div>
+              <div className="text-md  text-gray-600">
+                08:00am - 05:00pm
               </div>
             </div>
           </div>
@@ -142,10 +160,10 @@ function Form({ onClose }) {
                 <h3 className="text-xl lg:text-xl font-semibold">Call Us</h3>
                 <p className="mt-2">
                   <Link
-                    href="tel:+91 9646380013"
+                    href="tel:7786367271"
                     className="hover:underline text-md lg:text-lg"
                   >
-                    +91 96463-80013
+                 778-636-7271
                   </Link>
                 </p>
               </div>
@@ -158,10 +176,10 @@ function Form({ onClose }) {
                 <h3 className="text-xl lg:text-xl font-semibold">Mail Us</h3>
                 <p  className="mt-2">
                   <Link
-                    href="mailto:nirbhais965@gmail.com"
+                    href="mailto:creeksideetailz@gmail.com"
                     className="hover:underline text-md lg:text-lg"
                   >
-                    nirbhais965@gmail.com
+                    creeksideetailz@gmail.com
                   </Link>
                 </p>
               </div>
@@ -173,7 +191,7 @@ function Form({ onClose }) {
               <div>
                 <h3 className="text-xl lg:text-xl font-semibold">Visit Us</h3>
                 <p className="mt-2 text-md lg:text-lg">
-                  70 Hermann Ave Carteret New Jersey 07008
+                32721 Logan Ave, Mission BC V2V6K7
                 </p>
               </div>
           </div>

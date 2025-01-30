@@ -11,9 +11,10 @@ export default function AlbumPage() {
     <div className="">
       <main>
         <Banner />
+        <Why />
+
         <Oil />
         <Benefits />
-        <Why />
       </main>
     </div>
   );

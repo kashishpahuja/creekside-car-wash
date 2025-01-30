@@ -3,15 +3,15 @@ import React from "react";
 
 function Oil() {
   return (
-    <div className="relative z-20"  style={{
+    <div className="relative z-20 mb-24 py-12"  style={{
       backgroundImage: `url('/Images/oil/oilBG.jpg')`,
-      backgroundPosition: "center",
+      // backgroundPosition: "center",
       backgroundSize: "cover",
     }} >
-        <div
+        {/* <div
           className="absolute top-0 inset-0 bg-black bg-opacity-80 rounded-xl"
           aria-hidden="true"
-        ></div>
+        ></div> */}
     <div className="relative z-20  py-24 px-6 md:px-12 xl:px-32">
       {/* <h3 className="montserrat text-2xl  lg:text-3xl font-bold text-gray-700 text-center">
       Benefits of Oil Undercoating
