@@ -1,5 +1,5 @@
 import React from "react";
-import GiftCards from '../'
+import GiftCards from '../components/GiftCards'
 
 function Gift() {
   return (
@@ -9,13 +9,13 @@ function Gift() {
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
-      className=" relative z-20 md:mx-4  mx-8 lg:mx-24 my-24 overflow-hidden rounded-xl"
+      className=" relative z-20 md:mx-4  mx-8 lg:mx-24 my-24 pb-24 overflow-hidden rounded-xl"
     >
       <div
         className="absolute inset-0 bg-[#acd5da] bg-opacity-70 rounded-xl"
         aria-hidden="true"
       ></div>
-      <div className="flex items-center justify-center flex-col xl:flex-row  relative z-30 px-4 md:px-8 py-12  lg:px-24 w-full shadow-lg text-black  rounded-xl">
+      <div className="mb-12 flex items-center justify-center flex-col xl:flex-row  relative z-30 px-4 md:px-8 lg:px-24 w-full  text-black  rounded-xl">
         <div className="zoom:hover w-full md:h-[500px] ">
           <img
             src="/Images/gift/card0.png"

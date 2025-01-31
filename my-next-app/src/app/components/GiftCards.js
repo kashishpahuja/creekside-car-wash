@@ -1,156 +1,57 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Slider from "react-slick";
-import { FaArrowRight } from "react-icons/fa";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Link from "next/link";
-import { CgProfile } from "react-icons/cg";
+
+import React from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { FaCartShopping } from "react-icons/fa6";
+import { ToastContainer } from "react-toastify";
 
-const News = () => {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    autoplay: true,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1280,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          speed: 500,
-          autoplay: true,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          speed: 500,
-          autoplay: true,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          speed: 500,
-          autoplay: true,
-        },
-      },
-    ],
-  };
-
-  const blogs = [
-    {
-      id: 1,
-      title: "Why Regular Car Washes Are Important for Your Vehicle",
-      image: "/Images/blog2.webp",
-      date: "2025-01-18T12:00:00Z",
-      tag: "Car Care",
-      description:
-        "Regular car washes protect your car's paint from dirt and debris, and they help maintain its resale value.",
-    },
-    {
-      id: 2,
-      title: "How to Choose the Best Auto Care Package for Your Car",
-      image: "/Images/blog3.webp",
-      date: "2025-01-10T10:30:00Z",
-      tag: "Service Packages",
-      description:
-        "Learn about the different auto care packages available at Creekside Car Wash and how to select the best one for your vehicle.",
-    },
-    {
-      id: 3,
-      title: "The Benefits of Professional Car Detailing",
-      image: "/Images/blog4.webp",
-      date: "2025-01-05T15:00:00Z",
-      tag: "Car Detailing",
-      description:
-        "Professional car detailing goes beyond a simple wash. Find out how it can restore your car's shine and protect its interior.",
-    },
-    {
-      id: 4,
-      title: "Preparing Your Car for Winter: Tips from Creekside Car Wash",
-      image: "/Images/bannerBG2.jpg",
-      date: "2025-01-01T08:00:00Z",
-      tag: "Winter Tips",
-      description:
-        "Get your car ready for winter with these expert tips from Creekside Car Wash in Weyburn. Protect your vehicle from the harsh elements.",
-    },
-    // {
-    //   id: 5,
-    //   title: "Creekside Car Wash: Your Go-To Auto Care Center in Weyburn",
-    //   image: "/images/creekside-location.jpg",
-    //   date: "2024-12-20T14:30:00Z",
-    //   tag: "Local Business",
-    //   description:
-    //     "Find out why Creekside Car Wash is Weyburn’s favorite choice for car washing and detailing services.",
-    // },
+const GiftCards = () => {
+  const giftCards = [
+    { id: 1, image: "/Images/giftcard.webp", price: 50 },
+    { id: 2, image: "/Images/giftcard.webp", price: 100 },
+    { id: 3, image: "/Images/giftcard.webp", price: 150 },
   ];
 
+  const addToCart = (price) => {
+    toast.success(`$${price} Gift Card added to cart!`, {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      
+    });
+  };
+
   return (
-    <div className="relative text-center px-4 lg:px-16 overflow-hidden my-24">
-      {/* Title Section */}
-
-      <h2
-        className="montserrat text-2xl lg:text-6xl text-black text-center mb-12"
-        data-aos="zoom-out"
-      >
-OUR BLOGS
-      </h2>
-      <Link href={'/blogs'} className="mx-auto">
-        <Slider {...settings}>
-          {blogs.map((blog) => {
-            const blogDate = new Date(blog.date);
-            const month = blogDate.toLocaleString("en-US", { month: "short" }); // "Dec"
-            const year = blogDate.getFullYear();
-
-            return (
-              <div key={blog.id} className="p-4">
-                <div className="bg-white shadow-lg rounded-lg w-auto h-auto overflow-hidden">
-                  <div>
-                    <img src={blog.image} alt="img" className="w-full h-72 object-cover" />
-                  </div>
-                  <div className="p-4">
-                             <h3 className="exo text-start text-xl font-semibold mt-4 text-black hover:text-[#ee0a00]">
-                      {blog.title}
-                    </h3>
-
-
-<div className="flex items-center justify-between">
-<div className="exo flex items-center text-gray-600 text-md font-semibold hover:underline mt-4 ">
-                      <CgProfile  className="w-6 h-6 mr-2" />{' '}
-                        
-                        <span>Mohit Oberoi</span>
-                      </div>
-                      <div>
-                      <Link
-                      href="/blog"
-                      className="exo text-gray-600 text-md font-semibold hover:underline mt-4 inline-block"
-                    >
-                      <span>Add To Cart</span>{" "}
-                      <FaCartShopping className="inline ml-2" />
-                    </Link>
-                      </div>
-
-</div>
-                   
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </Slider>
-      </Link>
+    <div className="relative text-center px-4 lg:px-20 xl:px-40 ">
+      {/* <h2 className="montserrat text-2xl lg:text-5xl text-black text-center mb-12" data-aos="zoom-out">
+        GIFT CARDS
+      </h2> */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {giftCards.map((card) => (
+          <div
+            key={card.id}
+            className="bg-white shadow-lg rounded-lg p-4 transition-transform transform hover:scale-105 hover:bg-gray-100"
+          >
+            <div className="w-full">
+            <img src={card.image} alt="$ Gift Card" className="w-full h-[100%] object-cover rounded-md" /></div>
+            <h3 className="exo text-xl font-semibold mt-4 text-black">${card.price} Gift Card</h3>
+            <button
+              onClick={() => addToCart(card.price)}
+              className="mt-4 bg-red-600 text-white px-4 py-2 rounded flex items-center justify-center w-full hover:bg-red-700 transition"
+            >
+              Add to Cart <FaCartShopping className="ml-2" />
+            </button>
+          </div>
+        ))}
+      </div>
+      <ToastContainer className={'z-[99999999999]'}/>
     </div>
   );
 };
 
-export default News;
+export default GiftCards;

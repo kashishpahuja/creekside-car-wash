@@ -9,6 +9,8 @@ import Circle from "./components/Circle";
 import Bay from "./components/Bay";
 import Gift from "./components/Gift";
 import ContactPopup from './components/ContactPopup'
+import GiftCards from './components/GiftCards'
+
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
@@ -37,6 +39,8 @@ export default function Home() {
         <Bay />
         <Blog />
         <Gift />
+      {/* <GiftCards/> */}
+
         <ContactPopup/>
         </div>
       </main>
