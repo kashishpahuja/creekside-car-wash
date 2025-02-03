@@ -1,5 +1,6 @@
 import React from "react";
 import GiftCards from '../components/GiftCards'
+import Link from 'next/link'
 
 function Gift() {
   return (
@@ -9,13 +10,13 @@ function Gift() {
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
-      className=" relative z-20 md:mx-4  mx-8 lg:mx-24 my-24 pb-24 overflow-hidden rounded-xl"
+      className=" relative z-20 md:mx-4  mx-8 lg:mx-24 my-24  overflow-hidden rounded-xl"
     >
       <div
         className="absolute inset-0 bg-[#acd5da] bg-opacity-70 rounded-xl"
         aria-hidden="true"
       ></div>
-      <div className="mb-12 flex items-center justify-center flex-col xl:flex-row  relative z-30 px-4 md:px-8 lg:px-24 w-full  text-black  rounded-xl">
+      <div className="my-12 flex items-center justify-center flex-col xl:flex-row  relative z-30 px-4 md:px-8 lg:px-24 w-full  text-black  rounded-xl">
         <div className="zoom:hover w-full md:h-[500px] ">
           <img
             src="/Images/gift/card0.png"
@@ -41,11 +42,17 @@ function Gift() {
             <p className="exo mt-8 text-gray-700 text-md lg:text-lg ">
               It is that easy!
             </p>
+            <p className="mt-12">
+          <Link href={'/gift-card'} className="montserrat mx-auto text-xl lg:text-xl hover:text-red-700 border-white transition-all duration-300 text-white bg-red-700 hover:border-red-600 hover:bg-white py-4 px-2  rounded-xl  ">
+      Get Gift Card
+      </Link>
+      </p>
           </div>
-          
+        
         </div>
       </div>
-      <GiftCards/>
+    
+      {/* <GiftCards/> */}
     </div>
   );
 }

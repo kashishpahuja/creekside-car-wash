@@ -1,0 +1,142 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import DeleteConfirmation from "../components/DeletePopup";
+import Link from "next/link";
+import { FaArrowLeft, FaArrowRight, FaRupeeSign, FaTimes } from "react-icons/fa";
+
+function GiftCardCartPage() {
+  const [cart, setCart] = useState([
+    {
+      id: 1,
+      name: "Amazon Gift Card",
+      price: 500,
+      quantity: 1,
+      image: "/Images/giftcard.webp",
+    },
+    {
+      id: 2,
+      name: "Google Play Gift Card",
+      price: 1000,
+      quantity: 1,
+      image: "/Images/giftcard.webp",
+    },
+  ]);
+  const [totalPrice, setTotalPrice] = useState(1500);
+  const [showRemovePopup, setShowRemovePopup] = useState(false);
+  const [cardToRemove, setCardToRemove] = useState(null);
+  const [token, setToken] = useState(null);
+
+  useEffect(() => {
+    setToken(localStorage.getItem("token"));
+  }, []);
+
+  const handleRemoveClick = (id) => {
+    setShowRemovePopup(true);
+    setCardToRemove(id);
+  };
+
+  const confirmRemoveCard = () => {
+    setCart(cart.filter((item) => item.id !== cardToRemove));
+    setShowRemovePopup(false);
+  };
+
+  const updateQuantity = (id, newQuantity) => {
+    setCart(cart.map(item => item.id === id ? { ...item, quantity: newQuantity } : item));
+  };
+
+  return (
+    <div className="flex flex-col lg:flex-row gap-8 p-4 lg:p-8 md:mx-28 mb-12 mt-[150px]">
+      <div className="w-full lg:w-2/3">
+        <h2 className="text-2xl font-semibold mb-4">Gift Card Cart</h2>
+
+        <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-4 flex flex-col gap-6">
+          {cart.length > 0 ? (
+            cart.map((item) => (
+              <div key={item.id} className="relative flex justify-between items-center border-b pb-4">
+                <button
+                  className="absolute top-2 right-2 text-gray-500 text-sm hover:text-red-600"
+                  onClick={() => handleRemoveClick(item.id)}
+                >
+                  <FaTimes />
+                </button>
+                <div className="flex items-start gap-4">
+                  <div><img src={item.image} alt={item.name} className="w-24 h-24 object-cover rounded-md" /></div>
+                  <div>
+                    <h3 className="text-lg font-semibold">{item.name}</h3>
+                    <p className="text-gray-500 flex items-center">
+                      <FaRupeeSign /> {item.price.toFixed(2)}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex flex-col items-end">
+                  <input
+                    type="number"
+                    min="1"
+                    value={item.quantity}
+                    onChange={(e) => updateQuantity(item.id, parseInt(e.target.value) || 1)}
+                    className="w-16 border rounded text-center"
+                  />
+                </div>
+              </div>
+            ))
+          ) : (
+            <p className="text-center font-medium">Nothing In Cart!</p>
+          )}
+        </div>
+
+        <div className="flex items-center justify-between mt-6">
+          <Link href={"/giftcard"}>
+            <div className="btn-transition rounded-lg w-fit flex items-center justify-center gap-4 text-md font-medium">
+              <FaArrowLeft />
+              <p>Explore Gift Cards</p>
+            </div>
+          </Link>
+          <Link href={"/checkout"}>
+            <div className="btn-transition rounded-lg w-fit flex items-center justify-center gap-4 text-md font-medium">
+              <p>              Proceed to Checkout
+              </p>
+              <FaArrowRight />
+            </div>
+          </Link>
+        </div>
+      </div>
+
+      <div className="w-full lg:w-1/3">
+        <h2 className="text-2xl font-semibold mb-4">Price Summary</h2>
+        <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 shadow-sm">
+          <div className="flex justify-between py-2 text-gray-700">
+            <span>Subtotal</span>
+            <span className="flex items-center"> <FaRupeeSign/> {totalPrice.toFixed(2)}</span>
+          </div>
+          <div className="flex justify-between font-semibold text-lg text-gray-800">
+            <span>Total</span>
+            <span className="flex items-center"><FaRupeeSign/> {totalPrice.toFixed(2)}</span>
+          </div>
+          <Link href={token ? "/checkout" : "#"}>
+            <button
+              className={`w-full mt-6 py-3 font-semibold rounded-lg transition duration-200 ${
+                token ? "bg-orange-500 text-white hover:bg-orange-600" : "bg-gray-300 text-gray-600 cursor-not-allowed"
+              }`}
+              disabled={!token}
+            >
+              Proceed to Checkout
+            </button>
+          </Link>
+        </div>
+      </div>
+
+      {showRemovePopup && (
+        <DeleteConfirmation
+          itemName="this gift card"
+          itemType="Gift Card"
+          onCancel={() => setShowRemovePopup(false)}
+          onDelete={confirmRemoveCard}
+          task="Remove"
+        />
+      )}
+    </div>
+  );
+}
+
+export default GiftCardCartPage;
