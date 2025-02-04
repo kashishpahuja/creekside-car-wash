@@ -130,6 +130,7 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { RiArrowDropDownLine } from "react-icons/ri";
 import Popup from "./Popup";
 
 function Navbar() {
@@ -188,8 +189,8 @@ style={{
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center">
-          <ul className="exo flex items-center justify-center gap-8 xl:gap-16 text-md">
+        <div className="hidden xl:flex items-center">
+          <ul className="exo flex items-center justify-center gap-8 xl:gap-8 text-md xl:text-md">
             <li className=" transition duration-300  py-6 px-2" >
               <Link href={"/"}>Home</Link>
             </li>
@@ -197,11 +198,11 @@ style={{
               <Link href={"/about"}>About Us</Link>
             </li>
             <li
-              className="relative group  transition duration-300  py-6 px-2"
+              className="relative group  transition duration-300  py-6 px-2 flex items-center"
               onMouseEnter={() => setIsDropdownOpen(true)} onMouseLeave={() => setIsDropdownOpen(false)}
              
             >
-             Services
+             Services{" "} <RiArrowDropDownLine />
               {isDropdownOpen && (
                 <div className="absolute  top-full left-0  w-64 bg-white text-black "  onMouseLeave={() => setIsDropdownOpen(false)}>
                   <ul className="flex flex-col">
@@ -222,6 +223,9 @@ style={{
               )}
             </li>
             <li className=" transition duration-300  py-6 px-2">
+              <Link href="/gift-card">Gift Cards</Link>
+            </li>
+            <li className=" transition duration-300  py-6 px-2">
               <Link href="/blogs">Blogs</Link>
             </li>
             <li className=" transition duration-300  py-6 px-2">
@@ -234,7 +238,7 @@ style={{
         </div>
 
         {/* Mobile Menu Icon */}
-        <div className="lg:hidden">
+        <div className="xl:hidden">
           <button
             onClick={toggleMenu}
             className="text-2xl text-[#ee0a00] focus:outline-none"

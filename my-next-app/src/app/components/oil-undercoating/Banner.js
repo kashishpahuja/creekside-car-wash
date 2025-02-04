@@ -80,7 +80,7 @@ export default function AlbumPage() {
   
 
   return (
-    <div className="text-black bg-black">
+    <div className="text-black bg-black ">
       <main>
         <div
           className="relative h-[380px] lg:h-[600px] w-full"
