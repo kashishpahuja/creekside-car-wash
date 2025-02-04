@@ -25,11 +25,12 @@ function GiftCardCartPage() {
   const [totalPrice, setTotalPrice] = useState(1500);
   const [showRemovePopup, setShowRemovePopup] = useState(false);
   const [cardToRemove, setCardToRemove] = useState(null);
-  const [token, setToken] = useState(null);
 
+  // Function to recalculate total price
   useEffect(() => {
-    setToken(localStorage.getItem("token"));
-  }, []);
+    const newTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    setTotalPrice(newTotal);
+  }, [cart]);
 
   const handleRemoveClick = (id) => {
     setShowRemovePopup(true);
@@ -42,13 +43,14 @@ function GiftCardCartPage() {
   };
 
   const updateQuantity = (id, newQuantity) => {
+    if (newQuantity < 1) return; // Prevent quantity from going below 1
     setCart(cart.map(item => item.id === id ? { ...item, quantity: newQuantity } : item));
   };
 
   return (
     <div className="flex flex-col lg:flex-row gap-8 p-4 lg:p-8 md:mx-28 mb-12 mt-[150px]">
       <div className="w-full lg:w-2/3">
-        <h2 className="text-2xl font-semibold mb-4">Gift Card Cart</h2>
+        <h2 className="montserrat text-2xl mb-4">Gift Card Cart</h2>
 
         <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-4 flex flex-col gap-6">
           {cart.length > 0 ? (
@@ -63,9 +65,9 @@ function GiftCardCartPage() {
                 <div className="flex items-start gap-4">
                   <div><img src={item.image} alt={item.name} className="w-24 h-24 object-cover rounded-md" /></div>
                   <div>
-                    <h3 className="text-lg font-semibold">{item.name}</h3>
-                    <p className="text-gray-500 flex items-center">
-                      <FaRupeeSign /> {item.price.toFixed(2)}
+                    <h3 className="text-lg font-semibold text-gray-800">{item.name}</h3>
+                    <p className="text-gray-600 flex items-center mt-2">
+                    ${item.price.toFixed(2)}
                     </p>
                   </div>
                 </div>
@@ -86,16 +88,15 @@ function GiftCardCartPage() {
         </div>
 
         <div className="flex items-center justify-between mt-6">
-          <Link href={"/giftcard"}>
+          <Link href={"/gift-card"}>
             <div className="btn-transition rounded-lg w-fit flex items-center justify-center gap-4 text-md font-medium">
               <FaArrowLeft />
               <p>Explore Gift Cards</p>
             </div>
           </Link>
-          <Link href={"/checkout"}>
-            <div className="btn-transition rounded-lg w-fit flex items-center justify-center gap-4 text-md font-medium">
-              <p>              Proceed to Checkout
-              </p>
+          <Link href={cart.length > 0 ? "/checkout" : "#"}>
+            <div className={`btn-transition rounded-lg w-fit flex items-center justify-center gap-4 text-md font-medium ${cart.length === 0 ? "cursor-not-allowed" : ""}`}>
+              <p>Proceed to Checkout</p>
               <FaArrowRight />
             </div>
           </Link>
@@ -103,22 +104,21 @@ function GiftCardCartPage() {
       </div>
 
       <div className="w-full lg:w-1/3">
-        <h2 className="text-2xl font-semibold mb-4">Price Summary</h2>
+        <h2 className="montserrat text-2xl mb-4">Price Summary</h2>
         <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 shadow-sm">
           <div className="flex justify-between py-2 text-gray-700">
             <span>Subtotal</span>
-            <span className="flex items-center"> <FaRupeeSign/> {totalPrice.toFixed(2)}</span>
+            <span className="flex items-center"> $ {totalPrice.toFixed(2)}</span>
           </div>
           <div className="flex justify-between font-semibold text-lg text-gray-800">
             <span>Total</span>
-            <span className="flex items-center"><FaRupeeSign/> {totalPrice.toFixed(2)}</span>
+            <span className="flex items-center">$ {totalPrice.toFixed(2)}</span>
           </div>
-          <Link href={token ? "/checkout" : "#"}>
+          <Link href={cart.length > 0 ? "/checkout" : "#"}>
             <button
               className={`w-full mt-6 py-3 font-semibold rounded-lg transition duration-200 ${
-                token ? "bg-orange-500 text-white hover:bg-orange-600" : "bg-gray-300 text-gray-600 cursor-not-allowed"
+                cart.length > 0 ? "bg-red-600 text-white hover:bg-red-800" : "bg-gray-300 text-gray-600 cursor-not-allowed"
               }`}
-              disabled={!token}
             >
               Proceed to Checkout
             </button>
@@ -128,7 +128,7 @@ function GiftCardCartPage() {
 
       {showRemovePopup && (
         <DeleteConfirmation
-          itemName="this gift card"
+          itemName=""
           itemType="Gift Card"
           onCancel={() => setShowRemovePopup(false)}
           onDelete={confirmRemoveCard}
