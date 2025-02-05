@@ -59,11 +59,11 @@ const GiftCards = () => {
             key={card.id}
             className=" shadow-lg rounded-lg p-4  bg-gray-200"
           >
-            <div className="w-full h-72">
+            <div className="w-full ">
               <img
                 src={card.image}
                 alt="Gift Card"
-                className="w-full h-[100%] object-cover rounded-md"
+                className="w-full h-[100%] object-contain rounded-md"
               />
             </div>
             <div className="text-left">

@@ -9,15 +9,15 @@ function GiftCardCartPage() {
   const [cart, setCart] = useState([
     {
       id: 1,
-      name: "Amazon Gift Card",
-      price: 500,
+      name: "Regular Gift Card",
+      price: 50,
       quantity: 1,
       image: "/Images/giftcard.webp",
     },
     {
       id: 2,
-      name: "Google Play Gift Card",
-      price: 1000,
+      name: "Delux Gift Card",
+      price: 100,
       quantity: 1,
       image: "/Images/giftcard.webp",
     },
@@ -89,17 +89,17 @@ function GiftCardCartPage() {
 
         <div className="flex items-center justify-between mt-6">
           <Link href={"/gift-card"}>
-            <div className="btn-transition rounded-lg w-fit flex items-center justify-center gap-4 text-md font-medium">
+            <div className="btn-transition rounded-lg w-fit flex items-center justify-center gap-4 text-md hover:text-red-600 font-semibold">
               <FaArrowLeft />
               <p>Explore Gift Cards</p>
             </div>
           </Link>
-          <Link href={cart.length > 0 ? "/checkout" : "#"}>
+          {/* <Link href={cart.length > 0 ? "/checkout" : "#"}>
             <div className={`btn-transition rounded-lg w-fit flex items-center justify-center gap-4 text-md font-medium ${cart.length === 0 ? "cursor-not-allowed" : ""}`}>
               <p>Proceed to Checkout</p>
               <FaArrowRight />
             </div>
-          </Link>
+          </Link> */}
         </div>
       </div>
 

@@ -13,7 +13,7 @@ function Services() {
         
         {/* Service 1: Car Wash */}
         <div
-          className='relative w-full h-[260px] lg:h-[360px] bg-cover bg-center rounded shadow-lg overflow-hidden' data-aos="fade-up"
+          className='relative w-full h-[260px] lg:h-[360px] bg-cover bg-center rounded shadow-lg overflow-hidden' 
           style={{ backgroundImage: `url('/Images/services/carWash.webp')` }}
         >
           <Link href='/car-wash'>
@@ -30,7 +30,7 @@ function Services() {
 
         {/* Service 2: Oil Under Coating */}
         <div
-          className='relative w-full h-[260px] lg:h-[360px] bg-cover bg-center rounded shadow-lg overflow-hidden' data-aos="fade-up" data-aos-delay="200"
+          className='relative w-full h-[260px] lg:h-[360px] bg-cover bg-center rounded shadow-lg overflow-hidden' 
           style={{ backgroundImage: `url('/Images/services/autoGlass.jpg')` }}
         >
           <Link href='/oil-undercoating'>
@@ -47,7 +47,7 @@ function Services() {
 
         {/* Service 3: Detailing */}
         <div
-          className='relative w-full h-[260px] lg:h-[360px] bg-cover bg-center rounded shadow-lg overflow-hidden' data-aos="fade-up"  data-aos-delay="400"
+          className='relative w-full h-[260px] lg:h-[360px] bg-cover bg-center rounded shadow-lg overflow-hidden' 
           style={{ backgroundImage: `url('/Images/services/detailing.jpg')` }}
         >
           <Link href='/detailing'>
@@ -64,7 +64,7 @@ function Services() {
 
         {/* Service 4: Window Tinting */}
         <div
-          className='relative w-full h-[260px] lg:h-[360px] bg-cover bg-center rounded shadow-lg overflow-hidden' data-aos="fade-up"  data-aos-delay="600"
+          className='relative w-full h-[260px] lg:h-[360px] bg-cover bg-center rounded shadow-lg overflow-hidden' 
           style={{ backgroundImage: `url('/Images/services/carWraps.webp')` }}
         >
           <Link href='/window-tinting'>

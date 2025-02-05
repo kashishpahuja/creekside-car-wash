@@ -21,7 +21,7 @@ export default function Home() {
       AOS.init({
         duration: 1000, // Duration for each animation
         easing: "ease-in-out", // Easing type
-        once: false,
+        once: true,
       });
     }, []); // Empty dependency array ensures this only runs once
   return (

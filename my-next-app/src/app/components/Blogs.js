@@ -100,7 +100,7 @@ const News = () => {
 
       <h2
         className="montserrat text-2xl lg:text-6xl text-black text-center mb-12"
-        data-aos="zoom-out"
+        
       >
 OUR BLOGS
       </h2>

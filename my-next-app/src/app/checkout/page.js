@@ -8,15 +8,15 @@ function CheckoutPage() {
   const [cart, setCart] = useState([
     {
       id: 1,
-      name: "Amazon Gift Card",
-      price: 500,
+      name: "Regular Gift Card",
+      price: 50,
       quantity: 1,
       image: "/Images/giftcard.webp",
     },
     {
       id: 2,
-      name: "Google Play Gift Card",
-      price: 1000,
+      name: "Delux Gift Card",
+      price: 100,
       quantity: 1,
       image: "/Images/giftcard.webp",
     },
@@ -24,7 +24,10 @@ function CheckoutPage() {
   const [totalPrice, setTotalPrice] = useState(1500);
 
   useEffect(() => {
-    const newTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    const newTotal = cart.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
     setTotalPrice(newTotal);
   }, [cart]);
 
@@ -34,17 +37,48 @@ function CheckoutPage() {
       <div className="w-full lg:w-2/3 bg-white p-6 border border-gray-200 rounded-lg shadow-sm">
         <h2 className="text-2xl font-semibold mb-6">Billing Details</h2>
         <form className="space-y-4">
-          <input type="text" placeholder="Full Name" className="w-full p-3 border rounded" required />
-          <input type="email" placeholder="Email Address" className="w-full p-3 border rounded" required />
-          <input type="text" placeholder="Phone Number" className="w-full p-3 border rounded" required />
-          <input type="text" placeholder="Address" className="w-full p-3 border rounded" required />
+          <input
+            type="text"
+            placeholder="Full Name"
+            className="w-full p-3 border rounded"
+            required
+          />
+          <input
+            type="email"
+            placeholder="Email Address"
+            className="w-full p-3 border rounded"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Phone Number"
+            className="w-full p-3 border rounded"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Address"
+            className="w-full p-3 border rounded"
+            required
+          />
+
+          <select className="w-full p-3 border rounded" required>
+            <option value="">Select Pickup or Shipping Method</option>
+            <option value="credit-card">
+              Pick up card at Creekside Car Wash
+            </option>
+            <option value="paypal">Canada Post Shipping to BC</option>
+          </select>
           <select className="w-full p-3 border rounded" required>
             <option value="">Select Payment Method</option>
             <option value="credit-card">Credit Card</option>
             <option value="paypal">PayPal</option>
             <option value="cash-on-delivery">Cash on Delivery</option>
           </select>
-          <button type="submit" className="w-full py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-800 transition duration-200">
+          <button
+            type="submit"
+            className="w-full py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-800 transition duration-200 cursor-not-allowed"
+          >
             Place Order
           </button>
         </form>
@@ -55,20 +89,25 @@ function CheckoutPage() {
         <h2 className="text-2xl font-semibold mb-6">Order Summary</h2>
         <div className="space-y-4">
           {cart.map((item) => (
-            <div key={item.id} className="flex justify-between items-center border-b pb-2">
+            <div
+              key={item.id}
+              className="flex justify-between items-center border-b pb-2"
+            >
               <div>
                 <p className="text-gray-800 font-medium">{item.name}</p>
                 <p className="text-gray-600 text-sm">Qty: {item.quantity}</p>
               </div>
               <p className="text-gray-800 font-medium flex items-center">
-                <FaRupeeSign /> {(item.price * item.quantity).toFixed(2)}
+                $ {(item.price * item.quantity).toFixed(2)}
               </p>
             </div>
           ))}
         </div>
         <div className="flex justify-between py-4 font-semibold text-lg text-gray-800">
           <span>Total</span>
-          <span className="flex items-center"><FaRupeeSign/> {totalPrice.toFixed(2)}</span>
+          <span className="flex items-center">
+            $ {totalPrice.toFixed(2)}
+          </span>
         </div>
       </div>
     </div>
