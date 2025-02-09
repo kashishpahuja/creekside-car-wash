@@ -28,7 +28,7 @@ export default function AlbumPage({title}) {
           <div className="flex flex-col gap-4 items-start  ">
             <h1 className="montserrat text-3xl lg:text-5xl text-white">
               
-           {title}
+            {title}
             </h1>
             <Link href={"/contact"} className="exo-bold p-2 lg:px-4 py-3 border border-white mx-auto text-white rounded-xl  hover:text-black hover:bg-white"
             >

@@ -1,9 +1,9 @@
-require("dotenv").config(); // Load environment variables
+require("dotenv").config(); 
 const express = require("express");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
-
+const paymentRoutes = require("./routes/paymentRoutes")
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -18,6 +18,9 @@ app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+
+app.use('/api/payment',paymentRoutes)
 
 // Email sending route
 app.post("/send-mail", async (req, res) => {
