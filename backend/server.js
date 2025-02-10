@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 const paymentRoutes = require("./routes/paymentRoutes")
+const invoiceRoutes = require('./routes/invoiceRoutes')
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -20,9 +21,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
-app.use('/api/payment',paymentRoutes)
-
+app.use('/payment',paymentRoutes)
+app.use('/invoice', invoiceRoutes);  // Register the invoice routes
 // Email sending route
+// app.use('/email',emailRoutes)
+
 app.post("/send-mail", async (req, res) => {
   const { name, email, phone, location_form, message } = req.body;
 
@@ -68,5 +71,5 @@ app.post("/send-mail", async (req, res) => {
 
 // Start the server
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}/send-mail`);
+  console.log(`Server is running on http://localhost:${PORT}`);
 });

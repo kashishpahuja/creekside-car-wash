@@ -6,6 +6,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { FaCartShopping } from "react-icons/fa6";
 import { ToastContainer } from "react-toastify";
 import Link from "next/link";
+import { loadStripe } from "@stripe/stripe-js";
+
 
 const GiftCards = () => {
   const giftCards = [
@@ -13,25 +15,25 @@ const GiftCards = () => {
       id: 1,
       image: "/Images/giftcard.webp",
       name: "Regular Gift Card",
-      price: 50,
+      price: 1,
     },
     {
       id: 2,
       image: "/Images/giftcard.webp",
       name: "Delux Gift Card",
-      price: 100,
+      price: 1,
     },
     {
       id: 3,
       image: "/Images/giftcard.webp",
       name: "Premium Gift Card",
-      price: 150,
+      price: 1,
     },
   ];
 
   const handleBuyNow = async (price) => {
     // Send the price to your backend to create a Stripe session
-    const response = await fetch("/api/payment/create-checkout-session", {
+    const response = await fetch("http://localhost:5000/payment/create-checkout-session", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -42,7 +44,7 @@ const GiftCards = () => {
     const session = await response.json();
     if (session.id) {
       // Redirect to the Stripe Checkout page
-      const stripe = await loadStripe("your-public-stripe-key"); // Use your own Stripe public key here
+      const stripe = await loadStripe("pk_test_51QpbI8JBPpjDz7k5BTHJa3zzToOTUmqtkcEZ9rm0UvnuYLuNnltcXuvpTpFJsOf8Fd26GYjtkqZDrolFVAz0HX4r00xBNYZBks"); // Use your own Stripe public key here
       await stripe.redirectToCheckout({ sessionId: session.id });
     } else {
       toast.error("Error creating payment session. Please try again.");
