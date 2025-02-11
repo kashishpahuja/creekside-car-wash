@@ -1,4 +1,5 @@
 'use client';
+import Image from "next/image";
 import React from "react";
 
 
@@ -10,7 +11,7 @@ function Producer() {
         {/* CLEAN Section */}
         <div className="flex flex-col items-center justify-center gap-4" >
           <div className="zoom w-20 h-20 xl:w-28 xl:h-28">
-            <img className='w-full h-[100%] object-cover' src="/Images/gif/car-wash.gif" alt="Clean" />
+            <Image width={400} height={400} className='w-full h-[100%] object-cover' src="/Images/gif/car-wash.gif" alt="Clean" />
           </div>
           <div className="text-center">
             <h3 className="montserrat text-2xl font-semibold text-black">CLEAN</h3>
@@ -23,7 +24,7 @@ function Producer() {
         {/* SHINE Section */}
         <div className="flex flex-col items-center justify-center gap-4"  >
           <div className="zoom w-20 h-20 xl:w-28 xl:h-28 ">
-            <img className='w-full h-[100%] object-cover' src="/Images/gif/shine.gif" alt="Shine" />
+            <Image width={400} height={400} className='w-full h-[100%] object-cover' src="/Images/gif/shine.gif" alt="Shine" />
           </div>
           <div className="text-center">
             <h3 className="montserrat text-2xl font-semibold text-black">SHINE</h3>
@@ -36,7 +37,7 @@ function Producer() {
         {/* DETAIL Section */}
         <div className="flex flex-col items-center justify-center gap-4" >
           <div className="zoom w-20 h-20 xl:w-28 xl:h-28">
-            <img className='w-full h-[100%] object-cover' src="/Images/gif/detail.gif" alt="Detail" />
+            <Image width={400} height={400} className='w-full h-[100%] object-cover' src="/Images/gif/detail.gif" alt="Detail" />
           </div>
           <div className="text-center">
             <h3 className="montserrat text-2xl font-semibold text-black">DETAIL</h3>
@@ -49,7 +50,7 @@ function Producer() {
         {/* PROTECT Section */}
         <div className="flex flex-col items-center justify-center" >
           <div className="zoom w-20 h-20 xl:w-28 xl:h-28">
-            <img className='w-full h-[100%] object-cover' src="/Images/gif/protect.gif" alt="Protect" />
+            <Image width={400} height={400} className='w-full h-[100%] object-cover' src="/Images/gif/protect.gif" alt="Protect" />
           </div>
           <div className="text-center">
             <h3 className="montserrat text-2xl font-semibold text-black">PROTECT</h3>

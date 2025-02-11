@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import DeleteConfirmation from "../components/DeletePopup";
 import Link from "next/link";
 import { FaArrowLeft, FaArrowRight, FaRupeeSign, FaTimes } from "react-icons/fa";
+import Image from "next/image";
 
 function GiftCardCartPage() {
   const [cart, setCart] = useState([
@@ -63,7 +64,7 @@ function GiftCardCartPage() {
                   <FaTimes />
                 </button>
                 <div className="flex items-start gap-4">
-                  <div><img src={item.image} alt={item.name} className="w-24 h-24 object-cover rounded-md" /></div>
+                  <div><Image width={400} height={400} src={item.image} alt={item.name} className="w-24 h-24 object-cover rounded-md" /></div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800">{item.name}</h3>
                     <p className="text-gray-600 flex items-center mt-2">

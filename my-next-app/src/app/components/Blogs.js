@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
 import { CgProfile } from "react-icons/cg";
+import Image from "next/image";
 
 const News = () => {
   const settings = {
@@ -115,28 +116,28 @@ OUR BLOGS
               <div key={blog.id} className="p-4">
                 <div className="bg-white shadow-lg rounded-lg w-auto h-auto overflow-hidden">
                   <div>
-                    <img src={blog.image} alt="img" className="w-full h-72 object-cover" />
+                    <Image width={400} height={400} src={blog.image} alt="img" className="w-full h-72 object-cover" />
                   </div>
                   <div className="p-4">
-                             <h3 className="exo text-start text-xl font-semibold mt-4 text-black hover:text-[#ee0a00]">
+                             <h3 className="exo text-start text-lg md:text-xl font-semibold mt-4 text-black hover:text-[#ee0a00]">
                       {blog.title}
                     </h3>
 
 
-<div className="flex items-center justify-between">
-<div className="exo flex items-center text-gray-600 text-md font-semibold hover:underline mt-4 ">
+<div className="flex items-start md:items-center justify-between flex-col md:flex-row ">
+<div className="exo flex items-center text-gray-600 text-md md:text-md font-semibold hover:underline mt-4 ">
                       <CgProfile  className="w-6 h-6 mr-2" />{' '}
                         
                         <span>Mohit Oberoi</span>
                       </div>
                       <div>
-                      <Link
-                      href="/blog"
-                      className="exo text-gray-600 text-md font-semibold hover:underline mt-4 inline-block"
+                      <div
+                      // href="/blog"
+                      className="exo text-gray-600 text-md lg:text-md font-semibold hover:underline mt-4 inline-block"
                     >
                       <span>Read More</span>{" "}
                       <FaArrowRight className="inline ml-2" />
-                    </Link>
+                    </div>
                       </div>
 
 </div>

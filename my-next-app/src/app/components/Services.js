@@ -14,6 +14,7 @@ function Services() {
         {/* Service 1: Car Wash */}
         <div
           className='relative w-full h-[260px] lg:h-[360px] bg-cover bg-center rounded shadow-lg overflow-hidden' 
+            loading="lazy"
           style={{ backgroundImage: `url('/Images/services/carWash.webp')` }}
         >
           <Link href='/car-wash'>
@@ -22,7 +23,7 @@ function Services() {
 
             {/* Text and icon */}
             <div className='zoom relative z-10 flex items-center justify-center gap-3 h-full text-white '>
-              <div className='exo text-3xl  font-bold'>Car Wash</div>
+              <div className='exo text-2xl md:text-3xl  font-bold'>Car Wash</div>
               <div className='text-3xl'><MdKeyboardDoubleArrowRight /></div>
             </div>
           </Link>
@@ -31,6 +32,7 @@ function Services() {
         {/* Service 2: Oil Under Coating */}
         <div
           className='relative w-full h-[260px] lg:h-[360px] bg-cover bg-center rounded shadow-lg overflow-hidden' 
+            loading="lazy"
           style={{ backgroundImage: `url('/Images/services/autoGlass.jpg')` }}
         >
           <Link href='/oil-undercoating'>
@@ -39,7 +41,7 @@ function Services() {
 
             {/* Text and icon */}
             <div className='zoom relative z-10 flex items-center justify-center gap-3 h-full text-white '>
-              <div className='exo text-3xl  font-bold'>Oil Under Coating</div>
+              <div className='exo text-2xl md:text-3xl  font-bold'>Oil Under Coating</div>
               <div className='text-3xl'><MdKeyboardDoubleArrowRight /></div>
             </div>
           </Link>
@@ -48,7 +50,9 @@ function Services() {
         {/* Service 3: Detailing */}
         <div
           className='relative w-full h-[260px] lg:h-[360px] bg-cover bg-center rounded shadow-lg overflow-hidden' 
+            loading="lazy"
           style={{ backgroundImage: `url('/Images/services/detailing.jpg')` }}
+          
         >
           <Link href='/detailing'>
             {/* Black overlay */}
@@ -56,7 +60,7 @@ function Services() {
 
             {/* Text and icon */}
             <div className='zoom relative z-10 flex items-center justify-center gap-3 h-full text-white '>
-              <div className='exo text-3xl  font-bold'>Detailing</div>
+              <div className='exo text-2xl md:text-3xl  font-bold'>Detailing</div>
               <div className='text-3xl'><MdKeyboardDoubleArrowRight /></div>
             </div>
           </Link>
@@ -65,6 +69,7 @@ function Services() {
         {/* Service 4: Window Tinting */}
         <div
           className='relative w-full h-[260px] lg:h-[360px] bg-cover bg-center rounded shadow-lg overflow-hidden' 
+            loading="lazy"
           style={{ backgroundImage: `url('/Images/services/carWraps.webp')` }}
         >
           <Link href='/window-tinting'>
@@ -73,7 +78,7 @@ function Services() {
 
             {/* Text and icon */}
             <div className='zoom relative z-10 flex items-center justify-center gap-3 h-full text-white '>
-              <div className='exo text-3xl  font-bold'>Window Tinting</div>
+              <div className='exo text-2xl md:text-3xl  font-bold'>Window Tinting</div>
               <div className='text-3xl'><MdKeyboardDoubleArrowRight /></div>
             </div>
           </Link>

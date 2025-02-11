@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
+import Image from "next/image";
 
 const services = [
   {
@@ -42,7 +43,7 @@ function Banner() {
           loop
           className="w-full h-full object-cover"
         ></video> */}
-        <img src="/Images/bannerBG2.jpg" alt=""  className="w-full h-full object-cover"/>
+        <Image width={400} height={400} src="/Images/bannerBG2.jpg" alt=""  className="w-full h-full object-cover"/>
         {/* White Overlay */}
       </div>
       <div className="absolute shadow-black inset-0 bg-black opacity-70 w-[100%]"></div>
@@ -60,7 +61,7 @@ function Banner() {
             {services.map((service, index) => (
               <SwiperSlide key={index}>
                 <h3 className="text-lg md:text-xl xl:text-2xl">
-                  Weyburn's Best{" "}
+                  Weyburn&apos;s Best{" "}
                   <span className="text-[#ee0a00]">{service.title}</span>
                 </h3>
                 <p className="montserrat text-3xl lg:text-4xl xl:text-5xl font-bold mt-6">

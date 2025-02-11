@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -31,7 +32,7 @@ function Oil() {
        
         </div> 
         <div className=" w-full xl:w-1/2 ">
-          <img
+          <Image  width={400} height={400} 
             src="/Images/oil/2.png"
             alt=""
             className=" w-full h-[100%] object-contain "

@@ -4,6 +4,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 import Link from "next/link";
+import Image from "next/image";
 
 function Producer() {
   const services = [
@@ -23,7 +24,8 @@ function Producer() {
           >
             <Link href={`/service/${service.id}`}>
               <div className="w-full h-[400px] cursor-pointer rounded-lg">
-                <img
+                <Image
+                 width={400} height={400} 
                   src={service.image}
                   alt={''}
                   className="w-full h-[100%] object-cover"

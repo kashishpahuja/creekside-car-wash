@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { AiOutlineClose, AiOutlineRight } from "react-icons/ai"; // Import icons
@@ -22,7 +23,8 @@ function Popup({ menuOpen }) {
               {/* Logo Section */}
               <div className="flex justify-start">
                 <div className="w-28 h-28"> {/* Adjusted logo size */}
-                  <img
+                  <Image
+                   width={400} height={400} 
                     src="/Images/logo.webp"
                     alt="logo"
                     className="w-full h-full object-contain"

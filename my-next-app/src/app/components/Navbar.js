@@ -132,6 +132,7 @@ import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import Popup from "./Popup";
+import Image from "next/image";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -179,7 +180,8 @@ style={{
         {/* Logo */}
         <div className="w-44 h-44 overflow-hidden">
           <Link href="/" className="">
-            <img
+            <Image
+             width={400} height={400} 
               src="/Images/logo.webp"
               alt="Logo"
               className="object-contain"

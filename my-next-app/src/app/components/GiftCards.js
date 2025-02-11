@@ -7,44 +7,67 @@ import { FaCartShopping } from "react-icons/fa6";
 import { ToastContainer } from "react-toastify";
 import Link from "next/link";
 import { loadStripe } from "@stripe/stripe-js";
-
+import Image from "next/image";
 
 const GiftCards = () => {
   const giftCards = [
     {
       id: 1,
-      image: "/Images/giftcard.webp",
+      image: "/Images/gift/card.webp",
       name: "Regular Gift Card",
       price: 1,
     },
     {
       id: 2,
-      image: "/Images/giftcard.webp",
+      image: "/Images/gift/card.webp",
       name: "Delux Gift Card",
-      price: 1,
+      price: 100,
     },
     {
       id: 3,
-      image: "/Images/giftcard.webp",
+      image: "/Images/gift/card.webp",
       name: "Premium Gift Card",
-      price: 1,
+      price: 150,
+    },
+    {
+      id: 4,
+      image: "/Images/gift/card.webp",
+      name: "Regular Gift Card",
+      price: 250,
+    },
+    {
+      id: 5,
+      image: "/Images/gift/card.webp",
+      name: "Delux Gift Card",
+      price: 350,
+    },
+    {
+      id: 6,
+      image: "/Images/gift/card.webp",
+      name: "Premium Gift Card",
+      price: 450,
     },
   ];
 
   const handleBuyNow = async (price) => {
     // Send the price to your backend to create a Stripe session
-    const response = await fetch("http://localhost:5000/payment/create-checkout-session", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ price }),
-    });
+    const response = await fetch(
+      "http://localhost:5000/payment/create-checkout-session",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ price }),
+      }
+    );
 
     const session = await response.json();
     if (session.id) {
       // Redirect to the Stripe Checkout page
-      const stripe = await loadStripe("pk_test_51QpbI8JBPpjDz7k5BTHJa3zzToOTUmqtkcEZ9rm0UvnuYLuNnltcXuvpTpFJsOf8Fd26GYjtkqZDrolFVAz0HX4r00xBNYZBks"); // Use your own Stripe public key here
+      const stripe = await loadStripe(
+        "pk_live_51QpbI8JBPpjDz7k5xWkeh6e8QjN9So1L6R1mabUvKkS1TR6G4GRHFsHhZCkgOkOz7MCAWhBfXoxIkiYpJcXesyRM00zQUJL6BL"
+      ); // Use your own Stripe public key here
       await stripe.redirectToCheckout({ sessionId: session.id });
     } else {
       toast.error("Error creating payment session. Please try again.");
@@ -53,31 +76,34 @@ const GiftCards = () => {
 
   return (
     <div className="relative text-center px-4 lg:px-20 xl:px-40 my-24">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {giftCards.map((card) => (
-          <div
-            key={card.id}
-            className="shadow-lg rounded-lg p-4 bg-gray-200"
-          >
+          <div key={card.id} className="shadow-lg rounded-lg p-4 bg-gray-200">
             <div className="w-full ">
-              <img
+              <Image
+                width={400}
+                height={400}
                 src={card.image}
                 alt="Gift Card"
                 className="w-full h-[100%] object-contain rounded-md"
               />
             </div>
-            <div className="text-left">
-              <h3 className="exo text-md mt-4 text-gray-600">{card.name}</h3>
-              <h3 className="font-semibold text-lg mt-2 text-gray-800">
-                ${card.price}.00
-              </h3>
+            <div className="flex items-center justify-between flex-col lg:flex-row mt-4">
+              <div className="">
+                {/* <h3 className="exo text-md mt-4 text-gray-600">{card.name}</h3> */}
+                <h3 className="font-semibold text-lg mt-2 text-gray-800">
+                  ${card.price} Gift Card
+                </h3>
+              </div>
+              <div>
+                <button
+                  onClick={() => handleBuyNow(card.price)}
+                  className=" bg-red-600 text-white px-4 py-2 rounded flex items-center justify-center w-full hover:bg-red-700   font-bold transition"
+                >
+                  Buy Now <FaCartShopping className="ml-2" />
+                </button>
+              </div>
             </div>
-            <button
-              onClick={() => handleBuyNow(card.price)}
-              className="mt-4 bg-red-600 text-white px-4 py-2 rounded flex items-center justify-center w-full hover:bg-red-700 transition"
-            >
-              Buy Now <FaCartShopping className="ml-2" />
-            </button>
           </div>
         ))}
       </div>
@@ -87,13 +113,6 @@ const GiftCards = () => {
 };
 
 export default GiftCards;
-
-
-
-
-
-
-
 
 // "use client";
 

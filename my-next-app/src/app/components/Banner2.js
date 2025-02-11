@@ -194,6 +194,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import Link from "next/link";
+import Image from "next/image";
 
 const services = [
   {
@@ -220,7 +221,7 @@ function Banner() {
           {/* Video Section */}
           <div className='w-full lg:w-[60%] h-[500px] border border-red-500'>
           {/* <video src="/Images/bannerVideo.mp4" muted autoPlay loop className="w-full h-full"></video> */}
-        <img src="/Images/bannerBG2.jpg" alt="" className="w-full h-[100%] object-cover"/>
+        <Image width={400} height={400}  src="/Images/bannerBG2.jpg" alt="" className="w-full h-[100%] object-cover"/>
         </div>
 
         {/* Swiper Section */}

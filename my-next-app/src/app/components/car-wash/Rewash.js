@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -29,7 +30,7 @@ function Rewash() {
         </div>
 
         <div className=" w-full xl:w-1/2 rounded-xl">
-          <img
+          <Image  width={400} height={400} 
             src="/Images/footer.jpg"
             alt=""
             className=" w-full h-[100%] object-contain rounded-xl"

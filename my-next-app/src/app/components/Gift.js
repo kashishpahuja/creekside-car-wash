@@ -1,6 +1,7 @@
 import React from "react";
 import GiftCards from '../components/GiftCards'
 import Link from 'next/link'
+import Image from "next/image";
 
 function Gift() {
   return (
@@ -18,7 +19,9 @@ function Gift() {
       ></div>
       <div className="my-12 flex items-center justify-center flex-col xl:flex-row  relative z-30 px-4 md:px-8 lg:px-24 w-full  text-black  rounded-xl">
         <div className="zoom:hover w-full md:h-[500px] ">
-          <img
+          <Image
+          width={400}
+          height={400}
             src="/Images/gift/card0.png"
             alt=""
             className=" w-full h-[100%] object-contain"

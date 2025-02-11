@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 
 function Producer() {
@@ -8,7 +9,7 @@ function Producer() {
         {/* Feature 1: Flexible Washing Options */}
         <div className="flex flex-col items-center justify-center gap-4">
           <div className="w-20 h-20 xl:w-28 xl:h-28">
-            <img className="w-full h-[100%] object-cover" src="/Images/circle/1.webp" alt="Flexible Washing Options" />
+            <Image  width={400} height={400}  className="w-full h-[100%] object-cover" src="/Images/circle/1.webp" alt="Flexible Washing Options" />
           </div>
           <div className="text-center">
             <h3 className="montserrat text-xl font-semibold text-gray-800">
@@ -23,7 +24,7 @@ function Producer() {
         {/* Feature 2: Premium Equipment */}
         <div className="flex flex-col items-center justify-center gap-4">
           <div className="w-20 h-20 xl:w-28 xl:h-28">
-            <img className="w-full h-[100%] object-cover" src="/Images/circle/3.webp" alt="Premium Equipment" />
+            <Image  width={400} height={400}  className="w-full h-[100%] object-cover" src="/Images/circle/3.webp" alt="Premium Equipment" />
           </div>
           <div className="text-center">
             <h3 className="montserrat text-xl font-semibold text-gray-800">
@@ -38,7 +39,7 @@ function Producer() {
         {/* Feature 3: Comprehensive Packages */}
         <div className="flex flex-col items-center justify-center gap-4">
           <div className="w-20 h-20 xl:w-28 xl:h-28">
-            <img className="w-full h-[100%] object-cover" src="/Images/circle/2.webp" alt="Comprehensive Packages" />
+            <Image  width={400} height={400}  className="w-full h-[100%] object-cover" src="/Images/circle/2.webp" alt="Comprehensive Packages" />
           </div>
           <div className="text-center">
             <h3 className="montserrat text-xl font-semibold text-gray-800">
