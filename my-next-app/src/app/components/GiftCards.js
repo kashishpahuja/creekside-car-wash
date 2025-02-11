@@ -15,7 +15,7 @@ const GiftCards = () => {
       id: 1,
       image: "/Images/gift/card.webp",
       name: "Regular Gift Card",
-      price: 1,
+      price: 50,
     },
     {
       id: 2,
@@ -52,7 +52,7 @@ const GiftCards = () => {
   const handleBuyNow = async (price) => {
     // Send the price to your backend to create a Stripe session
     const response = await fetch(
-      "http://localhost:5000/payment/create-checkout-session",
+      "https://creekside-car-wash.onrender.com/payment/create-checkout-session",
       {
         method: "POST",
         headers: {
