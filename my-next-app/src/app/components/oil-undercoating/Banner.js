@@ -83,7 +83,7 @@ export default function AlbumPage() {
     <div className="text-black bg-black ">
       <main>
         <div
-          className="relative h-[380px] lg:h-[600px] w-full"
+          className="relative h-[280px] lg:h-[400px] w-full"
           style={{
             backgroundImage: `url('/Images/services/carWraps.webp')`,
             backgroundPosition: "center",
@@ -91,7 +91,7 @@ export default function AlbumPage() {
           }}
         >
           <div className="absolute inset-0 bg-black bg-opacity-70" aria-hidden="true"></div>
-          <div className="relative z-20 top-1/2 left-8 md:left-[30%] lg:left-[35%]  inline-block">
+          <div className="relative z-20 top-[25%] left-8 md:left-[30%] lg:left-[35%]  inline-block">
             <div className="flex flex-col gap-4 lg:items-start">
               <h1 className="montserrat text-2xl md:text-3xl lg:text-5xl text-white text-center">
                 CREEKSIDE <br /> OIL UNDERCOATING

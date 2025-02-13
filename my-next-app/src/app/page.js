@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic';
 
 // Import critical components normally (do not lazy-load)
-import Banner from "./components/Banner3";
+import Banner from "./components/Banner4";
 import Services from "./components/Services";
 
 // Dynamically import non-critical components

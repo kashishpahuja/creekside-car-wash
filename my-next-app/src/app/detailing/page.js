@@ -1,8 +1,9 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
-import Banner from "../components/CommonBanner";
+import Banner from "../components/DetailingBanner";
 import Progress from '../components/Progress'
+import Booking from "../components/Booking";
 
 
 export default function AlbumPage() {
@@ -10,7 +11,7 @@ export default function AlbumPage() {
     <div className="">
       <main>
         <Banner title={' CREEKSIDE DETAILING'}/>
-        <Progress/>
+        <Booking/>
       </main>
     </div>
   );

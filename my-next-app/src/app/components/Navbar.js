@@ -133,6 +133,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import Popup from "./Popup";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -178,21 +179,20 @@ style={{
 >
       <div className="text-lg font-medium flex items-center justify-between px-4 xl:px-20 h-full xl:mx-8">
         {/* Logo */}
-        <div className="w-44 h-44 overflow-hidden">
+        <div className="w-44 lg:w-48 h-20 overflow-hidden">
           <Link href="/" className="">
             <Image
              width={400} height={400} 
-              src="/Images/logo.webp"
+              src="/Images/newlogo.webp"
               alt="Logo"
-              className="object-contain"
-              style={{ width: "100%", height: "100%" }}
+              className="object-contain w-full h-[100%]"
             />
           </Link>
         </div>
 
         {/* Desktop Navigation */}
         <div className="hidden xl:flex items-center">
-          <ul className="exo flex items-center justify-center gap-8 xl:gap-8 text-md xl:text-md">
+          <ul className="exo flex items-center justify-center gap-8 xl:gap-8 text-md xl:text-md text-gray-600">
             <li className=" transition duration-300  py-6 px-2" >
               <Link href={"/"}>Home</Link>
             </li>
@@ -205,7 +205,7 @@ style={{
              
             >
              Services{" "} <RiArrowDropDownLine />
-              {isDropdownOpen && (
+              {/* {isDropdownOpen && (
                 <div className="absolute  top-full left-0  w-64 bg-white text-black "  onMouseLeave={() => setIsDropdownOpen(false)}>
                   <ul className="flex flex-col">
                     <li className="hover:text-red-600 hover:bg-gray-200 border-b  px-4 py-4">
@@ -222,7 +222,35 @@ style={{
                     </li> 
                   </ul>
                 </div>
-              )}
+              )} */}
+
+{isDropdownOpen && (
+  <motion.div
+    initial={{ height: 0, opacity: 0 }}
+    animate={{ height: "auto", opacity: 1 }}
+    exit={{ height: 0, opacity: 0 }}
+    transition={{ duration: 0.7, ease: "easeInOut" }}
+    className="absolute top-full left-0 w-64 bg-white text-black shadow-lg"
+    onMouseLeave={() => setIsDropdownOpen(false)}
+  >
+    <ul className="flex flex-col">
+      <li className="hover:text-red-600 hover:bg-gray-200 border-b px-4 py-4">
+        <Link className="text-md" href="/car-wash">Car Wash</Link>
+      </li>
+      <li className="hover:text-red-600 hover:bg-gray-200 border-b px-4 py-4">
+        <Link className="text-md" href="/oil-undercoating">Oil Undercoating</Link>
+      </li>
+      <li className="hover:text-red-600 hover:bg-gray-200 border-b px-4 py-4">
+        <Link className="text-md" href="/detailing">Detailing</Link>
+      </li>
+      <li className="hover:text-red-600 hover:bg-gray-200 border-b px-4 py-4">
+        <Link className="text-md" href="/window-tinting">Window Tinting</Link>
+      </li> 
+    </ul>
+  </motion.div>
+)}
+
+
             </li>
             <li className=" transition duration-300  py-6 px-2">
               <Link href="/gift-card">Gift Cards</Link>

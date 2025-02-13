@@ -13,9 +13,9 @@ export default function AlbumPage({title}) {
     <div className="text-black bg-black">
             <main>
       <div
-        className="relative h-[380px] lg:h-[600px] w-full"
+        className="relative h-[280px] lg:h-[400px] w-full"
         style={{
-          backgroundImage: `url('/Images/services/carWraps.webp')`,
+          backgroundImage: `url('/Images/commonBanner.webp')`,
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
@@ -24,7 +24,7 @@ export default function AlbumPage({title}) {
           className="absolute inset-0 bg-black bg-opacity-70"
           aria-hidden="true"
         ></div>
-        <div className="relative z-20 top-1/2 left-[40%] inline-block">
+        <div className="relative z-20 top-[25%]  left-[15%] md:left-[40%] inline-block">
           <div className="flex flex-col gap-4 items-start  ">
             <h1 className="montserrat text-3xl lg:text-5xl text-white">
               
