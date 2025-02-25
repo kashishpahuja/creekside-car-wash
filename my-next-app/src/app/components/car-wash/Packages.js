@@ -9,96 +9,103 @@ function Packages() {
       </h3>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 xl:gap-8 pt-32">
-        <div className="relative text-center  ">
-          <div className="  rounded-t-xl  py-10 text-2xl gap-2 flex items-center justify-center  bg-[#1c7293] text-white">
-            $<span className="montserrat text-6xl">12.99</span>
-          </div>
-          <div className="rounded-b-lg shadow-lg py-6 bg-[#edede9]">
-            <ul className=" p-6 text-gray-700 font-semibold text-sm md:text-base space-y-4 text-center">
-              <li className=" ">2 Step Pre Soak</li>
-
-              <li className=" ">Triple Foam Conditioner</li>
-              <li className=" ">High Pressure Rinse (x2)</li>
-              <li className=" ">Extreme Shine Foam Arch Wash</li>
-              <li className=" ">Body Shield Wax</li>
-              <li className=" ">Undercarriage Blast</li>
-              <li className=" ">Spot Free Rinse</li>
-              <li className=" ">Dryer</li>
-            </ul>
-            <h5 className="montserrat bg-[#1c7293] px-8 text-white font-medium text-lg py-2 w-fit rounded-lg mx-auto">
-              REGULAR
-            </h5>
-          </div>
-        </div>
-
-        <div className="relative text-center  ">
-          <div className="  rounded-t-xl  py-10 text-2xl gap-2 flex items-center justify-center  bg-[#33658a] text-white">
-            $<span className="montserrat text-6xl">12.99</span>
-          </div>
-          <div className="rounded-b-lg shadow-lg py-6 bg-[#edede9]">
-            <ul className=" p-6 text-gray-700 font-semibold text-sm md:text-base space-y-4 text-center">
-              <li className=" ">2 Step Pre Soak</li>
-
-              <li className=" ">Triple Foam Conditioner</li>
-              <li className=" ">High Pressure Rinse (x2)</li>
-              <li className=" ">Extreme Shine Foam Arch Wash</li>
-              <li className=" ">Body Shield Wax</li>
-              <li className=" ">Undercarriage Blast</li>
-              <li className=" ">Spot Free Rinse</li>
-              <li className=" ">Dryer</li>
-            </ul>
-            <h5 className="montserrat bg-[#33658a] px-8 text-white font-medium text-lg py-2 w-fit rounded-lg mx-auto">
-              REGULAR
-            </h5>
-          </div>
-        </div>
 
 
         <div className="relative text-center  ">
-          <div className="  rounded-t-xl  py-10 text-2xl gap-2 flex items-center justify-center  bg-[#215168] text-white">
+        <h5 className="montserrat bg-[#183c5e] px-8 text-white font-medium text-lg py-8 rounded-t-xl   mx-auto">
+        TOUCHLESS BASE WASH
+            </h5>
+            <div className="bg-[#edede9] rounded-b-xl py-8">
+          <div className="  text-2xl gap-2 flex items-center justify-center  text-[#183c5e] ">
             $<span className="montserrat text-6xl">12.99</span>
           </div>
-          <div className="rounded-b-lg shadow-lg py-6 bg-[#edede9]">
+          <div className="">
             <ul className=" p-6 text-gray-700 font-semibold text-sm md:text-base space-y-4 text-center">
-              <li className=" ">2 Step Pre Soak</li>
+            <li className=" ">2 Step Pre Soak</li>
 
-              <li className=" ">Triple Foam Conditioner</li>
-              <li className=" ">High Pressure Rinse (x2)</li>
-              <li className=" ">Extreme Shine Foam Arch Wash</li>
-              <li className=" ">Body Shield Wax</li>
-              <li className=" ">Undercarriage Blast</li>
-              <li className=" ">Spot Free Rinse</li>
-              <li className=" ">Dryer</li>
+<li className=" ">High Pressure Rinse (x2)</li>
+
+<li className=" ">Body Shield Wax</li>
+<li className=" ">Undercarriage Blast</li>
+<li className=" ">Spot Free Rinse</li>
+<li className=" ">Dryer</li>
+
             </ul>
-            <h5 className="montserrat bg-[#215168] px-8 text-white font-medium text-lg py-2 w-fit rounded-lg mx-auto">
-              REGULAR
+     
+          </div>
+          </div>
+        </div> <div className="relative text-center  ">
+        <h5 className="montserrat bg-[#183c5e] px-8 text-white font-medium text-lg py-8 rounded-t-xl   mx-auto">
+        TOUCHLESS BETTER WASH
             </h5>
+            <div className="bg-[#edede9] rounded-b-xl py-8">
+          <div className="  text-2xl gap-2 flex items-center justify-center  text-[#183c5e] ">
+            $<span className="montserrat text-6xl">14.99</span>
+          </div>
+          <div className="">
+            <ul className=" p-6 text-gray-700 font-semibold text-sm md:text-base space-y-4 text-center">
+            <li className=" ">2 Step Pre Soak</li>
+
+<li className=" ">Triple Foam Conditioner</li>
+<li className=" ">High Pressure Rinse (x2)</li>
+<li className=" ">Body Shield Wax</li>
+<li className=" ">Undercarriage Blast</li>
+<li className=" ">Spot Free Rinse</li>
+<li className=" ">Dryer</li>
+
+            </ul>
+     
+          </div>
+          </div>
+        </div> <div className="relative text-center  ">
+        <h5 className="montserrat bg-[#183c5e] px-8 text-white font-medium text-lg py-8 rounded-t-xl   mx-auto">
+        TOUCHLESS BEST WASH
+            </h5>
+            <div className="bg-[#edede9] rounded-b-xl py-8">
+          <div className="  text-2xl gap-2 flex items-center justify-center  text-[#183c5e] ">
+            $<span className="montserrat text-6xl">19.99</span>
+          </div>
+          <div className="">
+            <ul className=" p-6 text-gray-700 font-semibold text-sm md:text-base space-y-4 text-center">
+            <li className=" ">2 Step Pre Soak</li>
+
+<li className=" ">Triple Foam Conditioner</li>
+<li className=" ">High Pressure Rinse (x2)</li>
+<li className=" ">Body Shield Wax</li>
+<li className=" ">Undercarriage Blast</li>
+<li className=" ">Spot Free Rinse</li>
+<li className=" ">Dryer</li>
+
+            </ul>
+     
+          </div>
           </div>
         </div>
+
 
 
         <div className="relative text-center  ">
-          <div className="  rounded-t-xl  py-10 text-2xl gap-2 flex items-center justify-center  bg-[#183c5e] text-white">
-            $<span className="montserrat text-6xl">12.99</span>
-          </div>
-          <div className="rounded-b-lg shadow-lg py-6 bg-[#edede9]">
-            <ul className=" p-6 text-gray-700 font-semibold text-sm md:text-base space-y-4 text-center">
-              <li className=" ">2 Step Pre Soak</li>
-
-              <li className=" ">Triple Foam Conditioner</li>
-              <li className=" ">High Pressure Rinse (x2)</li>
-              <li className=" ">Extreme Shine Foam Arch Wash</li>
-              <li className=" ">Body Shield Wax</li>
-              <li className=" ">Undercarriage Blast</li>
-              <li className=" ">Spot Free Rinse</li>
-              <li className=" ">Dryer</li>
-            </ul>
-            <h5 className="montserrat bg-[#183c5e] px-8 text-white font-medium text-lg py-2 w-fit rounded-lg mx-auto">
-              REGULAR
+        <h5 className="montserrat bg-[#183c5e] px-8 text-white font-medium text-lg py-8 rounded-t-xl   mx-auto">
+              THE WORKS WASH
             </h5>
+            <div className="bg-[#edede9] rounded-b-xl py-8">
+          <div className="  text-2xl gap-2 flex items-center justify-center  text-[#183c5e] ">
+            $<span className="montserrat text-6xl">29.99</span>
+          </div>
+          <div className="">
+            <ul className=" p-6 text-gray-700 font-semibold text-sm md:text-base space-y-4 text-center">
+              <li className=" ">**During Attendant hours only</li>
+
+         
+              <li className=" ">Bug/salt/bird dropping, wheels, windshields prep</li>
+              <li className=" ">Vacuum token worth 4minutes</li>
+              <li className=" ">Touchless Premium Wash</li>
+
+            </ul>
+     
+          </div>
           </div>
         </div>
-
       </div>
 
       {/* <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 xl:gap-8 pt-32">

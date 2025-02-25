@@ -12,9 +12,12 @@ export default function AlbumPage() {
       <main>
         <Banner />
         <Why />
-
         <Oil />
+
+        <Why />
         <Benefits />
+        <Why />
+
       </main>
     </div>
   );

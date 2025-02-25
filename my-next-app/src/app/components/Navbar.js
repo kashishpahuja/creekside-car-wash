@@ -167,9 +167,10 @@ function Navbar() {
     <div
 className={`absolute top-0 left-0 w-full z-[99999] md:transition-opacity duration-500 ease-in-out `}
 style={{
-  height: "120px", // Fixed height
-  backgroundColor: isScrolled ? "rgba(255, 255, 255, 0.95)" : "white", // Opacity effect
-  color: isScrolled ? "#272323" : "black",
+  // display: isScrolled ? "hidden" : "absolute",
+  height: "100px", // Fixed height
+  backgroundColor: isScrolled ? "rgba(255, 255, 255, 0.95)" : "rgba(0, 0, 0, 0.20)", // Opacity effect
+  color: isScrolled ? "#272323" : "white",
   boxShadow: isScrolled ? "0 4px 6px rgba(0, 0, 0, 0.1)" : "none",
   position: isScrolled ? "fixed" : "absolute",
   transform: "translateY(0%)", // Keeps it stable
@@ -183,7 +184,9 @@ style={{
           <Link href="/" className="">
             <Image
              width={400} height={400} 
-              src="/Images/newlogo.webp"
+             src={isScrolled ? "/Images/newlogo.webp" : "/Images/LogoWhite.webp"}
+      
+
               alt="Logo"
               className="object-contain w-full h-[100%]"
             />
@@ -192,7 +195,7 @@ style={{
 
         {/* Desktop Navigation */}
         <div className="hidden xl:flex items-center">
-          <ul className="exo flex items-center justify-center gap-8 xl:gap-8 text-md xl:text-md text-gray-600">
+          <ul className=" flex items-center justify-center gap-8 xl:gap-8 text-md xl:text-md ">
             <li className=" transition duration-300  py-6 px-2" >
               <Link href={"/"}>Home</Link>
             </li>

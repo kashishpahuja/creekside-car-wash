@@ -10,10 +10,10 @@ import React from "react";
 export default function AlbumPage({title}) {
   return (
 
-    <div className="text-black bg-black">
+    <div className="text-black bg-black ">
             <main>
       <div
-        className="relative h-[280px] lg:h-[400px] w-full "
+        className="relative h-[380px] lg:h-[500px] w-full "
         style={{
           backgroundImage: `url('/Images/detailing.webp')`,
           backgroundPosition: "center",
@@ -24,7 +24,7 @@ export default function AlbumPage({title}) {
           className="absolute inset-0 bg-black bg-opacity-70"
           aria-hidden="true"
         ></div>
-        <div className="relative z-20 top-[25%] left-[15%] md:left-[27%] xl:left-[35%] inline-block">
+        <div className="relative z-20 flex items-center justify-center h-[100%]">
           <div className="flex flex-col gap-4 items-start  ">
             <h1 className="montserrat text-2xl lg:text-5xl text-white">
               

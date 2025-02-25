@@ -3,7 +3,9 @@
 import dynamic from 'next/dynamic';
 
 // Import critical components normally (do not lazy-load)
-import Banner from "./components/Banner4";
+// import Banner from "./components/Banner2";
+import Banner from "./components/Banner5";
+
 import Services from "./components/Services";
 
 // Dynamically import non-critical components
@@ -20,10 +22,11 @@ export default function Home() {
         <div>
           {/* Keep critical components static */}
           <Banner />
-          <Services />
 
           {/* Lazy-load non-critical components */}
           <Circle />
+          <Services />
+
           <Bay />
           <Blog />
           <Gift />

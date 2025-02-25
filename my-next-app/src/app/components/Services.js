@@ -4,8 +4,8 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 function Services() {
   return (
-    <div className='my-24'>
-      <h3 className="montserrat text-2xl lg:text-6xl text-black text-center mb-12">
+    <div className='mb-12'>
+      <h3 className="montserrat text-2xl lg:text-5xl text-black text-center mb-12">
         OUR SERVICES
       </h3>
       

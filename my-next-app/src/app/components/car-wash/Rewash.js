@@ -5,10 +5,10 @@ import React from "react";
 function Rewash() {
   return (
     <div className="bg-gray-200 text-center py-24 px-6 md:px-12 xl:px-32">
-      <h3 className="montserrat text-2xl  lg:text-3xl font-bold text-gray-700 text-center">
+      <h3 className="montserrat text-2xl  lg:text-3xl font-bold text-[#183c5e] text-center">
         REWASH POLICY
       </h3>
-      <h3 className="montserrat text-lg  lg:text-xl font-bold text-gray-600 text-center my-6 ">
+      <h3 className="montserrat text-lg  lg:text-xl font-bold text-[#183c5e] text-center my-6 ">
         Did We Miss A Spot?
       </h3>
       <div className="flex items-center gap-12 justify-center flex-col xl:flex-row  relative z-30 px-4 md:px-8    w-full  text-black  rounded-xl ">

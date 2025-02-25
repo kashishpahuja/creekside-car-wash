@@ -99,7 +99,7 @@ const News = () => {
     <div className="relative text-center px-4 lg:px-24 overflow-hidden my-24">
       {/* Title Section */}
 
-      <h2 className="montserrat text-2xl lg:text-6xl text-black text-center mb-12">
+      <h2 className="montserrat text-2xl lg:text-5xl text-black text-center mb-12">
         OUR BLOGS
       </h2>
       <Link href={"/blogs"} className="mx-auto">
