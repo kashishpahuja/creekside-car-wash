@@ -4,7 +4,7 @@ import React from "react";
 function Oil() {
   return (
     <div className="relative z-20 mb-24 py-12"  style={{
-      backgroundImage: `url('/Images/oil/oilBG.jpg')`,
+      backgroundImage: `url('/Images/oil/oilBG.webp')`,
       // backgroundPosition: "center",
       backgroundSize: "cover",
     }} >

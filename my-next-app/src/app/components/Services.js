@@ -4,12 +4,12 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 function Services() {
   return (
-    <div className='mb-12'>
-      <h3 className="montserrat text-2xl lg:text-5xl text-black text-center mb-12">
+    <div className='my-16'>
+      <h3 className="montserrat text-4xl lg:text-5xl text-black text-center ">
         OUR SERVICES
       </h3>
       
-      <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 py-4 gap-4 lg:gap-2 mx-6 lg:mx-0'>
+      <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 mt-12 py-4 gap-4 lg:gap-2 mx-6 lg:mx-0'>
         
         {/* Service 1: Car Wash */}
         <div
@@ -33,7 +33,7 @@ function Services() {
         <div
           className='relative w-full h-[260px] lg:h-[360px] bg-cover bg-center rounded shadow-lg overflow-hidden' 
             loading="lazy"
-          style={{ backgroundImage: `url('/Images/services/autoGlass.jpg')` }}
+          style={{ backgroundImage: `url('/Images/services/autoGlass.webp')` }}
         >
           <Link href='/oil-undercoating'>
             {/* Black overlay */}
@@ -51,7 +51,7 @@ function Services() {
         <div
           className='relative w-full h-[260px] lg:h-[360px] bg-cover bg-center rounded shadow-lg overflow-hidden' 
             loading="lazy"
-          style={{ backgroundImage: `url('/Images/services/detailing.jpg')` }}
+          style={{ backgroundImage: `url('/Images/services/detailing.webp')` }}
           
         >
           <Link href='/detailing'>

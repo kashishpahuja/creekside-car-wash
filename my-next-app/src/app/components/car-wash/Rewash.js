@@ -31,7 +31,7 @@ function Rewash() {
 
         <div className=" w-full xl:w-1/2 rounded-xl">
           <Image  width={400} height={400} 
-            src="/Images/footer.jpg"
+            src="/Images/footer.webp"
             alt=""
             className=" w-full h-[100%] object-contain rounded-xl"
           />

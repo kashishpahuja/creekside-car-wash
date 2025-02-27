@@ -22,7 +22,7 @@ function Gift() {
           <Image
           width={400}
           height={400}
-            src="/Images/gift/card0.png"
+            src="/Images/gift/card0.webp"
             alt=""
             className=" w-full h-[100%] object-contain"
           />
@@ -32,7 +32,7 @@ function Gift() {
             JOIN YOUR COMMUNITY CAR WASH
           </h3>
           <p className="montserrat my-8 text-lg lg:text-2xl  text-gray-800">
-            Get Creekside’s prepaid wash cards in 2 easy steps!
+            Get Creekside&apos;s prepaid wash cards in 2 easy steps!
           </p>
           <div className="xl:w-[800px] mx-auto">
             <p className="exo  text-gray-700 text-md lg:text-lg ">

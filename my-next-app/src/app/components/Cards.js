@@ -9,8 +9,8 @@ import Image from "next/image";
 function Producer() {
   const services = [
     {id:'1', name: 'Car Wraps', image: '/Images/services/carWraps.webp', icon: <MdKeyboardDoubleArrowRight /> },
-    { id:'2', name: 'Auto Glass', image: '/Images/services/autoGlass.jpg', icon: <MdKeyboardDoubleArrowRight /> },
-    { id:'3', name: 'Auto Detailing', image: '/Images/services/detailing.jpg', icon: <MdKeyboardDoubleArrowRight /> },
+    { id:'2', name: 'Auto Glass', image: '/Images/services/autoGlass.webp', icon: <MdKeyboardDoubleArrowRight /> },
+    { id:'3', name: 'Auto Detailing', image: '/Images/services/detailing.webp', icon: <MdKeyboardDoubleArrowRight /> },
     { id:'4', name: 'Car Wash', image: '/Images/services/carWash.webp', icon: <MdKeyboardDoubleArrowRight /> },
   ];
 

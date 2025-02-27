@@ -1,15 +1,10 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-
-// Import critical components normally (do not lazy-load)
-// import Banner from "./components/Banner2";
-import Banner from "./components/Banner5";
-
+import Banner from "./components/Banner";
 import Services from "./components/Services";
-
-// Dynamically import non-critical components
 const Blog = dynamic(() => import("./components/Blogs"));
+const Car = dynamic(() => import("./components/Car"));
 const Circle = dynamic(() => import("./components/Circle"));
 const Bay = dynamic(() => import("./components/Bay"));
 const Gift = dynamic(() => import("./components/Gift"));
@@ -20,12 +15,13 @@ export default function Home() {
     <div>
       <main>
         <div>
-          {/* Keep critical components static */}
+     
           <Banner />
 
-          {/* Lazy-load non-critical components */}
-          <Circle />
+
           <Services />
+          <Car/>
+          <Circle />
 
           <Bay />
           <Blog />

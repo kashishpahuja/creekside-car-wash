@@ -165,16 +165,16 @@ function Navbar() {
 
   return (
     <div
-className={`absolute top-0 left-0 w-full z-[99999] md:transition-opacity duration-500 ease-in-out `}
+className={`absolute top-0 left-0 w-full z-[99999] bg-transparent text-white md:transition-opacity duration-500 ease-in-out `}
 style={{
-  // display: isScrolled ? "hidden" : "absolute",
+  visibility: isScrolled ? "hidden" : "visible",
   height: "100px", // Fixed height
-  backgroundColor: isScrolled ? "rgba(255, 255, 255, 0.95)" : "rgba(0, 0, 0, 0.20)", // Opacity effect
-  color: isScrolled ? "#272323" : "white",
-  boxShadow: isScrolled ? "0 4px 6px rgba(0, 0, 0, 0.1)" : "none",
-  position: isScrolled ? "fixed" : "absolute",
-  transform: "translateY(0%)", // Keeps it stable
-  transition: "background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out",
+  // backgroundColor: isScrolled ? "rgba(255, 255, 255, 0.95)" : "rgba(0, 0, 0, 0.20)", // Opacity effect
+  // color: isScrolled ? "#272323" : "white",
+  // boxShadow: isScrolled ? "0 4px 6px rgba(0, 0, 0, 0.1)" : "none",
+  // position: isScrolled ? "fixed" : "absolute",
+  // transform: "translateY(0%)", // Keeps it stable
+  // transition: "background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out",
 }}
 
 >
@@ -274,7 +274,7 @@ style={{
         <div className="xl:hidden">
           <button
             onClick={toggleMenu}
-            className="text-2xl text-[#ee0a00] focus:outline-none"
+            className="text-2xl text-white focus:outline-none"
           >
             {menuOpen ? <FaTimes /> : <FaBars />}
           </button>

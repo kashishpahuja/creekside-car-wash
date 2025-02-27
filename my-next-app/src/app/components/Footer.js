@@ -20,7 +20,7 @@ const Footer = () => {
   return (
     <div 
     style={{
-        backgroundImage: `url('/Images/footerImg.jpg')`,
+        backgroundImage: `url('/Images/footerImg.webp')`,
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}

@@ -3,6 +3,8 @@ import React from "react";
 
 function Bay() {
   return (
+    <div>
+  
     <div 
     style={{
       backgroundImage: `url('/Images/gift/bg.webp')`,
@@ -17,7 +19,7 @@ function Bay() {
       <div className=" rounded-xl  relative z-20 flex items-start justify-between flex-col xl:flex-row gap-8 mx-auto">
         {/* Left Side */}
         <div className="w-full xl:w-[60%] space-y-6">
-          <h3 className="montserrat text-lg lg:text-3xl font-bold text-center lg:text-left text-black">
+          <h3 className="montserrat text-2xl lg:text-4xl font-bold text-center lg:text-left text-black">
             Self-Serve Bays with Hot Water (Maximum Height 11&#39;6)
           </h3>
           <div className="space-y-4">
@@ -85,6 +87,7 @@ function Bay() {
         </div>
       </div>
       
+    </div>
     </div>
   );
 }
