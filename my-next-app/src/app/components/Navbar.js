@@ -203,7 +203,7 @@ style={{
               <Link href={"/about"}>About Us</Link>
             </li>
             <li
-              className="relative group  transition duration-300  py-6 px-2 flex items-center"
+              className="relative group  transition duration-300  py-6 px-2 flex items-center cursor-pointer"
               onMouseEnter={() => setIsDropdownOpen(true)} onMouseLeave={() => setIsDropdownOpen(false)}
              
             >
@@ -233,21 +233,21 @@ style={{
     animate={{ height: "auto", opacity: 1 }}
     exit={{ height: 0, opacity: 0 }}
     transition={{ duration: 0.7, ease: "easeInOut" }}
-    className="absolute top-full left-0 w-64 bg-white text-black shadow-lg"
+    className="absolute top-full left-0 w-64 bg-white text-black shadow-lg rounded-lg"
     onMouseLeave={() => setIsDropdownOpen(false)}
   >
     <ul className="flex flex-col">
-      <li className="hover:text-red-600 hover:bg-gray-200 border-b px-4 py-4">
+      <li className="hover:text-white hover:bg-black  border-b px-4 py-4 rounded-t-lg">
         <Link className="text-md" href="/car-wash">Car Wash</Link>
       </li>
-      <li className="hover:text-red-600 hover:bg-gray-200 border-b px-4 py-4">
+      <li className="hover:text-white hover:bg-black border-b px-4 py-4">
         <Link className="text-md" href="/oil-undercoating">Oil Undercoating</Link>
       </li>
-      <li className="hover:text-red-600 hover:bg-gray-200 border-b px-4 py-4">
+      <li className="hover:text-white hover:bg-black border-b px-4 py-4">
         <Link className="text-md" href="/detailing">Detailing</Link>
       </li>
-      <li className="hover:text-red-600 hover:bg-gray-200 border-b px-4 py-4">
-        <Link className="text-md" href="/window-tinting">Window Tinting</Link>
+      <li className="hover:text-white hover:bg-black  px-4 py-4 rounded-b-lg">
+        <Link className="text-md" href="/window-tinting">Fleet Accounts</Link>
       </li> 
     </ul>
   </motion.div>

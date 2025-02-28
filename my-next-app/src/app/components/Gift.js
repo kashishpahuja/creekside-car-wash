@@ -18,7 +18,7 @@ function Gift() {
         aria-hidden="true"
       ></div>
       <div className="my-12 flex items-center justify-center flex-col xl:flex-row  relative z-30 px-4 md:px-8 lg:px-24 w-full  text-black  rounded-xl">
-        <div className="zoom:hover w-full md:h-[500px] ">
+        <Link href={'/gift-card'} className="zoom:hover w-full md:h-[500px] ">
           <Image
           width={400}
           height={400}
@@ -26,7 +26,7 @@ function Gift() {
             alt=""
             className=" w-full h-[100%] object-contain"
           />
-        </div>
+        </Link>
         <div className="text-center lg:pb-8">
           <h3 className="montserrat text-3xl  xl:text-5xl text-black">
             JOIN YOUR COMMUNITY CAR WASH

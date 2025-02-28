@@ -4,11 +4,11 @@ import { SiTicktick } from "react-icons/si";
 function Packages() {
   return (
     <div className="my-24 mx-8 lg:mx-16 xl:mx-24">
-      <h3 className="montserrat text-2xl  lg:text-4xl  text-gray-700 text-center">
+      <h3 className="montserrat text-3xl  lg:text-4xl  text-black text-center">
         OUR PACKAGES
       </h3>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 xl:gap-8 pt-32">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 xl:gap-8 pt-12">
 
 
         <div className="relative text-center  ">

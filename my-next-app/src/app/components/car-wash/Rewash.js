@@ -5,16 +5,16 @@ import React from "react";
 function Rewash() {
   return (
     <div className="bg-gray-200 text-center py-24 px-6 md:px-12 xl:px-32">
-      <h3 className="montserrat text-2xl  lg:text-3xl font-bold text-[#183c5e] text-center">
+      <h3 className="montserrat text-3xl  xl:text-4xl text-black text-center mb-6 ">
         REWASH POLICY
       </h3>
-      <h3 className="montserrat text-lg  lg:text-xl font-bold text-[#183c5e] text-center my-6 ">
-        Did We Miss A Spot?
-      </h3>
-      <div className="flex items-center gap-12 justify-center flex-col xl:flex-row  relative z-30 px-4 md:px-8    w-full  text-black  rounded-xl ">
+     
+      <div className=" flex items-center gap-12 justify-center flex-col xl:flex-row  relative z-30 px-4 md:px-8    w-full  text-black  rounded-xl ">
        
         <div className="w-full xl:w-1/2 text-center lg:pb-8">
-        
+        <h3 className="montserrat text-lg  lg:text-xl font-bold text-gray-800 text-center my-6 ">
+        Did We Miss A Spot?
+      </h3>
           <p className="exo  text-gray-700 text-sm md:text-md lg:text-lg ">
             Simply choose a denomination (savings included) and proceed to the
             secure checkout screen. You will receive a confirmation email and we
