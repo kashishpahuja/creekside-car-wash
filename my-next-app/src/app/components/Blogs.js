@@ -56,7 +56,7 @@ const News = () => {
       <Swiper
         modules={[Navigation, Autoplay]}
         spaceBetween={30}
-        slidesPerView={3}
+        // slidesPerView={3}
         navigation={false}
         autoplay={{ delay: 3000 }}
         breakpoints={{
@@ -86,7 +86,7 @@ const News = () => {
                       height={400}
                       src={blog.image}
                       alt="img"
-                      className="w-full h-72 object-cover"
+                      className="w-full h-72 2xl:h-80 object-cover"
                     />
                   </div>
                   <div className="mt-4">

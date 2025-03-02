@@ -165,10 +165,10 @@ function Navbar() {
 
   return (
     <div
-className={`absolute top-0 left-0 w-full z-[99999] bg-transparent text-white md:transition-opacity duration-500 ease-in-out `}
+className={`absolute top-0 left-0 w-full z-[99999] bg-transparent text-white md:transition-opacity duration-500 ease-in-out h-[100px] 2xl:h-[120px]`}
 style={{
   visibility: isScrolled ? "hidden" : "visible",
-  height: "100px", // Fixed height
+  // height: "100px", // Fixed height
   // backgroundColor: isScrolled ? "rgba(255, 255, 255, 0.95)" : "rgba(0, 0, 0, 0.20)", // Opacity effect
   // color: isScrolled ? "#272323" : "white",
   // boxShadow: isScrolled ? "0 4px 6px rgba(0, 0, 0, 0.1)" : "none",
@@ -180,7 +180,7 @@ style={{
 >
       <div className="text-lg font-medium flex items-center justify-between px-4 xl:px-20 h-full xl:mx-8">
         {/* Logo */}
-        <div className="w-44 lg:w-48 h-20 overflow-hidden">
+        <div className="w-44 lg:w-48 h-20 2xl:w-56 overflow-hidden">
           <Link href="/" className="">
             <Image
              width={400} height={400} 
@@ -195,7 +195,7 @@ style={{
 
         {/* Desktop Navigation */}
         <div className="hidden xl:flex items-center">
-          <ul className=" flex items-center justify-center gap-8 xl:gap-8 text-md xl:text-md ">
+          <ul className=" flex items-center justify-center gap-8 xl:gap-8 text-md 2xl:text-xl  ">
             <li className=" transition duration-300  py-6 px-2" >
               <Link href={"/"}>Home</Link>
             </li>
@@ -208,46 +208,53 @@ style={{
              
             >
              Services{" "} <RiArrowDropDownLine />
-              {/* {isDropdownOpen && (
-                <div className="absolute  top-full left-0  w-64 bg-white text-black "  onMouseLeave={() => setIsDropdownOpen(false)}>
-                  <ul className="flex flex-col">
-                    <li className="hover:text-red-600 hover:bg-gray-200 border-b  px-4 py-4">
-                      <Link className="text-md " href="/car-wash">Car Wash</Link>
-                    </li>
-                    <li className="hover:text-red-600 hover:bg-gray-200 border-b  px-4 py-4">
-                      <Link className="text-md " href="/oil-undercoating">Oil Undercoating</Link>
-                    </li>
-                    <li className="hover:text-red-600 hover:bg-gray-200 border-b  px-4 py-4">
-                      <Link className="text-md " href="/detailing">Detailing</Link>
-                    </li>
-                    <li className="hover:text-red-600 hover:bg-gray-200 border-b  px-4 py-4">
-                      <Link className="text-md " href="/window-tinting">Window Tinting</Link>
-                    </li> 
-                  </ul>
-                </div>
-              )} */}
-
-{isDropdownOpen && (
+             {/* {isDropdownOpen && (
   <motion.div
-    initial={{ height: 0, opacity: 0 }}
-    animate={{ height: "auto", opacity: 1 }}
-    exit={{ height: 0, opacity: 0 }}
-    transition={{ duration: 0.7, ease: "easeInOut" }}
-    className="absolute top-full left-0 w-64 bg-white text-black shadow-lg rounded-lg"
+    initial={{ opacity: 0, x: 20 }}
+    animate={{ opacity: 1, x: 0 }}
+    exit={{ opacity: 0, x: 20 }}
+    transition={{ duration: 0.3, ease: "easeOut" }}
+    className="absolute top-full left-0 w-64 bg-white text-black shadow-lg"
     onMouseLeave={() => setIsDropdownOpen(false)}
   >
     <ul className="flex flex-col">
-      <li className="hover:text-white hover:bg-black  border-b px-4 py-4 rounded-t-lg">
+      <li className="hover:text-red-600 hover:bg-gray-200 border-b px-4 py-4">
         <Link className="text-md" href="/car-wash">Car Wash</Link>
       </li>
-      <li className="hover:text-white hover:bg-black border-b px-4 py-4">
+      <li className="hover:text-red-600 hover:bg-gray-200 border-b px-4 py-4">
         <Link className="text-md" href="/oil-undercoating">Oil Undercoating</Link>
       </li>
-      <li className="hover:text-white hover:bg-black border-b px-4 py-4">
+      <li className="hover:text-red-600 hover:bg-gray-200 border-b px-4 py-4">
         <Link className="text-md" href="/detailing">Detailing</Link>
       </li>
-      <li className="hover:text-white hover:bg-black  px-4 py-4 rounded-b-lg">
-        <Link className="text-md" href="/window-tinting">Fleet Accounts</Link>
+      <li className="hover:text-red-600 hover:bg-gray-200 border-b px-4 py-4">
+        <Link className="text-md" href="/window-tinting">Window Tinting</Link>
+      </li> 
+    </ul>
+  </motion.div>
+)} */}
+
+{isDropdownOpen && (
+  <motion.div
+    initial={{ opacity: 0, x: 20 }}
+    animate={{ opacity: 1, x: 0 }}
+    exit={{ opacity: 0, x: 20 }}
+    transition={{ duration: 0.3, ease: "easeOut" }}
+    className="absolute top-full left-0 w-64 bg-white text-gray-900 font-semibold shadow-lg rounded-lg border border-gray-200"
+    onMouseLeave={() => setIsDropdownOpen(false)}
+  >
+    <ul className="flex flex-col">
+      <li className="hover:bg-gray-100 rounded-lg border-b px-4 py-4 transition-all duration-200">
+        <Link className="text-md font-medium" href="/car-wash">Car Wash</Link>
+      </li>
+      <li className="hover:bg-gray-100 rounded-lg border-b px-4 py-4 transition-all duration-200">
+        <Link className="text-md font-medium" href="/oil-undercoating">Oil Undercoating</Link>
+      </li>
+      <li className="hover:bg-gray-100 rounded-lg border-b px-4 py-4 transition-all duration-200">
+        <Link className="text-md font-medium" href="/detailing">Detailing</Link>
+      </li>
+      <li className="hover:bg-gray-100 rounded-lg px-4 py-4 transition-all duration-200">
+        <Link className="text-md font-medium" href="/window-tinting">Window Tinting</Link>
       </li> 
     </ul>
   </motion.div>

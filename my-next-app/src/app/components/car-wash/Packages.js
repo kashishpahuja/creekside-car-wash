@@ -12,11 +12,11 @@ function Packages() {
 
 
         <div className="relative text-center  ">
-        <h5 className="montserrat bg-[#183c5e] px-8 text-white font-medium text-lg py-8 rounded-t-xl   mx-auto">
+        <h5 className="montserrat bg-[#1f1e1f] px-8 text-white font-medium text-lg py-8 rounded-t-xl   mx-auto">
         TOUCHLESS BASE WASH
             </h5>
             <div className="bg-[#edede9] rounded-b-xl py-8">
-          <div className="  text-2xl gap-2 flex items-center justify-center  text-[#183c5e] ">
+          <div className="  text-2xl gap-2 flex items-center justify-center  text-[#1f1e1f] ">
             $<span className="montserrat text-6xl">12.99</span>
           </div>
           <div className="">
@@ -35,11 +35,11 @@ function Packages() {
           </div>
           </div>
         </div> <div className="relative text-center  ">
-        <h5 className="montserrat bg-[#183c5e] px-8 text-white font-medium text-lg py-8 rounded-t-xl   mx-auto">
+        <h5 className="montserrat bg-[#1f1e1f] px-8 text-white font-medium text-lg py-8 rounded-t-xl   mx-auto">
         TOUCHLESS BETTER WASH
             </h5>
             <div className="bg-[#edede9] rounded-b-xl py-8">
-          <div className="  text-2xl gap-2 flex items-center justify-center  text-[#183c5e] ">
+          <div className="  text-2xl gap-2 flex items-center justify-center  text-[#1f1e1f] ">
             $<span className="montserrat text-6xl">14.99</span>
           </div>
           <div className="">
@@ -58,11 +58,11 @@ function Packages() {
           </div>
           </div>
         </div> <div className="relative text-center  ">
-        <h5 className="montserrat bg-[#183c5e] px-8 text-white font-medium text-lg py-8 rounded-t-xl   mx-auto">
+        <h5 className="montserrat bg-[#1f1e1f] px-8 text-white font-medium text-lg py-8 rounded-t-xl   mx-auto">
         TOUCHLESS BEST WASH
             </h5>
             <div className="bg-[#edede9] rounded-b-xl py-8">
-          <div className="  text-2xl gap-2 flex items-center justify-center  text-[#183c5e] ">
+          <div className="  text-2xl gap-2 flex items-center justify-center  text-[#1f1e1f] ">
             $<span className="montserrat text-6xl">19.99</span>
           </div>
           <div className="">
@@ -85,11 +85,11 @@ function Packages() {
 
 
         <div className="relative text-center  ">
-        <h5 className="montserrat bg-[#183c5e] px-8 text-white font-medium text-lg py-8 rounded-t-xl   mx-auto">
+        <h5 className="montserrat bg-[#1f1e1f] px-8 text-white font-medium text-lg py-8 rounded-t-xl   mx-auto">
               THE WORKS WASH
             </h5>
             <div className="bg-[#edede9] rounded-b-xl py-8">
-          <div className="  text-2xl gap-2 flex items-center justify-center  text-[#183c5e] ">
+          <div className="  text-2xl gap-2 flex items-center justify-center  text-[#1f1e1f] ">
             $<span className="montserrat text-6xl">29.99</span>
           </div>
           <div className="">

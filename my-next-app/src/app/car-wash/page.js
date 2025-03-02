@@ -13,10 +13,11 @@ export default function AlbumPage() {
     <div className="">
       <main>
         <Banner />
+        <Features/>
+
         <Bay/>
         <Packages/>
         <Rewash/>
-        <Features/>
       </main>
     </div>
   );

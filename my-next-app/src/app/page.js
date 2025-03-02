@@ -14,16 +14,12 @@ export default function Home() {
   return (
     <div>
       <main>
-        <div>
-     
+        <div>     
           <Banner />
-
-
+          <Circle />
           <Services />
           <Car/>
-          <Circle />
-
-          <Bay />
+          {/* <Bay /> */}
           <Blog />
           <Gift />
           <ContactPopup />

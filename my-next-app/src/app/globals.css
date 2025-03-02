@@ -135,3 +135,11 @@ body {
 .flipping {
   animation: flipOut 1s forwards;
 }
+
+
+
+.kashish{
+  height: 20px;
+  width: 45px;
+  border: 2px solid #64fcfd;
+}

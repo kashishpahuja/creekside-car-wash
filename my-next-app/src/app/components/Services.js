@@ -13,7 +13,7 @@ function Services() {
         
         {/* Service 1: Car Wash */}
         <div
-          className='relative w-full h-[260px] lg:h-[360px] bg-cover bg-center rounded shadow-lg overflow-hidden' 
+          className='relative w-full h-[260px] lg:h-[360px] 2xl:h-[440px] bg-cover bg-center rounded shadow-lg overflow-hidden' 
             loading="lazy"
           style={{ backgroundImage: `url('/Images/services/carWash.webp')` }}
         >
@@ -31,7 +31,7 @@ function Services() {
 
         {/* Service 2: Oil Under Coating */}
         <div
-          className='relative w-full h-[260px] lg:h-[360px] bg-cover bg-center rounded shadow-lg overflow-hidden' 
+          className='relative w-full h-[260px] lg:h-[360px] 2xl:h-[440px] bg-cover bg-center rounded shadow-lg overflow-hidden' 
             loading="lazy"
           style={{ backgroundImage: `url('/Images/services/autoGlass.webp')` }}
         >
@@ -49,7 +49,7 @@ function Services() {
 
         {/* Service 3: Detailing */}
         <div
-          className='relative w-full h-[260px] lg:h-[360px] bg-cover bg-center rounded shadow-lg overflow-hidden' 
+          className='relative w-full h-[260px] lg:h-[360px] 2xl:h-[440px] bg-cover bg-center rounded shadow-lg overflow-hidden' 
             loading="lazy"
           style={{ backgroundImage: `url('/Images/services/detailing.webp')` }}
           
@@ -68,7 +68,7 @@ function Services() {
 
         {/* Service 4: Window Tinting */}
         <div
-          className='relative w-full h-[260px] lg:h-[360px] bg-cover bg-center rounded shadow-lg overflow-hidden' 
+          className='relative w-full h-[260px] lg:h-[360px] 2xl:h-[440px] bg-cover bg-center rounded shadow-lg overflow-hidden' 
             loading="lazy"
           style={{ backgroundImage: `url('/Images/services/carWraps.webp')` }}
         >
