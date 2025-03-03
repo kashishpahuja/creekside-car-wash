@@ -40,7 +40,7 @@ function Popup({ menuOpen }) {
                   { href: "/car-wash", label: "CAR WASH" },
                   { href: "/oil-undercoating", label: "OIL UNDERCOATING" },
                   { href: "/detailing", label: "DETAILING" },
-                  { href: "/window-tinting", label: "WINDOW TINTING" },
+                  { href: "/fleet-accounts", label: "FLEET ACCOUNTS" },
                   { href: "/contact", label: "CONTACT US" },
                 ].map((item, index) => (
                   <Link key={index} href={item.href} onClick={menuOpen}>

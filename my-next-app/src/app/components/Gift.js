@@ -35,7 +35,7 @@ function Gift() {
             Get Creekside&apos;s prepaid wash cards in 2 easy steps!
           </p>
           <div className="xl:w-[800px] mx-auto">
-            <p className="exo  text-gray-300 text-md lg:text-lg text-justify">
+            <p className="exo  text-gray-300 text-md 2xl:text-xl    text-justify">
               Simply choose a denomination (savings included) and proceed to the
               secure checkout screen. You will receive a confirmation email and
               we will have your card or fob ready for pickup in 24hrs. For all

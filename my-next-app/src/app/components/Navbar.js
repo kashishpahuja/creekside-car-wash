@@ -178,9 +178,9 @@ style={{
 }}
 
 >
-      <div className="text-lg font-medium flex items-center justify-between px-4 xl:px-20 h-full xl:mx-8">
+      <div className="text-lg font-medium flex items-center justify-between px-4 xl:px-12 h-full 2xl:mx-8">
         {/* Logo */}
-        <div className="w-44 lg:w-48 h-20 2xl:w-56 overflow-hidden">
+        <div className="w-44 lg:w-40 h-20 2xl:w-56 overflow-hidden">
           <Link href="/" className="">
             <Image
              width={400} height={400} 
@@ -195,15 +195,15 @@ style={{
 
         {/* Desktop Navigation */}
         <div className="hidden xl:flex items-center">
-          <ul className=" flex items-center justify-center gap-8 xl:gap-8 text-md 2xl:text-xl  ">
-            <li className=" transition duration-300  py-6 px-2" >
-              <Link href={"/"}>Home</Link>
+          <ul className=" flex items-center justify-center gap-8  text-md xl:text-md  2xl:text-xl  ">
+            <li className="zoom py-6 px-2" >
+              <Link className="text-md 2xl:text-xl" href={"/"}>Home</Link>
             </li>
-            <li className=" transition duration-300  py-6 px-2">
-              <Link href={"/about"}>About Us</Link>
+            <li className="zoom  py-6 px-2">
+              <Link className="text-md 2xl:text-xl" href={"/about"}>About Us</Link>
             </li>
             <li
-              className="relative group  transition duration-300  py-6 px-2 flex items-center cursor-pointer"
+              className="zoom relative group text-md 2xl:text-xl  transition duration-300  py-6 px-2 flex items-center cursor-pointer   "
               onMouseEnter={() => setIsDropdownOpen(true)} onMouseLeave={() => setIsDropdownOpen(false)}
              
             >
@@ -240,21 +240,21 @@ style={{
     animate={{ opacity: 1, x: 0 }}
     exit={{ opacity: 0, x: 20 }}
     transition={{ duration: 0.3, ease: "easeOut" }}
-    className="absolute top-full left-0 w-64 bg-white text-gray-900 font-semibold shadow-lg rounded-lg border border-gray-200"
+    className="absolute top-full left-0 w-64 bg-[#1f1e1f] text-gray-100 font-semibold  rounded-lg"
     onMouseLeave={() => setIsDropdownOpen(false)}
   >
     <ul className="flex flex-col">
-      <li className="hover:bg-gray-100 rounded-lg border-b px-4 py-4 transition-all duration-200">
-        <Link className="text-md font-medium" href="/car-wash">Car Wash</Link>
+      <li className="hover:bg-[#302d30f5] rounded-lg border-b border-[#49474936] px-4 py-4 transition-all duration-200">
+        <Link className=" text-md font-medium" href="/car-wash">Car Wash</Link>
       </li>
-      <li className="hover:bg-gray-100 rounded-lg border-b px-4 py-4 transition-all duration-200">
-        <Link className="text-md font-medium" href="/oil-undercoating">Oil Undercoating</Link>
+      <li className="hover:bg-[#302d30f5] rounded-lg border-b border-[#49474936] px-4 py-4 transition-all duration-200">
+        <Link className=" text-md font-medium" href="/oil-undercoating">Oil Undercoating</Link>
       </li>
-      <li className="hover:bg-gray-100 rounded-lg border-b px-4 py-4 transition-all duration-200">
-        <Link className="text-md font-medium" href="/detailing">Detailing</Link>
+      <li className="hover:bg-[#302d30f5] rounded-lg border-b border-[#49474936] px-4 py-4 transition-all duration-200">
+        <Link className=" text-md font-medium" href="/detailing">Detailing</Link>
       </li>
-      <li className="hover:bg-gray-100 rounded-lg px-4 py-4 transition-all duration-200">
-        <Link className="text-md font-medium" href="/window-tinting">Window Tinting</Link>
+      <li className="hover:bg-[#302d30f5] rounded-lg px-4 py-4 transition-all duration-200">
+        <Link className="  text-md font-medium" href="/fleet-accounts">Fleet Accounts</Link>
       </li> 
     </ul>
   </motion.div>
@@ -262,17 +262,17 @@ style={{
 
 
             </li>
-            <li className=" transition duration-300  py-6 px-2">
-              <Link href="/gift-card">Gift Cards</Link>
+            <li className="zoom   py-6 px-2">
+              <Link href="/gift-card" className="text-md 2xl:text-xl">Gift Cards</Link>
             </li>
-            <li className=" transition duration-300  py-6 px-2">
-              <Link href="/blogs">Blogs</Link>
+            <li className=" zoom py-6 px-2">
+              <Link href="/blogs" className="text-md 2xl:text-xl">Blogs</Link>
             </li>
-            <li className=" transition duration-300  py-6 px-2">
-              <Link href="/faq">FAQ</Link>
+            <li className=" zoom py-6 px-2">
+              <Link href="/faq" className="text-md 2xl:text-xl">FAQ</Link>
             </li>
-            <li className=" transition duration-300  py-6 px-2">
-              <Link href="/contact">Contact Us</Link>
+            <li className=" zoom py-6 px-2">
+              <Link href="/contact" className="text-md 2xl:text-xl">Contact Us</Link>
             </li>
           </ul>
         </div>

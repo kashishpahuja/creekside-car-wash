@@ -137,7 +137,7 @@ const Footer = () => {
              
               <li className="flex items-center hover:animate-pulse">
                 <FaChevronRight className="mr-2" />
-                <Link className="text-md xl:text-lg" href="/window-tinting">Window Tinting</Link>
+                <Link className="text-md xl:text-lg" href="/fleet-accounts">Fleet Accounts</Link>
               </li>
            
             </ul>

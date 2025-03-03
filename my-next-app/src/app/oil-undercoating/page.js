@@ -5,18 +5,23 @@ import Banner from "../components/oil-undercoating/Banner";
 import Oil from "../components/oil-undercoating/Oil";
 import Benefits from "../components/oil-undercoating/Benefits";
 import Why from "../components/oil-undercoating/Why";
+import Oil2 from '../components/oil-undercoating/OilTwo'
 
 export default function AlbumPage() {
   return (
     <div className="">
       <main>
         <Banner />
-        <Why />
+        <Benefits />
+
+        <Oil2 />
         <Oil />
 
         <Why />
-        <Benefits />
-        <Why />
+
+
+        
+
 
       </main>
     </div>

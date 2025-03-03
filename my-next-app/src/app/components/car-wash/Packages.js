@@ -12,7 +12,7 @@ function Packages() {
 
 
         <div className="relative text-center  ">
-        <h5 className="montserrat bg-[#1f1e1f] px-8 text-white font-medium text-lg py-8 rounded-t-xl   mx-auto">
+        <h5 className="montserrat bg-[#1f1e1f] px-8 text-white font-medium text-xl 2xl:text-2xl py-8 2xl:py-10 rounded-t-xl   mx-auto">
         TOUCHLESS BASE WASH
             </h5>
             <div className="bg-[#edede9] rounded-b-xl py-8">
@@ -35,7 +35,7 @@ function Packages() {
           </div>
           </div>
         </div> <div className="relative text-center  ">
-        <h5 className="montserrat bg-[#1f1e1f] px-8 text-white font-medium text-lg py-8 rounded-t-xl   mx-auto">
+        <h5 className="montserrat bg-[#1f1e1f] px-8 text-white font-medium text-xl 2xl:text-2xl py-8 2xl:py-10 rounded-t-xl   mx-auto">
         TOUCHLESS BETTER WASH
             </h5>
             <div className="bg-[#edede9] rounded-b-xl py-8">
@@ -58,7 +58,7 @@ function Packages() {
           </div>
           </div>
         </div> <div className="relative text-center  ">
-        <h5 className="montserrat bg-[#1f1e1f] px-8 text-white font-medium text-lg py-8 rounded-t-xl   mx-auto">
+        <h5 className="montserrat bg-[#1f1e1f] px-8 text-white font-medium text-xl 2xl:text-2xl py-8 2xl:py-10 rounded-t-xl   mx-auto">
         TOUCHLESS BEST WASH
             </h5>
             <div className="bg-[#edede9] rounded-b-xl py-8">
@@ -85,7 +85,7 @@ function Packages() {
 
 
         <div className="relative text-center  ">
-        <h5 className="montserrat bg-[#1f1e1f] px-8 text-white font-medium text-lg py-8 rounded-t-xl   mx-auto">
+        <h5 className="montserrat bg-[#1f1e1f] px-8 text-white font-medium text-xl 2xl:text-2xl py-8 2xl:py-10 rounded-t-xl   mx-auto">
               THE WORKS WASH
             </h5>
             <div className="bg-[#edede9] rounded-b-xl py-8">

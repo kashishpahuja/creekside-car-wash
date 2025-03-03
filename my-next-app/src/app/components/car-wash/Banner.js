@@ -67,7 +67,7 @@ export default function AlbumPage() {
                 className="exo-bold w-full"
                 onClick={openCalendlyPopup}
               >
-                <div className="montserrat text-md lg:text-xl  border  border-white p-2 lg:px-4 py-3 mx-auto inline-block rounded-xl w-fit text-white  hover:text-black hover:bg-white">Book Now</div>
+                <div className="montserrat text-md lg:text-xl  border transition duration-300 border-white p-2 lg:px-4 py-3 mx-auto inline-block rounded-xl w-fit text-white  hover:text-black hover:bg-white">Book Now</div>
               </button>
          
           </div>

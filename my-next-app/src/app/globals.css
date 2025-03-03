@@ -93,14 +93,7 @@ body {
 }
 
 
-.zoom{
-  transition: transform 400ms ease-in-out;
-  /* width:100%; */
-  /* height: auto; */
-}
-.zoom:hover{
-  transform: scale(1.1);
-}
+
 
 .testimonial-container {
 
@@ -137,9 +130,11 @@ body {
 }
 
 
-
-.kashish{
-  height: 20px;
-  width: 45px;
-  border: 2px solid #64fcfd;
+.zoom{
+  transition: transform 400ms ease-in-out;
+  /* width:100%; */
+  /* height: auto; */
+}
+.zoom:hover{
+  transform: scale(1.1);
 }

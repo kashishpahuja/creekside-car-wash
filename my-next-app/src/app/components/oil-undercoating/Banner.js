@@ -85,7 +85,7 @@ export default function AlbumPage() {
         <div
           className="relative h-[380px] lg:h-[500px] w-full"
           style={{
-            backgroundImage: `url('/Images/services/carWraps.webp')`,
+            backgroundImage: `url('/Images/services/detailing.webp')`,
             backgroundPosition: "center",
             backgroundSize: "cover",
           }}

@@ -51,7 +51,7 @@ function Banner() {
       <div className="absolute shadow-black inset-0 bg-black opacity-70 w-[100%] "></div>
 
       {/* Content */}
-      <div className="relative text-white h-full flex items-center justify-center lg:justify-start xl:ml-20  overflow-hidden">
+      <div className="relative text-white h-full flex items-center justify-center lg:justify-start xl:ml-12  overflow-hidden">
         {/* Swiper Section */}
         <div className=" w-[100%] lg:w-[50%] xl:w-[50%] bg-transparent  p-8 lg:p-12 z-10">
         <div className="">
@@ -62,7 +62,7 @@ function Banner() {
             {/* <h3 className=" text-white text-3xl font-bold ">
          Creekside Car Wash
             </h3> */}
-            <h3 className=" text-white text-sm 2xl:text-xl  font-medium mt-6 md:w-[60%] lg:w-full text-justify">
+            <h3 className=" text-white text-md 2xl:text-xl  font-medium mt-6 md:w-[60%] lg:w-full text-justify">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, recusandae? Odio dolorem et praesentium. Debitis sunt accusamus nihil maiores exercitationem sed architecto, natus qui? Iste consequuntur qui eius eligendi. Atque, officia odit?
             </h3>
           </div>

@@ -55,15 +55,27 @@ const FeaturesSection = () => {
                 <div className='p-6 w-fit inline-block border border-gray-600  rounded-lg '>
                   <Image src={feature.icon} alt={feature.title} width={60} height={60} className='mx-auto'/>
                 </div>
-                <h4 className='text-xl font-semibold mt-4'>{feature.title}</h4>
+                <h4 className='text-lg xl:text-2xl font-semibold mt-4'>{feature.title}</h4>
                 <p className='text-gray-200'>{feature.description}</p>
               </div>
             ))}
           </div>
+<div className='col-span-6 flex justify-center w-full h-[400px] lg:h-[600px] 2xl:min-h-screen'>
+  <video
+    src='/Images/bay/car.webm'
+    autoPlay
+    loop
+    muted
+    playsInline
+    className='object-contain w-full h-full'
+  />
+</div>
 
-          <div className='col-span-6 flex justify-center w-full h-[600px] 2xl:min-h-screen '>
+
+{/* 
+<div className='col-span-6 flex justify-center w-full h-[600px] 2xl:min-h-screen '>
             <Image src='/Images/car/Truck.webp' alt='Car Image' width={600} height={600} className='object-contain w-full h-[100%] ' />
-          </div>
+          </div> */}
 
           <div className='col-span-3 space-y-12 text-white '>
             {featuresRight.map((feature) => (
@@ -74,9 +86,9 @@ const FeaturesSection = () => {
                 <div className='text-[#d7eaf3] text-lg font-bold '>{feature.number}</div>
                 </div>
                 <div className='p-6 w-fit inline-block border border-gray-600  rounded-lg '>
-                  <Image src={feature.icon} alt={feature.title} width={60} height={60} className='mx-auto'/>
+                  <Image src={feature.icon} alt='' width={60} height={60} className='w-full h-auto mx-auto'/>
                 </div>
-                <h4 className='text-xl font-semibold mt-4'>{feature.title}</h4>
+                <h4 className='text-lg xl:text-2xl font-semibold mt-4'>{feature.title}</h4>
                 <p className='text-gray-200'>{feature.description}</p>
               </div>
             ))}

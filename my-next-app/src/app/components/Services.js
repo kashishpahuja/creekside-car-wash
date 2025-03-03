@@ -66,7 +66,7 @@ function Services() {
           </Link>
         </div>
 
-        {/* Service 4: Window Tinting */}
+        {/* Service 4: FLEET ACCOUNTS */}
         <div
           className='relative w-full h-[260px] lg:h-[360px] 2xl:h-[440px] bg-cover bg-center rounded shadow-lg overflow-hidden' 
             loading="lazy"
@@ -78,7 +78,7 @@ function Services() {
 
             {/* Text and icon */}
             <div className='zoom relative z-10 flex items-center justify-center gap-3 h-full text-white '>
-              <div className='exo text-2xl md:text-3xl  font-bold'>Window Tinting</div>
+              <div className='exo text-2xl md:text-3xl  font-bold'>Fleet Accounts</div>
               <div className='text-3xl'><MdKeyboardDoubleArrowRight /></div>
             </div>
           </Link>
