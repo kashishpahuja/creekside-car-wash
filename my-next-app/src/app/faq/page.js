@@ -12,7 +12,7 @@ export default function AlbumPage() {
       <main>
         <Banner title={' FAQ'}/>
         <Faq/>
-        <Progress/>
+        {/* <Progress/> */}
       </main>
     </div>
   );

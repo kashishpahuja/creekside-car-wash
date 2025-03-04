@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useState, useRef, useEffect } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
@@ -44,7 +45,8 @@ function Faq() {
   ];
 
   return (
-    <div className="flex flex-col xl:flex-row gap-10 my-16 mx-4 md:mx-12 xl:mx-32">
+    <div className="">
+    <div className="flex flex-col xl:flex-row gap-10 my-16  mx-4 md:mx-12 xl:mx-32">
       {/* Left Column */}
       <div className="flex flex-col gap-4 w-full xl:w-1/2">
         {faqs.map((faq, index) => (
@@ -57,7 +59,7 @@ function Faq() {
                   : "bg-gray-200 text-gray-800"
               }`}
             >
-              <span className="exo text-xl">{faq.question}</span>
+              <span className="exo text-lg 2xl:text-xl">{faq.question}</span>
               {openIndexLeft === index ? (
                 <FaChevronUp className="text-gray-600" />
               ) : (
@@ -71,7 +73,7 @@ function Faq() {
               ref={(el) => (contentRefsLeft.current[index] = el)}
             >
               <div className="p-4 text-gray-700 bg-white shadow-md">
-                <span className="exo text-lg">{faq.answer}</span>
+                <span className="exo text-md 2xl:text-lg">{faq.answer}</span>
               </div>
             </div>
           </div>
@@ -79,7 +81,7 @@ function Faq() {
       </div>
 
       {/* Right Column */}
-      <div className="flex flex-col gap-4 w-full xl:w-1/2">
+      <div className="flex flex-col gap-4 w-full xl:w-1/2   items-center justify-center">
         {faqs.map((faq, index) => (
           <div key={index} className="w-full">
             <button
@@ -90,7 +92,7 @@ function Faq() {
                   : "bg-gray-200 text-gray-800"
               }`}
             >
-              <span className="exo text-xl">{faq.question}</span>
+              <span className="exo text-lg 2xl:text-xl">{faq.question}</span>
               {openIndexRight === index ? (
                 <FaChevronUp className="text-gray-600" />
               ) : (
@@ -104,12 +106,37 @@ function Faq() {
               ref={(el) => (contentRefsRight.current[index] = el)}
             >
               <div className="p-4 text-gray-700 bg-white shadow-md">
-                <span className="exo text-lg">{faq.answer}</span>
+                <span className="exo text-md 2xl:text-lg">{faq.answer}</span>
               </div>
             </div>
           </div>
         ))}
       </div>
+    </div>
+    <div 
+        // style={{
+        //   backgroundImage: `url('/Images/gift/blackBG.webp')`,
+        //   backgroundPosition: "center",
+        //   backgroundSize: "cover",
+        // }} 
+    className="flex flex-col gap-4 items-center justify-center  h-[300px]">
+      {/* <div
+          className="absolute inset-0 bg-[#111414] bg-opacity-70 rounded-xl"
+          aria-hidden="true"
+        ></div> */}
+  <p className="exo  text-black text-2xl lg:text-4xl">
+    Not what you were looking for?
+  </p>
+  <p className="exo text-lg text-gray-800">
+    Talk to us directly, and we&apos;ll be happy to help!
+  </p>
+  <p className="mt-6">
+    <Link href={'/contact'} className="montserrat mx-auto text-xl lg:text-xl hover:bg-white bg-[#1f1e1f]  hover:border-2 hover:border-[#1f1e1f]  text-white hover:text-[#1f1e1f] py-4 px-6 rounded-xl">
+      Contact Us
+    </Link>
+  </p>
+</div>
+
     </div>
   );
 }

@@ -2,7 +2,8 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import Banner from "../components/CommonBanner";
-import Progress from '../components/Progress'
+// import Progress from '../components/Progress'
+import Fleet from '../components/fleet/Form'
 
 
 export default function AlbumPage() {
@@ -10,7 +11,8 @@ export default function AlbumPage() {
     <div className="">
       <main>
         <Banner title={' FLEET ACCOUNTS'}/>
-        <Progress/>
+        <Fleet/>
+        {/* <Progress/> */}
       </main>
     </div>
   );

@@ -25,9 +25,38 @@ app.use('/payment',paymentRoutes)
 
 
 app.post("/send-mail", async (req, res) => {
-  const { name, email, phone, location_form, message } = req.body;
+  const { fname, lname, company, vehicles, email, phone, message, recaptchaToken  } = req.body;
 
   try {
+
+    
+  // Verify reCAPTCHA Token
+
+  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+  const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`;
+
+  try {
+    const recaptchaResponse = await fetch(recaptchaUrl, {
+      method: "POST",
+    });
+    const recaptchaData = await recaptchaResponse.json();
+    const { success } = recaptchaData;
+
+    if (!success) {
+      return res.status(400).json({
+        error: "reCAPTCHA verification failed. Please try again.",
+      });
+    }
+  } catch (error) {
+    // console.log("reCAPTCHA Response:", recaptchaData);
+
+    console.error("reCAPTCHA verification error:", error);
+    return res.status(500).json({ error: "Failed to verify reCAPTCHA." });
+  }
+
+
+
+  // Proceed to send the email if reCAPTCHA is successful
     
     // Create a transporter
     const transporter = nodemailer.createTransport({
@@ -40,17 +69,27 @@ app.post("/send-mail", async (req, res) => {
 
     // Email options
     const mailOptions = {
-      from: `Creekside Car Wash<${process.env.EMAIL}>`,
-      to: 'creeksidedetailz@gmail.com', // Your email to receive the form submission
-      subject: `New Contact Form Submission from ${name}`,
-      text: `You have a new message:
-      
-      Name: ${name}
-      Email: ${email}
-      Phone: ${phone}
-      Location From: ${location_form}
-      Message: ${message}`,
+      from: `Creekside Car Wash <${process.env.EMAIL}>`,
+      to: process.env.receiverEMAIL,
+      subject: `New Contact Form Submission from ${fname}`,
+      html: `
+       <div style="font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #000; color: #fff;">
+      <h2 style="margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;">Creekside Car Wash</h2>
+      <p style="font-size: 18px; font-weight: bold;">You have a new message</p>
+      <div style="background: #111; padding: 20px; border-radius: 8px; max-width: 500px; margin: auto; box-shadow: 0px 4px 8px rgba(255,255,255,0.2); text-align: left;">
+        <p style="border-bottom: 1px solid #444; padding-bottom: 5px;"><strong>First Name:</strong> ${fname}</p>
+        <p style="border-bottom: 1px solid #444; padding-bottom: 5px;"><strong>Last Name:</strong> ${lname}</p>
+        <p style="border-bottom: 1px solid #444; padding-bottom: 5px;"><strong>Email:</strong> ${email}</p>
+        <p style="border-bottom: 1px solid #444; padding-bottom: 5px;"><strong>Phone:</strong> ${phone}</p>
+        <p style="border-bottom: 1px solid #444; padding-bottom: 5px;"><strong>Company:</strong> ${company}</p>
+        <p style="border-bottom: 1px solid #444; padding-bottom: 5px;"><strong>Vehicles:</strong> ${vehicles}</p>
+        <p><strong>Message:</strong></p>
+        <p style="background: #222; padding: 10px; border-radius: 5px; font-style: italic; color: #ddd;">${message}</p>
+      </div>
+    </div>
+      `,
     };
+    
 
     // Send the email
     await transporter.sendMail(mailOptions);
@@ -69,5 +108,5 @@ app.post("/send-mail", async (req, res) => {
 
 // Start the server
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on http://localhost:${PORT}/send-mail`);
 });

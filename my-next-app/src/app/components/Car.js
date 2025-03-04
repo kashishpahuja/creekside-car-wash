@@ -11,15 +11,15 @@ const FeaturesSection = () => {
       id: 1,
       number: '01',
       icon: '/Images/car/1.webp',
-      title: 'Self Serve Bays',
-      description: "Max height 11'6, 24/7",
+      title: 'Hot Water Wash',
+      description: 'Better cleaning for tough dirt and grime. Perfect for deep cleaning.',
     },
     {
       id: 2,
       number: '02',
       icon: '/Images/car/2.webp',
-      title: 'Vacuums',
-      description: 'Powerful cleaning',
+      title: 'Full Cleaning Setup',
+      description: 'Includes 4 vacuums + 1 shampoo & spot remover vacuum for interior cleaning.',
     },
   ];
   
@@ -28,17 +28,18 @@ const FeaturesSection = () => {
       id: 3,
       number: '03',
       icon: '/Images/car/3.webp',
-      title: 'Shampoo Vacuum',
-      description: 'Deep cleaning',
+      title: 'Dedicated Semi-Truck Bay',
+      description: 'Special 4th bay for semi-trucks with ample space.',
     },
     {
       id: 4,
       number: '04',
       icon: '/Images/car/4.webp',
-      title: 'Semi Truck Bay',
-      description: 'For large vehicles',
+      title: '24/7 Availability',
+      description: 'Open 24 hours, so you can wash your vehicle anytime.',
     },
   ];
+  
   
 
   return (
