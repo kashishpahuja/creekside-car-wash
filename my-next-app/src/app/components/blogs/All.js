@@ -6,7 +6,7 @@ const News = () => {
   const blogs = [
     {
       id: 1,
-      title: "Why Regular Car Washes Are Essential for Your Vehicle’s Longevity",
+      title: "Why Regular Car Washes Are Essential for Your Vehicle's Longevity",
       images: ["/Images/blog1.webp", "/Images/blog2.webp"],
       date: "March 5, 2025",
       tag: "Car Wash",

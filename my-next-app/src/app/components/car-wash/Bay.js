@@ -47,7 +47,7 @@ export default function CarWashInfo() {
         <h2 className="text-4xl lg:text-5xl font-bold text-white">
           Ultimate Car Wash Experience
         </h2>
-        <p className="text-lg text-gray-200">
+        <p className="exo text-sm md:text-lg text-gray-200">
           Whether you&apos;re looking for a quick wash or deep cleaning, our bays are equipped to meet your needs.
           Our state-of-the-art facilities provide top-notch cleaning solutions for all vehicles, from cars to RVs.
         </p>
@@ -55,7 +55,7 @@ export default function CarWashInfo() {
           <Image width={400} height={400} src="/Images/car-wash/1.webp" alt="Main Bay" className="w-1/2   rounded-lg" />
           <Image width={400} height={400} src="/Images/car-wash/2.webp" alt="Truck Bay" className="w-1/2   rounded-lg" />
         </div>
-        <p className="text-lg text-gray-200">
+        <p className="exo text-sm md:text-lg text-gray-200">
           Whether you&apos;re looking for a quick wash or deep cleaning, our bays are equipped to meet your neeher you&apos; a quick wash or deep cleaning, our bays are equipped to meet your needs.
     
         </p>
@@ -71,7 +71,7 @@ export default function CarWashInfo() {
                 <div className="text-gray-800 text-2xl">{feature.number}</div>
               </div>
               <h3 className="text-2xl text-black font-semibold mt-4">{feature.title}</h3>
-              <p className="text-gray-900 text-lg mt-2">{feature.description}</p>
+              <p className="exo text-gray-700 text-sm md:text-lg mt-2">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -83,7 +83,7 @@ export default function CarWashInfo() {
                 <div className="text-gray-800 text-2xl">{feature.number}</div>
               </div>
               <h3 className="text-2xl text-black font-semibold mt-4">{feature.title}</h3>
-              <p className="text-gray-900 text-lg mt-2">{feature.description}</p>
+              <p className=" exo text-gray-700 text-sm md:text-lg mt-2">{feature.description}</p>
             </div>
           ))}
         </div>
