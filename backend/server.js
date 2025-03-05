@@ -25,7 +25,7 @@ app.use('/payment',paymentRoutes)
 
 
 app.post("/send-mail", async (req, res) => {
-  const { fname, lname, company, vehicles, email, phone, message, recaptchaToken  } = req.body;
+  const { fname, lname, company, vehicles, email, phone, message, recaptchaToken, fleetServices  } = req.body;
 
   try {
 
@@ -83,6 +83,7 @@ app.post("/send-mail", async (req, res) => {
         <p style="border-bottom: 1px solid #444; padding-bottom: 5px;"><strong>Phone:</strong> ${phone}</p>
         <p style="border-bottom: 1px solid #444; padding-bottom: 5px;"><strong>Company:</strong> ${company}</p>
         <p style="border-bottom: 1px solid #444; padding-bottom: 5px;"><strong>Vehicles:</strong> ${vehicles}</p>
+                    <p><strong>Fleet Services:</strong> ${fleetServices.join(", ")}</p>
         <p><strong>Message:</strong></p>
         <p style="background: #222; padding: 10px; border-radius: 5px; font-style: italic; color: #ddd;">${message}</p>
       </div>

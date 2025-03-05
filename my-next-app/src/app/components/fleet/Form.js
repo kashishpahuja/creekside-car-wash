@@ -14,6 +14,7 @@ export default function ContactForm() {
     message: '',
     company:'', 
     vehicles:'',
+    fleetServices: [],
     recaptchaToken: '', 
   });
 
@@ -21,11 +22,31 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isFormTouched, setIsFormTouched] = useState(false);
 
-  // Handle input changes
+
+
+
+  const fleetOptions = ['Auto Sales', 'Vehicle Rental', 'Limousine', 'Funeral', 'Other'];
+
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
+    const { name, value, type, checked } = e.target;
+    if (type === 'checkbox') {
+      setFormData((prevData) => ({
+        ...prevData,
+        fleetServices: checked
+          ? [...prevData.fleetServices, value]
+          : prevData.fleetServices.filter((service) => service !== value),
+      }));
+    } else {
+      setFormData((prevData) => ({ ...prevData, [name]: value }));
+    }
   };
+
+
+  // Handle input changes
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prevData) => ({ ...prevData, [name]: value }));
+  // };
 
   // Validation function
   const validate = () => {
@@ -41,12 +62,15 @@ export default function ContactForm() {
       tempErrors.email = 'Email is invalid';
     if (!formData.company) tempErrors.company = 'Company name is required';
     if (!formData.vehicles) tempErrors.vehicles = 'vehicles number is required';
+    if (!formData.fleetServices.length) tempErrors.fleetServices = 'Select at least one fleet service';
     if (!formData.message) tempErrors.message = 'Message is required';
     if (!formData.recaptchaToken) tempErrors.recaptchaToken = 'Please complete the reCAPTCHA';
 
     setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0;
   };
+
+  
 
   // Handle form submission
   const handleSubmit = async (e) => {
@@ -59,7 +83,7 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     try {
-    //   const response = await fetch('https://digital-paaji.onrender.com/send-mail', {
+    //   const response = await fetch('https://creekside-car-wash.onrender.com/send-mail', {
       const response = await fetch('http://localhost:5000/send-mail', {
 
         method: 'POST',
@@ -87,6 +111,7 @@ export default function ContactForm() {
           email: '',
           company:'', 
           vehicles:'',
+          fleetServices: [],
           message: '',
           recaptchaToken: '', 
         });
@@ -119,7 +144,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="mx-4 md:mx-12 xl:mx-60 my-24">
+    <div id="fleetForm" className="mx-4 md:mx-12 xl:mx-60 my-24">
       <ToastContainer style={{ zIndex: 999999999 }} />
       <h3 className="exo mb-4 text-[30px] text-[#1f1e1f] xl:text-[40px] text-center">
       Fleet Program Form
@@ -215,6 +240,26 @@ Bring sparkle to your branded fleet and to our community, while helping preserve
           {isFormTouched && errors.vehicles && <p className="text-red-500 text-sm">{errors.vehicles}</p>}
         </div>
 
+ {/* Fleet Services Checkboxes */}
+ <div className="md:col-span-2">
+          <label className="exo block lg:text-lg mb-2">Fleet Services Provided <span className='text-red-600'>*</span></label>
+          {fleetOptions.map((option) => (
+  <label key={option} className="flex items-center gap-2 cursor-pointer">
+    <input
+      type="checkbox"
+      name="fleetServices"
+      value={option}
+      checked={formData.fleetServices.includes(option)}
+      onChange={handleChange}
+      className="w-5 h-5 appearance-none border border-gray-400 rounded-sm checked:bg-white transition-all duration-500 checked:border-black checked:before:content-['✔'] checked:before:text-black checked:before:flex checked:before:justify-center checked:before:items-center"
+    />
+    <span className="text-xl mt-2">{option}</span>
+  </label>
+))}
+
+          {isFormTouched && errors.fleetServices && <p className="text-red-500 text-sm">{errors.fleetServices}</p>}
+        </div>
+
         {/* Message */}
         <div className="md:col-span-2">
           <label className="exo block lg:text-lg mb-2">Your Mission <span className='text-red-600'> *</span></label>
@@ -234,7 +279,6 @@ Bring sparkle to your branded fleet and to our community, while helping preserve
           <ReCAPTCHA
             sitekey='6Lf6NeoqAAAAADQ_kBie3V880kFhHDP5dvsuBDW4'
             theme='dark'
-    
             onChange={(token) => setFormData({ ...formData, recaptchaToken: token })}
           />
           {isFormTouched && errors.recaptchaToken && (
@@ -247,7 +291,7 @@ Bring sparkle to your branded fleet and to our community, while helping preserve
           <button
             type="submit"
             disabled={isSubmitting}
-            className="montserrat mx-auto text-xl lg:text-xl hover:bg-white bg-[#1f1e1f]  hover:border-2 hover:border-[#1f1e1f]  text-white hover:text-[#1f1e1f] py-4 px-6 rounded-xl"
+            className="montserrat mx-auto text-xl lg:text-xl hover:bg-white bg-[#1f1e1f]  border-2 border-[#1f1e1f]  text-white hover:text-[#1f1e1f] py-4 px-6 rounded-xl"
           >
             <span>{isSubmitting ? 'Sending...' : 'Submit'}</span>
           </button>

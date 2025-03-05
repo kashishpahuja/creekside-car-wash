@@ -33,7 +33,7 @@ function Oil() {
         </div> 
         <div className=" w-full xl:w-1/2 ">
           <Image  width={400} height={400} 
-            src="/Images/oil/5.webp"
+            src="/Images/oil/4.webp"
             alt=""
             className=" w-full h-[100%] object-contain "
           />
