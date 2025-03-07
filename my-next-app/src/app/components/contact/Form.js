@@ -8,14 +8,17 @@ import { MdAccessTime } from "react-icons/md";
 import { SlCalender } from "react-icons/sl";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // import styles for toasts
+import ReCAPTCHA from 'react-google-recaptcha';
+
 
 function Form({ onClose }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    location_form: "",
+    location_from: "",
     message: "",
+    recaptchaToken: '', 
   });
 
   const [errors, setErrors] = useState({});
@@ -39,9 +42,10 @@ function Form({ onClose }) {
     if (!formData.phone) tempErrors.phone = "Phone number is required";
     else if (!/^\d{10}$/.test(formData.phone))
       tempErrors.phone = "Phone number must be 10 digits";
-    if (!formData.location_form)
-      tempErrors.location_form = "Location From is required";
+    if (!formData.location_from)
+      tempErrors.location_from = "Location From is required";
     if (!formData.message) tempErrors.message = "Message is required";
+    if (!formData.recaptchaToken) tempErrors.recaptchaToken = 'Please complete the reCAPTCHA';
 
     setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0;
@@ -56,7 +60,8 @@ function Form({ onClose }) {
 
     try {
       const response = await fetch(
-        "https://creekside-car-wash.onrender.com/send-mail",
+        // "https://creekside-car-wash.onrender.com/send-mail",
+        'http://localhost:5000/send-mail',
         {
           method: "POST",
           headers: {
@@ -80,8 +85,10 @@ function Form({ onClose }) {
           name: "",
           email: "",
           phone: "",
-          location_form: "",
+          location_from: "",
           message: "",
+          recaptchaToken: '', 
+
         });
         if (onClose) onClose();
       } else {
@@ -250,13 +257,13 @@ function Form({ onClose }) {
                   <input
                     type="text"
                     placeholder="Location From*"
-                    name="location_form"
-                    value={formData.location_form}
+                    name="location_from"
+                    value={formData.location_from}
                     onChange={handleChange}
                     className="w-full border-b border-gray-600  p-4 focus:outline-none"
                   />
-                  {errors.location_form && (
-                    <p className="text-black">{errors.location_form}</p>
+                  {errors.location_from && (
+                    <p className="text-black">{errors.location_from}</p>
                   )}
                 </div>
               </div>
@@ -274,11 +281,24 @@ function Form({ onClose }) {
                 )}
               </div>
 
+        {/* reCAPTCHA */}
+        <div>
+          <ReCAPTCHA
+            sitekey='6Lf6NeoqAAAAADQ_kBie3V880kFhHDP5dvsuBDW4'
+            theme='dark'
+            onChange={(token) => setFormData({ ...formData, recaptchaToken: token })}
+          />
+          {errors.recaptchaToken && (
+            <p className="text-red-500 text-sm">{errors.recaptchaToken}</p>
+          )}
+        </div>
+
+
               <div>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`bg-black text-white py-3 px-4 rounded-lg  ${
+                  className={`bg-black text-white py-3 px-4 rounded-lg mt-4 ${
                     isSubmitting ? "opacity-50 cursor-not-allowed" : "hover:bg-white hover:text-black hover:font-bold "
                   } transition duration-300`}
                 >
