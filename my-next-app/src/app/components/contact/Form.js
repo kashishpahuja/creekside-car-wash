@@ -8,7 +8,7 @@ import { MdAccessTime } from "react-icons/md";
 import { SlCalender } from "react-icons/sl";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // import styles for toasts
-import ReCAPTCHA from 'react-google-recaptcha';
+
 
 
 function Form({ onClose }) {
@@ -18,7 +18,7 @@ function Form({ onClose }) {
     phone: "",
     location_from: "",
     message: "",
-    recaptchaToken: '', 
+
   });
 
   const [errors, setErrors] = useState({});
@@ -45,7 +45,7 @@ function Form({ onClose }) {
     if (!formData.location_from)
       tempErrors.location_from = "Location From is required";
     if (!formData.message) tempErrors.message = "Message is required";
-    if (!formData.recaptchaToken) tempErrors.recaptchaToken = 'Please complete the reCAPTCHA';
+    
 
     setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0;
@@ -87,7 +87,7 @@ function Form({ onClose }) {
           phone: "",
           location_from: "",
           message: "",
-          recaptchaToken: '', 
+    
 
         });
         if (onClose) onClose();
@@ -281,17 +281,7 @@ function Form({ onClose }) {
                 )}
               </div>
 
-        {/* reCAPTCHA */}
-        <div>
-          <ReCAPTCHA
-            sitekey='6Lf6NeoqAAAAADQ_kBie3V880kFhHDP5dvsuBDW4'
-            theme='dark'
-            onChange={(token) => setFormData({ ...formData, recaptchaToken: token })}
-          />
-          {errors.recaptchaToken && (
-            <p className="text-red-500 text-sm">{errors.recaptchaToken}</p>
-          )}
-        </div>
+
 
 
               <div>

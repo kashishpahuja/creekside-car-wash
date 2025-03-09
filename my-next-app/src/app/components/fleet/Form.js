@@ -84,7 +84,7 @@ export default function ContactForm() {
 
     try {
     //   const response = await fetch('https://creekside-car-wash.onrender.com/send-mail', {
-      const response = await fetch('http://localhost:5000/send-mail', {
+      const response = await fetch('http://localhost:5000/send-fleet', {
 
         method: 'POST',
         headers: {
