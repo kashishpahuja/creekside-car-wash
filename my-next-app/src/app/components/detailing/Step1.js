@@ -1,14 +1,13 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
-import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
-import Link from "next/link";
 
-const News = () => {
+
+const Step1 = ({setSelectedCarType}) => {
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0); // Track active index for styling
 
@@ -35,17 +34,21 @@ const News = () => {
 
   const handleClick = (index) => {
     setActiveIndex(index); // Set active index on click
+    setSelectedCarType(blogs[index].title)
+    
     if (swiperRef.current) {
       swiperRef.current.swiper.slideTo(index); // Navigate to specific slide
     }
   };
-
+ 
   const handleSlideChange = (swiper) => {
     setActiveIndex(swiper.realIndex); // Update the active index when the slide changes
   };
 
   return (
-    <div className="relative text-center overflow-hidden my-24">
+    <div className="relative text-center overflow-hidden my-24"
+
+    >
       {/* Title Section */}
       <h2 className="montserrat text-xl xl:text-3xl text-[#d63c3c] text-center mb-6  px-4 lg:px-24">STEP 1</h2>
       <h2 className="montserrat text-2xl md:text-3xl lg:text-5xl text-black text-center mb-12  px-4 lg:px-24">
@@ -92,6 +95,7 @@ const News = () => {
             slidesPerView: 1,
           },
         }}
+        className=" "
       >
         {blogs.map((blog, index) => (
           <SwiperSlide key={blog.id}>
@@ -101,7 +105,7 @@ const News = () => {
                 height={400}
                 src={blog.images[0]}
                 alt={blog.title}
-                className="w-full lg:h-[600px] object-contain"
+                className="w-full xl:h-[600px] object-contain"
               />
             </div>
           </SwiperSlide>
@@ -120,4 +124,4 @@ const News = () => {
   );
 };
 
-export default News;
+export default Step1;

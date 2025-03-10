@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { SiTicktick } from "react-icons/si";
 
-function Packages() {
+function Step2() {
   const [selectedPackage, setSelectedPackage] = useState(null);
 
   const handleSelect = (packageName) => {
@@ -84,16 +84,16 @@ function Packages() {
             key={index}
             className="relative text-center hover:transition-transform hover:translate-y-[-12px] duration-300"
           >
-            <h5 className="montserrat bg-[#d63c3c] px-8 text-white font-medium text-xl 2xl:text-2xl py-8 2xl:py-10 rounded-t-xl mx-auto">
+            <h5 className="montserrat bg-[#d63c3c] px-8 text-white font-medium text-lg 2xl:text-2xl py-8 2xl:py-10 rounded-t-xl mx-auto">
               {pkg.name}
             </h5>
             <div className="bg-[#edede9] rounded-b-xl py-8">
               <div className="text-2xl gap-2 flex items-center justify-center text-[#1f1e1f]">
                 ${" "}
-                <span className="montserrat text-6xl">{pkg.price}</span>
+                <span className="montserrat text-5xl">{pkg.price}</span>
               </div>
               <div>
-                <ul className="p-6 text-gray-700 font-semibold text-sm md:text-lg space-y-4 text-center">
+                <ul className="p-6 text-gray-700 font-semibold text-sm md:text-md space-y-4 text-center">
                   {pkg.features.map((feature, idx) => (
                     <li key={idx}>{feature}</li>
                   ))}
@@ -124,4 +124,4 @@ function Packages() {
   );
 }
 
-export default Packages;
+export default Step2;
