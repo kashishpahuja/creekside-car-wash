@@ -25,84 +25,88 @@ app.use('/payment',paymentRoutes)
 
 
 app.post("/booking", async (req, res) => {
-  const { fname, lname, email, phone, address, recaptchaToken  } = req.body;
+  const {
+    fname,
+    lname,
+    email,
+    phone,
+    address,
+    recaptchaToken,
+    carType,
+    washingPlan,
+    washingPrice,
+    bookingDate,
+    bookingTime,
+    addedServices,
+  } = req.body;
+
+  console.log("Received Booking Data:", req.body);
 
   try {
+    // Verify reCAPTCHA Token
+    const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+    const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`;
 
-    
-  // Verify reCAPTCHA Token
+    try {
+      const recaptchaResponse = await fetch(recaptchaUrl, { method: "POST" });
+      const recaptchaData = await recaptchaResponse.json();
+      const { success } = recaptchaData;
 
-  const secretKey = process.env.RECAPTCHA_SECRET_KEY;
-  const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`;
-
-  try {
-    const recaptchaResponse = await fetch(recaptchaUrl, {
-      method: "POST",
-    });
-    const recaptchaData = await recaptchaResponse.json();
-    const { success } = recaptchaData;
-
-    if (!success) {
-      return res.status(400).json({
-        error: "reCAPTCHA verification failed. Please try again.",
-      });
+      if (!success) {
+        return res.status(400).json({
+          error: "reCAPTCHA verification failed. Please try again.",
+        });
+      }
+    } catch (error) {
+      console.error("reCAPTCHA verification error:", error);
+      return res.status(500).json({ error: "Failed to verify reCAPTCHA." });
     }
-  } catch (error) {
-    // console.log("reCAPTCHA Response:", recaptchaData);
 
-    console.error("reCAPTCHA verification error:", error);
-    return res.status(500).json({ error: "Failed to verify reCAPTCHA." });
-  }
-
-
-
-  // Proceed to send the email if reCAPTCHA is successful
-    
     // Create a transporter
     const transporter = nodemailer.createTransport({
-      service: "gmail", // Replace with your email service (e.g., Gmail)
+      service: "gmail",
       auth: {
-        user: process.env.EMAIL, // Your email address from .env
-        pass: process.env.PASSWORD, // Your app password or email password
+        user: process.env.EMAIL,
+        pass: process.env.PASSWORD,
       },
     });
+
+    // Formatting addedServices array
+    const addedServicesHtml = addedServices.length
+      ? `<ul>${addedServices.map((service) => `<li>${service}</li>`).join("")}</ul>`
+      : "<p>No additional services selected.</p>";
 
     // Email options
     const mailOptions = {
       from: `Creekside Car Wash <${process.env.EMAIL}>`,
       to: process.env.receiverEMAIL,
-      subject: `New Contact Form Submission from ${fname}`,
+      subject: `Detailing Booking from ${fname}`,
       html: `
-       <div style="font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #000; color: #fff;">
-      <h2 style="margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; color: #fff;">Creekside Car Wash</h2>
-      <p style="font-size: 18px; font-weight: bold; color: #fff;">You have a new message</p>
-      <div style="background: #111; padding: 20px; border-radius: 8px; max-width: 500px; margin: auto; box-shadow: 0px 4px 8px rgba(255,255,255,0.2); text-align: left;">
-        <p style="border-bottom: 1px solid #444; padding-bottom: 5px;"><strong>First Name:</strong> ${fname}</p>
-        <p style="border-bottom: 1px solid #444; padding-bottom: 5px;"><strong>Last Name:</strong> ${lname}</p>
-        <p style="border-bottom: 1px solid #444; padding-bottom: 5px;"><strong>Email:</strong> ${email}</p>
-        <p style="border-bottom: 1px solid #444; padding-bottom: 5px;"><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Address:</strong></p>
-        <p style="background: #222; padding: 10px; border-radius: 5px; font-style: italic; color: #ddd;">${address}</p>
+      <div style="font-family: Arial, sans-serif; padding: 20px;">
+        <h2 style="margin-bottom: 15px; border-bottom: 2px solid #000; padding-bottom: 5px;">Creekside Car Wash - New Booking</h2>
+        <p><strong>First Name:</strong> ${fname}</p>
+        <p><strong>Last Name:</strong> ${lname}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Address:</strong> ${address}</p>
+        <p><strong>Car Type:</strong> ${carType}</p>
+        <p><strong>Washing Plan:</strong> ${washingPlan} (${washingPrice})</p>
+        <p><strong>Booking Date:</strong> ${bookingDate}</p>
+        <p><strong>Booking Time:</strong> ${bookingTime}</p>
+        <p><strong>Additional Services:</strong> ${addedServicesHtml}</p>
       </div>
-    </div>
       `,
     };
-    
 
     // Send the email
     await transporter.sendMail(mailOptions);
-    res
-      .status(200)
-      .json({ message: "Your message has been sent successfully!" });
-
-
+    res.status(200).json({ message: "Your booking has been sent successfully!" });
   } catch (error) {
     console.error("Error sending email:", error);
-    res
-      .status(500)
-      .json({ error: "Failed to send email. Please try again later." });
+    res.status(500).json({ error: "Failed to send email. Please try again later." });
   }
 });
+
 
 
 app.post("/send-fleet", async (req, res) => {
@@ -152,26 +156,27 @@ app.post("/send-fleet", async (req, res) => {
     const mailOptions = {
       from: `Creekside Car Wash <${process.env.EMAIL}>`,
       to: process.env.receiverEMAIL,
-      subject: `New Contact Form Submission from ${fname}`,
+      subject: `Fleet Form Submission from ${fname}`,
       html: `
-       <div style="font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #000; color: #fff;">
-      <h2 style="margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; color: #fff;">Creekside Car Wash</h2>
-      <p style="font-size: 18px; font-weight: bold; color: #fff;">You have a new message</p>
-      <div style="background: #111; padding: 20px; border-radius: 8px; max-width: 500px; margin: auto; box-shadow: 0px 4px 8px rgba(255,255,255,0.2); text-align: left;">
-        <p style="border-bottom: 1px solid #444; padding-bottom: 5px;"><strong>First Name:</strong> ${fname}</p>
-        <p style="border-bottom: 1px solid #444; padding-bottom: 5px;"><strong>Last Name:</strong> ${lname}</p>
-        <p style="border-bottom: 1px solid #444; padding-bottom: 5px;"><strong>Email:</strong> ${email}</p>
-        <p style="border-bottom: 1px solid #444; padding-bottom: 5px;"><strong>Phone:</strong> ${phone}</p>
-        <p style="border-bottom: 1px solid #444; padding-bottom: 5px;"><strong>Company:</strong> ${company}</p>
-        
-
-        <p style="border-bottom: 1px solid #444; padding-bottom: 5px;"><strong>Vehicles:</strong> ${vehicles}</p>
-                    <p><strong>Fleet Services:</strong> ${fleetServices.join(", ")}</p>
-        <p><strong>Message:</strong></p>
-        <p style="background: #222; padding: 10px; border-radius: 5px; font-style: italic; color: #ddd;">${message}</p>
+      <div style="font-family: Arial, sans-serif; padding: 20px; color: #000;">
+        <h2 style="margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; border-bottom: 2px solid #000; padding-bottom: 5px;">
+          Creekside Car Wash
+        </h2>
+        <p style="font-size: 18px; font-weight: bold;">You have a new message</p>
+        <div style="padding: 20px; border-radius: 8px; max-width: 600px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1); text-align: left; border: 1px solid #ddd;">
+          <p style="border-bottom: 1px solid #ddd; padding-bottom: 5px;"><strong>First Name:</strong> ${fname}</p>
+          <p style="border-bottom: 1px solid #ddd; padding-bottom: 5px;"><strong>Last Name:</strong> ${lname}</p>
+          <p style="border-bottom: 1px solid #ddd; padding-bottom: 5px;"><strong>Email:</strong> ${email}</p>
+          <p style="border-bottom: 1px solid #ddd; padding-bottom: 5px;"><strong>Phone:</strong> ${phone}</p>
+          <p style="border-bottom: 1px solid #ddd; padding-bottom: 5px;"><strong>Company:</strong> ${company}</p>
+          <p style="border-bottom: 1px solid #ddd; padding-bottom: 5px;"><strong>Vehicles:</strong> ${vehicles}</p>
+          <p style="border-bottom: 1px solid #ddd; padding-bottom: 5px;"><strong>Fleet Services:</strong> ${fleetServices.join(", ")}</p>
+          <p><strong>Message:</strong></p>
+          <p style="padding: 10px; border-radius: 5px; font-style: italic; background: #f9f9f9;">${message}</p>
+        </div>
       </div>
-    </div>
-      `,
+    `
+    
     };
     
 
@@ -241,20 +246,22 @@ app.post("/send-mail", async (req, res) => {
       to: process.env.receiverEMAIL,
       subject: `New Contact Form Submission from ${name}`,
       html: `
-       <div style="font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #000; color: #fff;">
-      <h2 style="margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;">Creekside Car Wash</h2>
-      <p style="font-size: 18px; font-weight: bold;">You have a new message</p>
-      <div style="background: #111; padding: 20px; border-radius: 8px; max-width: 500px; margin: auto; box-shadow: 0px 4px 8px rgba(255,255,255,0.2); text-align: left;">
-        <p style="border-bottom: 1px solid #444; padding-bottom: 5px;"><strong>Name:</strong> ${name}</p>
-        <p style="border-bottom: 1px solid #444; padding-bottom: 5px;"><strong>Email:</strong> ${email}</p>
-        <p style="border-bottom: 1px solid #444; padding-bottom: 5px;"><strong>Phone:</strong> ${phone}</p>
-        <p style="border-bottom: 1px solid #444; padding-bottom: 5px;"><strong>Location from:</strong> ${location_from}</p>
-
-        <p><strong>Message:</strong></p>
-        <p style="background: #222; padding: 10px; border-radius: 5px; font-style: italic; color: #ddd;">${message}</p>
+      <div style="font-family: Arial, sans-serif; padding: 20px; color: #000;">
+        <h2 style="margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; border-bottom: 2px solid #000; padding-bottom: 5px;">
+          Creekside Car Wash
+        </h2>
+        <p style="font-size: 18px; font-weight: bold;">You have a new message</p>
+        <div style="padding: 20px; border-radius: 8px; max-width: 600px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1); text-align: left; border: 1px solid #ddd;">
+          <p style="border-bottom: 1px solid #ddd; padding-bottom: 5px;"><strong>Name:</strong> ${name}</p>
+          <p style="border-bottom: 1px solid #ddd; padding-bottom: 5px;"><strong>Email:</strong> ${email}</p>
+          <p style="border-bottom: 1px solid #ddd; padding-bottom: 5px;"><strong>Phone:</strong> ${phone}</p>
+          <p style="border-bottom: 1px solid #ddd; padding-bottom: 5px;"><strong>Location From:</strong> ${location_from}</p>
+          <p><strong>Message:</strong></p>
+          <p style="padding: 10px; border-radius: 5px; font-style: italic; background: #f9f9f9;">${message}</p>
+        </div>
       </div>
-    </div>
-      `,
+    `
+    
     };
     
 

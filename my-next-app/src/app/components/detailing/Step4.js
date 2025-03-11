@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css"; // import styles for toasts
 import { FaCar } from "react-icons/fa";
 
 
-export default function ContactForm({selectedCarType}) {
+export default function ContactForm({selectedAddedService, selectedCarType, selectedPlanPrice, selectedPlan, selectedBookingDate, selectedBookingTime}) {
   const [formData, setFormData] = useState({
     fname: "",
     lname: "",
@@ -15,6 +15,7 @@ export default function ContactForm({selectedCarType}) {
     email: "",
     address: "",
     recaptchaToken: "",
+
   });
 
   const [errors, setErrors] = useState({});
@@ -58,7 +59,8 @@ export default function ContactForm({selectedCarType}) {
     if (!formData.address) tempErrors.address = "address is required";
     if (!formData.recaptchaToken)
       tempErrors.recaptchaToken = "Please complete the reCAPTCHA";
-
+    if (!selectedBookingDate) tempErrors.selectedBookingDate = "Booking Date is required";
+    if (!selectedBookingTime) tempErrors.selectedBookingTime = "Booking Time is required";
     setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0;
   };
@@ -74,13 +76,25 @@ export default function ContactForm({selectedCarType}) {
     setIsSubmitting(true);
 
     try {
+
+      const payload = {
+        ...formData,
+        carType:selectedCarType,
+        washingPlan: selectedPlan,
+        washingPrice: selectedPlanPrice,
+        bookingDate:selectedBookingDate,
+        bookingTime:selectedBookingTime,
+        addedServices:selectedAddedService.map(service=>service.name),
+      };
+
+
       //   const response = await fetch('https://creekside-car-wash.onrender.com/send-mail', {
       const response = await fetch("http://localhost:5000/booking", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       const data = await response.json();
@@ -140,62 +154,21 @@ export default function ContactForm({selectedCarType}) {
     <div id="fleetForm" className="mx-4 md:mx-12 xl:mx-24 my-24">
       <ToastContainer style={{ zIndex: 999999999 }} />
       <h2 className="montserrat text-xl xl:text-2xl text-[#d63c3c] text-center px-4 lg:px-24">
-        STEP 2
+        STEP 5
       </h2>
       <h2 className="montserrat text-2xl md:text-3xl lg:text-5xl text-[#1f1e1f] text-center my-6 px-4 lg:px-24">
         Select Your Plan
       </h2>
       <div className="flex items-center justify-center flex-wrap lg:flex-nowrap gap-12 lg:gap-8 mt-16 w-full h-auto">
-        <div className="w-full lg:w-1/2 text-black grid grid-cols-1 md:grid-cols-2 gap-2">
-          <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
-            <FaCar className="w-8 h-8 text-black" />
-            <h2 className="text-md xl:text-xl font-bold text-black ">Car Type</h2>
-            <h2 className="text-xl xl:text-2xl font-semibold text-[#d63c3c]">
-              {selectedCarType}
-            </h2>
-          </div>
-          <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
-            <FaCar className="w-8 h-8 text-black" />
-            <h2 className="text-md xl:text-xl font-bold text-black ">Washing Plan</h2>
-            <h2 className="text-xl xl:text-2xl font-semibold text-[#d63c3c]">
-              Hatchback/Sedan
-            </h2>
-          </div>
-          <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
-            <FaCar className="w-8 h-8 text-black" />
-            <h2 className="text-md xl:text-xl font-bold text-black ">Washing Plan</h2>
-            <h2 className="text-xl xl:text-2xl font-semibold text-[#d63c3c]">
-              Hatchback/Sedan
-            </h2>
-          </div>
-          <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
-            <FaCar className="w-8 h-8 text-black" />
-            <h2 className="text-md xl:text-xl font-bold text-black ">Washing Plan</h2>
-            <h2 className="text-xl xl:text-2xl font-semibold text-[#d63c3c]">
-              Hatchback/Sedan
-            </h2>
-          </div>
-          <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
-            <FaCar className="w-8 h-8 text-black" />
-            <h2 className="text-md xl:text-xl font-bold text-black ">Washing Plan</h2>
-            <h2 className="text-xl xl:text-2xl font-semibold text-[#d63c3c]">
-              Hatchback/Sedan
-            </h2>
-          </div>
-          <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
-            <FaCar className="w-8 h-8 text-black" />
-            <h2 className="text-md xl:text-xl font-bold text-black ">Washing Plan</h2>
-            <h2 className="text-xl xl:text-2xl font-semibold text-[#d63c3c]">
-              Hatchback/Sedan
-            </h2>
-          </div>
-        </div>
 
-        <div className="w-full lg:w-1/2    h-[100%] text-black  overflow-hidden">
-        <h3 className="font-bold mb-4 text-[30px] text-[#1f1e1f] xl:text-[35px] text-center">
+      <div className="relative w-full lg:w-1/2    h-[100%] text-black  overflow-hidden p-6"
+
+        >
+    
+        <h3 className="font-bold mb-4  text-[#1f1e1f] text-xl lg:text-2xl text-center">
         Please input your contact details
       </h3>
-      <h5 className="exo mb-10 text-md xl:text-lg text-center text-gray-700">
+      <h5 className=" mb-10 text-md xl:text-lg text-center text-gray-800">
         In order to make booking you need to choose a plan, time and fill all
         required form fields.
       </h5>
@@ -308,17 +281,76 @@ export default function ContactForm({selectedCarType}) {
             </div>
 
             {/* Submit Button */}
-            <div className="md:col-span-2 mx-auto flex flex-col gap-4 items-center">
+            <div className="md:col-span-2  mx-auto">
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="montserrat mx-auto text-xl lg:text-xl hover:bg-white bg-[#1f1e1f]  border-2 border-[#1f1e1f]  text-white hover:text-[#1f1e1f] py-4 px-6 rounded-xl"
+                className="montserrat text-xl lg:text-xl hover:bg-white bg-[#1f1e1f]  border-2 border-[#1f1e1f]  text-white hover:text-[#1f1e1f] py-4 px-6 rounded-xl"
               >
                 <span>{isSubmitting ? "Sending..." : "Submit"}</span>
               </button>
+
+              <div className="md:col-span-2 text-center mt-4">
+  {isFormTouched && errors.selectedBookingDate && (
+    <p className="text-red-500 text-sm">{errors.selectedBookingDate}</p>
+  )}
+  {isFormTouched && errors.selectedBookingTime && (
+    <p className="text-red-500 text-sm">{errors.selectedBookingTime}</p>
+  )}
+</div>
             </div>
           </form>
         </div>
+
+        <div className="w-full lg:w-1/2 h-[100%] text-black grid grid-cols-1 md:grid-cols-2 gap-2">
+          <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
+            <FaCar className="w-8 h-8 text-black" />
+            <h2 className="text-md xl:text-xl font-bold text-black ">Car Type</h2>
+            <h2 className="text-xl xl:text-2xl font-semibold text-[#d63c3c] ">
+              {selectedCarType}
+            </h2>
+          </div>
+          <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
+            <FaCar className="w-8 h-8 text-black" />
+            <h2 className="text-md xl:text-xl font-bold text-black ">Washing Plan</h2>
+            <h2 className="text-xl xl:text-2xl font-semibold text-[#d63c3c] text-center">
+              {selectedPlan}
+            </h2>
+          </div>
+          <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
+            <FaCar className="w-8 h-8 text-black" />
+            <h2 className="text-md xl:text-xl font-bold text-black ">Plan Price</h2>
+            <h2 className="text-xl xl:text-2xl font-semibold text-[#d63c3c]">
+            ${selectedPlanPrice}
+            </h2>
+          </div>
+          <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
+            <FaCar className="w-8 h-8 text-black" />
+            <h2 className="text-md xl:text-xl font-bold text-black ">Booking Date</h2>
+            <h2 className="text-xl xl:text-2xl font-semibold text-[#d63c3c]">
+              {selectedBookingDate}
+            </h2>
+          </div>
+          <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
+            <FaCar className="w-8 h-8 text-black" />
+            <h2 className="text-md xl:text-xl font-bold text-black ">Booking Time</h2>
+            <h2 className="text-xl xl:text-2xl font-semibold text-[#d63c3c]">
+              {selectedBookingTime}
+            </h2>
+          </div>
+          <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
+            <FaCar className="w-8 h-8 text-black" />
+            <h2 className="text-md xl:text-xl font-bold text-black ">Added Services</h2>
+           
+           {selectedAddedService.map((item) => (
+            <h2 key={item.name} className="exo text-md font-semibold text-gray-700">
+            {item.name}
+            </h2>
+            ))}
+          </div>
+        </div>
+
+   
       </div>
     </div>
   );
