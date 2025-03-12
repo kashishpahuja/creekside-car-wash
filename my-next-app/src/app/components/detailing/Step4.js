@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css"; // import styles for toasts
 import { FaCar } from "react-icons/fa";
 
 
-export default function ContactForm({selectedAddedService, selectedCarType, selectedPlanPrice, selectedPlan, selectedBookingDate, selectedBookingTime}) {
+export default function ContactForm({selectedAddedServicePrice, selectedAddedService, selectedCarType, selectedPlanPrice, selectedPlan, selectedBookingDate, selectedBookingTime}) {
   const [formData, setFormData] = useState({
     fname: "",
     lname: "",
@@ -74,7 +74,10 @@ export default function ContactForm({selectedAddedService, selectedCarType, sele
     if (!isValid) return;
 
     setIsSubmitting(true);
-
+    const totalPrice = (
+      Number(selectedPlanPrice) + 
+      selectedAddedService.reduce((total, service) => total + Number(service.price), 0)
+    ).toFixed(2);
     try {
 
       const payload = {
@@ -85,6 +88,7 @@ export default function ContactForm({selectedAddedService, selectedCarType, sele
         bookingDate:selectedBookingDate,
         bookingTime:selectedBookingTime,
         addedServices:selectedAddedService.map(service=>service.name),
+        totalPrice: totalPrice, 
       };
 
 
@@ -304,43 +308,46 @@ export default function ContactForm({selectedAddedService, selectedCarType, sele
 
         <div className="w-full lg:w-1/2 h-[100%] text-black grid grid-cols-1 md:grid-cols-2 gap-2">
           <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
-            <FaCar className="w-8 h-8 text-black" />
-            <h2 className="text-md xl:text-xl font-bold text-black ">Car Type</h2>
-            <h2 className="text-xl xl:text-2xl font-semibold text-[#d63c3c] ">
+            <FaCar className="w-12 h-12 text-black" />
+            <h2 className="text-xl xl:text-2xl font-bold text-black ">Car Type</h2>
+            <h2 className="text-md xl:text-xl exo text-[#d63c3c] ">
               {selectedCarType}
             </h2>
           </div>
           <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
-            <FaCar className="w-8 h-8 text-black" />
-            <h2 className="text-md xl:text-xl font-bold text-black ">Washing Plan</h2>
-            <h2 className="text-xl xl:text-2xl font-semibold text-[#d63c3c] text-center">
+            <FaCar className="w-12 h-12 text-black" />
+            <h2 className="text-xl xl:text-2xl font-bold text-black ">Washing Plan</h2>
+            <h2 className="text-md xl:text-xl exo text-[#d63c3c] text-center">
               {selectedPlan}
             </h2>
           </div>
           <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
-            <FaCar className="w-8 h-8 text-black" />
-            <h2 className="text-md xl:text-xl font-bold text-black ">Plan Price</h2>
-            <h2 className="text-xl xl:text-2xl font-semibold text-[#d63c3c]">
-            ${selectedPlanPrice}
+            <FaCar className="w-12 h-12 text-black" />
+            <h2 className="text-xl xl:text-2xl font-bold text-black ">Plan Price</h2>
+            <h2 className="text-md xl:text-xl exo text-[#d63c3c]">
+            ${(
+    Number(selectedPlanPrice) + 
+    selectedAddedService.reduce((total, service) => total + Number(service.price), 0)
+  ).toFixed(2)}
             </h2>
           </div>
           <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
-            <FaCar className="w-8 h-8 text-black" />
-            <h2 className="text-md xl:text-xl font-bold text-black ">Booking Date</h2>
-            <h2 className="text-xl xl:text-2xl font-semibold text-[#d63c3c]">
+            <FaCar className="w-12 h-12 text-black" />
+            <h2 className="text-xl xl:text-2xl font-bold text-black ">Booking Date</h2>
+            <h2 className="text-md xl:text-xl exo text-[#d63c3c]">
               {selectedBookingDate}
             </h2>
           </div>
           <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
-            <FaCar className="w-8 h-8 text-black" />
-            <h2 className="text-md xl:text-xl font-bold text-black ">Booking Time</h2>
-            <h2 className="text-xl xl:text-2xl font-semibold text-[#d63c3c]">
+            <FaCar className="w-12 h-12 text-black" />
+            <h2 className="text-xl xl:text-2xl font-bold text-black ">Booking Time</h2>
+            <h2 className="text-md xl:text-xl exo text-[#d63c3c]">
               {selectedBookingTime}
             </h2>
           </div>
           <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
-            <FaCar className="w-8 h-8 text-black" />
-            <h2 className="text-md xl:text-xl font-bold text-black ">Added Services</h2>
+            <FaCar className="w-12 h-12 text-black" />
+            <h2 className="text-xl xl:text-2xl font-bold text-black ">Added Services</h2>
            
            {selectedAddedService.map((item) => (
             <h2 key={item.name} className="exo text-md font-semibold text-gray-700">

@@ -13,6 +13,8 @@ const StepsContainer = () => {
   const [selectedBookingDate, setSelectedBookingDate] = useState(""); 
   const [selectedBookingTime, setSelectedBookingTime] = useState(""); 
   const [selectedAddedService, setSelectedAddedService] = useState([]); 
+  const [selectedAddedServicePrice, setSelectedAddedServicePrice] = useState([]); 
+
 
 
 
@@ -22,9 +24,9 @@ const StepsContainer = () => {
       <Step1  setSelectedCarType={setSelectedCarType} />
       <Step2 setSelectedPlan={setSelectedPlan} setSelectedPlanPrice={setSelectedPlanPrice}/>
       <Step3 setSelectedBookingDate={setSelectedBookingDate} setSelectedBookingTime={setSelectedBookingTime}/>
-      <Step5 setSelectedAddedService={setSelectedAddedService}/>
+      <Step5 setSelectedAddedService={setSelectedAddedService} setSelectedAddedServicePrice={setSelectedAddedServicePrice}/>
       
-      <Step4 selectedAddedService={selectedAddedService} selectedBookingDate={selectedBookingDate} selectedBookingTime={selectedBookingTime} selectedPlan={selectedPlan} selectedPlanPrice={selectedPlanPrice} selectedCarType={selectedCarType} />
+      <Step4 selectedAddedServicePrice={selectedAddedServicePrice} selectedAddedService={selectedAddedService} selectedBookingDate={selectedBookingDate} selectedBookingTime={selectedBookingTime} selectedPlan={selectedPlan} selectedPlanPrice={selectedPlanPrice} selectedCarType={selectedCarType} />
     </div>
   );
 };

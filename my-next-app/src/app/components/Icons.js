@@ -42,16 +42,16 @@ const ScrollToTop = () => {
         >
           {/* Car Image */}
           <motion.div
-            className="absolute bottom-12 w-24 h-24 lg:w-28 lg:h-28"
-            animate={isAnimating ? { y: -800, opacity: 0 } : { y: 0, opacity: 1 }}
-            transition={{ duration: 1.0, ease: "easeInOut" }}
+            className="absolute bottom-12 hover:bottom-8 transition-all duration-300  w-24 h-24 lg:w-28 lg:h-28"
+            animate={isAnimating ? { y: -400, opacity: 0 } : { y: 0, opacity: 1 }}
+            transition={{ duration: 1.0, ease: "easeOut" }}
           >
             <Image
               width={30}
               height={30}
               src="/Images/gotop.webp" // Ensure correct path
               alt="Go Top"
-              className="zoom w-full h-[100%] object-cover"
+              className=" w-full h-[100%] object-cover"
             />
           </motion.div>
           {/* Go Top Text */}

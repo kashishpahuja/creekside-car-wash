@@ -2,9 +2,10 @@ require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
+const fetch = require("node-fetch");
 const cors = require("cors");
 const paymentRoutes = require("./routes/paymentRoutes")
-
+const { google } = require("googleapis");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -24,6 +25,21 @@ app.use(bodyParser.json());
 app.use('/payment',paymentRoutes)
 
 
+
+// google calendar OAuth2 setup
+const oauth2Client = new google.auth.OAuth2(
+  process.env.GOOGLE_CLIENT_ID,
+  process.env.GOOGLE_CLIENT_SECRET,
+  process.env.REDIRECT_URI,
+);
+oauth2Client.setCredentials({
+  refresh_token:process.env.GOOGLE_REFRESH_TOKEN,
+});
+
+const calendar = google.calendar({version:"v3",auth:oauth2Client})
+
+
+
 app.post("/booking", async (req, res) => {
   const {
     fname,
@@ -38,6 +54,7 @@ app.post("/booking", async (req, res) => {
     bookingDate,
     bookingTime,
     addedServices,
+    totalPrice
   } = req.body;
 
   console.log("Received Booking Data:", req.body);
@@ -93,6 +110,7 @@ app.post("/booking", async (req, res) => {
         <p><strong>Washing Plan:</strong> ${washingPlan} (${washingPrice})</p>
         <p><strong>Booking Date:</strong> ${bookingDate}</p>
         <p><strong>Booking Time:</strong> ${bookingTime}</p>
+        <p><strong>Total Price:</strong> $${totalPrice}</p>
         <p><strong>Additional Services:</strong> ${addedServicesHtml}</p>
       </div>
       `,
@@ -100,10 +118,70 @@ app.post("/booking", async (req, res) => {
 
     // Send the email
     await transporter.sendMail(mailOptions);
-    res.status(200).json({ message: "Your booking has been sent successfully!" });
+
+// Function to convert 12-hour format (1:00 pm) to 24-hour format (13:00)
+function convertTo24Hour(time) {
+  const [timeStr, modifier] = time.split(" ");
+  let [hours, minutes] = timeStr.split(":");
+
+  if (modifier.toLowerCase() === "pm" && hours !== "12") {
+    hours = String(parseInt(hours, 10) + 12);
+  } else if (modifier.toLowerCase() === "am" && hours === "12") {
+    hours = "00";
+  }
+
+  return `${hours}:${minutes}`;
+}
+
+// Convert bookingTime before using it
+const formattedTime = convertTo24Hour(bookingTime);
+
+const startDateTime = new Date(`${bookingDate}T${formattedTime}:00`);
+if (isNaN(startDateTime.getTime())) {
+  return res.status(400).json({ error: "Invalid booking date/time format." });
+}
+
+const endDateTime = new Date(startDateTime.getTime() + 60 * 60 * 1000);
+
+
+    // add event to google calender 
+    const event = {
+      summary:`Car Wash Appointment - ${fname} ${lname}`,
+      location:address,
+      description:`Service: ${washingPlan},\nAdditional Services:  ${Array.isArray(addedServices) ? addedServices.join(", ") : "None"},/nTotal Price: $${totalPrice}`,
+
+      start:{
+        dateTime: startDateTime.toISOString(),
+        timezone:"Asia/Kolkata",
+      },
+      end:{
+        dateTime:endDateTime.toISOString(),
+        timezone:"Asia/Kolkata",
+      },
+      attendees:[{email:email}],
+      reminders:{
+        useDefault: false,
+        overrides:[
+          {method:"email",minutes:60},
+          {method:"popup",minutes:10},
+        ],
+      },
+    };
+    const calendarEvent = await calendar.events.insert({
+      calendarId:process.env.GOOGLE_CALENDAR_ID,
+      resource: event,
+    })
+console.log("Event created:", calendarEvent.data.htmlLink);
+
+
+    res.status(200).json({ 
+      message: "Your booking has been sent successfully!" ,
+      eventLink:calendarEvent.data.htmlLink,
+
+    });
   } catch (error) {
-    console.error("Error sending email:", error);
-    res.status(500).json({ error: "Failed to send email. Please try again later." });
+    console.error("Error processing booking:", error);
+    res.status(500).json({ error: "Failed to process booking. Please try again later." });
   }
 });
 
