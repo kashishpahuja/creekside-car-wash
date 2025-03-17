@@ -162,12 +162,12 @@ const endDateTime = new Date(startDateTime.getTime() + 60 * 60 * 1000);
         dateTime:endDateTime.toISOString(),
         timezone:"Asia/Kolkata",
       },
-      attendees:[{email:email}],
+      attendees:[{email:email},  { email: process.env.receiverEMAIL },],
       reminders:{
         useDefault: false,
         overrides:[
           {method:"email",minutes:60},
-          {method:"popup",minutes:10},
+          {method:"popup",minutes:30},
         ],
       },
     };

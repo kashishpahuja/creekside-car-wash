@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import ReCAPTCHA from "react-google-recaptcha";
 import "react-toastify/dist/ReactToastify.css"; // import styles for toasts
 import { FaCar } from "react-icons/fa";
+import Image from "next/image";
 
 
 export default function ContactForm({selectedAddedServicePrice, selectedAddedService, selectedCarType, selectedPlanPrice, selectedPlan, selectedBookingDate, selectedBookingTime}) {
@@ -307,48 +308,49 @@ export default function ContactForm({selectedAddedServicePrice, selectedAddedSer
         </div>
 
         <div className="w-full lg:w-1/2 h-[100%] text-black grid grid-cols-1 md:grid-cols-2 gap-2">
-          <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
-            <FaCar className="w-12 h-12 text-black" />
+          <div className="flex flex-col items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
+          <Image alt="" width={20} height={20} src={'/Images/detailing/5.webp'} className="w-20 h-auto mb-2 object-contain text-black" />
+
             <h2 className="text-xl xl:text-2xl font-bold text-black ">Car Type</h2>
-            <h2 className="text-md xl:text-xl exo text-[#d63c3c] ">
+            <h2 className="text-md xl:text-xl exo text-[#d63c3c]  mt-4 ">
               {selectedCarType}
             </h2>
           </div>
-          <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
-            <FaCar className="w-12 h-12 text-black" />
+          <div className="flex flex-col items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
+            <Image alt="" width={20} height={20} src={'/Images/detailing/4.webp'} className="w-20 h-auto object-contain text-black" />
             <h2 className="text-xl xl:text-2xl font-bold text-black ">Washing Plan</h2>
-            <h2 className="text-md xl:text-xl exo text-[#d63c3c] text-center">
+            <h2 className="text-md xl:text-xl exo text-[#d63c3c]  mt-4 text-center">
               {selectedPlan}
             </h2>
           </div>
-          <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
-            <FaCar className="w-12 h-12 text-black" />
+          <div className="flex flex-col items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
+            <Image alt="" width={20} height={20} src={'/Images/detailing/6.webp'} className="w-16 h-auto mb-2 object-contain text-black" />
             <h2 className="text-xl xl:text-2xl font-bold text-black ">Plan Price</h2>
-            <h2 className="text-md xl:text-xl exo text-[#d63c3c]">
+            <h2 className="text-md xl:text-xl exo text-[#d63c3c] mt-4 ">
             ${(
     Number(selectedPlanPrice) + 
     selectedAddedService.reduce((total, service) => total + Number(service.price), 0)
   ).toFixed(2)}
             </h2>
           </div>
-          <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
-            <FaCar className="w-12 h-12 text-black" />
+          <div className="flex flex-col items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
+            <Image alt="" width={20} height={20} src={'/Images/detailing/7.webp'} className="w-12 h-auto mb-2 object-contain text-black" />
             <h2 className="text-xl xl:text-2xl font-bold text-black ">Booking Date</h2>
-            <h2 className="text-md xl:text-xl exo text-[#d63c3c]">
+            <h2 className="text-md xl:text-xl exo text-[#d63c3c] mt-4 ">
               {selectedBookingDate}
             </h2>
           </div>
-          <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
-            <FaCar className="w-12 h-12 text-black" />
+          <div className="flex flex-col items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
+            <Image alt="" width={20} height={20} src={'/Images/detailing/8.webp'} className="w-16 h-auto mb-2 object-contain text-black" />
             <h2 className="text-xl xl:text-2xl font-bold text-black ">Booking Time</h2>
-            <h2 className="text-md xl:text-xl exo text-[#d63c3c]">
+            <h2 className="text-md xl:text-xl exo text-[#d63c3c] mt-4 ">
               {selectedBookingTime}
             </h2>
           </div>
-          <div className="flex flex-col gap-4 items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
-            <FaCar className="w-12 h-12 text-black" />
-            <h2 className="text-xl xl:text-2xl font-bold text-black ">Added Services</h2>
-           
+          <div className="flex flex-col items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
+            <Image alt="" width={20} height={20} src={'/Images/detailing/1.webp'} className="w-20 h-auto mb-2 object-contain text-black" />
+            <h2 className="text-xl xl:text-2xl mt-4 font-bold text-black ">Added Services</h2>
+          
            {selectedAddedService.map((item) => (
             <h2 key={item.name} className="exo text-md font-semibold text-gray-700">
             {item.name}
