@@ -348,7 +348,7 @@ export default function ContactForm({selectedAddedServicePrice, selectedAddedSer
             </h2>
           </div>
           <div className="flex flex-col items-center justify-center bg-gray-100 px-6 py-12 rounded-xl">
-            <Image alt="" width={20} height={20} src={'/Images/detailing/1.webp'} className="w-20 h-auto mb-2 object-contain text-black" />
+            <Image alt="" width={20} height={20} src={'/Images/detailing/9.webp'} className="w-12 h-auto object-contain text-black" />
             <h2 className="text-xl xl:text-2xl mt-4 font-bold text-black ">Added Services</h2>
           
            {selectedAddedService.map((item) => (

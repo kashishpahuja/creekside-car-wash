@@ -26,7 +26,7 @@ function Oil() {
     >
     
    
-      <h3 className="montserrat text-2xl  lg:text-4xl font-bold text-black text-center">
+      <h3 className="montserrat text-3xl  lg:text-4xl font-bold text-black ">
       Benefits of Oil Undercoating
       </h3>
       <h3 className=" text-sm mx-6 xl:mx-20 lg:text-lg font-bold text-gray-700 text-justify lg:text-center my-8 ">
