@@ -116,6 +116,10 @@ app.post("/booking", async (req, res) => {
       `,
     };
 
+
+
+
+
     // Send the email
     await transporter.sendMail(mailOptions);
 
@@ -147,8 +151,8 @@ const endDateTime = new Date(startDateTime.getTime() + 60 * 60 * 1000);
     // add event to google calender 
     const event = {
       summary:`Car Wash Appointment - ${fname} ${lname}`,
-      location:address,
-      description:`Service: ${washingPlan},\nAdditional Services:  ${Array.isArray(addedServices) ? addedServices.join(", ") : "None"},/nTotal Price: $${totalPrice}`,
+      // location:address,
+      description:`Service: ${washingPlan},\nAdditional Services:  ${Array.isArray(addedServices) ? addedServices.join(", ") : "None"},\nTotal Price: $${totalPrice}`,
 
       start:{
         dateTime: startDateTime.toISOString(),
@@ -172,6 +176,27 @@ const endDateTime = new Date(startDateTime.getTime() + 60 * 60 * 1000);
       resource: event,
     })
 console.log("Event created:", calendarEvent.data.htmlLink);
+     // Email confirmation to client
+     const mailOptionsToClient = {
+      from: `Creekside Car Wash <${process.env.EMAIL}>`,
+      to: email,
+      subject: "Booking Confirmation - Creekside Car Wash",
+      html: `
+        <h2>Booking Confirmation</h2>
+        <p>Dear ${fname},</p>
+        <p>Thank you for booking with Creekside Car Wash! Your service has been scheduled as follows:</p>
+        <p><strong>Date:</strong> ${bookingDate}</p>
+        <p><strong>Time:</strong> ${bookingTime}</p>
+        <p><strong>Service:</strong> ${washingPlan} (${washingPrice})</p>
+        <p><strong>Additional Services:</strong> ${addedServicesHtml}</p>
+        <p><strong>Total Price:</strong> $${totalPrice}</p>
+        <p><a href="${calendarEvent.data.htmlLink}">Click here to view your booking</a></p>
+        <p>We look forward to serving you!</p>
+        <p><strong>Creekside Car Wash Team</strong></p>
+      `,
+    };
+
+    await transporter.sendMail(mailOptionsToClient)
 
 
     res.status(200).json({ 
